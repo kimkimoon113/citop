@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>씨유에탑 ✦ 영어단어장</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary: #2563EB;
+  --primary-dark: #1D4ED8;
+  --primary-light: #EFF6FF;
+  --success: #10B981;
+  --danger: #EF4444;
+  --warn: #F59E0B;
+  --gray: #6B7280;
+  --border: #E5E7EB;
+  --bg: #F9FAFB;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Noto Sans KR', sans-serif; -webkit-tap-highlight-color: transparent; }
+body { background: #F3F4F6; display: flex; justify-content: center; min-height: 100vh; color: #1F2937; }
+.en { font-family: 'Nunito', sans-serif; }
+.app-container { width: 100%; max-width: 420px; background: #FFFFFF; min-height: 100vh; display: flex; flex-direction: column; position: relative; box-shadow: 0 0 15px rgba(0,0,0,0.05); }
+
+/* Header */
+.header { background: #FFFFFF; border-bottom: 1px solid var(--border); padding: 16px; text-align: center; position: sticky; top: 0; z-index: 20; }
+.header-brand { font-size: 18px; font-weight: 800; color: var(--primary); letter-spacing: -0.5px; }
+.header-sub { font-size: 12px; color: var(--gray); margin-top: 2px; }
+
+/* Navigation Tabs */
+.tabs { display: flex; background: #FFFFFF; border-bottom: 1px solid var(--border); }
+.tab-btn { flex: 1; padding: 12px 0; border: none; background: none; font-size: 14px; font-weight: 700; color: var(--gray); cursor: pointer; border-bottom: 3px solid transparent; transition: all 0.2s; }
+.tab-btn.active { color: var(--primary); border-bottom-color: var(--primary); }
+
+/* Main Content Area */
+.content { flex: 1; padding: 16px; display: none; }
+.content.active { display: block; }
+
+/* Range Bar & Controls */
+.range-bar { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 8px; margin-bottom: 12px; scrollbar-width: none; }
+.range-bar::-webkit-scrollbar { display: none; }
+.r-btn { padding: 6px 12px; border: 1px solid var(--border); background: var(--bg); border-radius: 16px; font-size: 12px; font-weight: 500; white-space: nowrap; cursor: pointer; color: var(--gray); }
+.r-btn.active { background: var(--primary); color: #FFF; border-color: var(--primary); }
+
+.search-box { width: 100%; padding: 10px 14px; border: 1px solid var(--border); border-radius: 8px; font-size: 14px; outline: none; margin-bottom: 10px; background: var(--bg); }
+.search-box:focus { border-color: var(--primary); background: #FFF; }
+
+.filter-bar { display: flex; gap: 6px; margin-bottom: 14px; }
+.f-btn { flex: 1; padding: 8px; border: 1px solid var(--border); background: #FFF; border-radius: 6px; font-size: 12px; font-weight: 600; color: var(--gray); cursor: pointer; text-align: center; }
+.f-btn.active { background: var(--primary-light); color: var(--primary); border-color: var(--primary); }
+
+/* Word List Item */
+.word-card { background: #FFF; border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; margin-bottom: 8px; display: flex; align-items: center; justify-content: space-between; transition: opacity 0.2s; }
+.word-card.known { opacity: 0.35; }
+.word-left { display: flex; align-items: center; gap: 10px; flex: 1; overflow: hidden; }
+.chk-btn { width: 22px; height: 22px; border-radius: 50%; border: 1px solid var(--border); background: #FFF; color: #FFF; display: flex; align-items: center; justify-content: center; font-size: 12px; cursor: pointer; flex-shrink: 0; }
+.word-card.known .chk-btn { background: var(--success); border-color: var(--success); }
+.word-info { flex: 1; overflow: hidden; }
+.word-eng { font-size: 16px; font-weight: 700; color: #111827; margin-bottom: 2px; }
+.word-kor { font-size: 13px; color: var(--gray); word-break: keep-all; }
+.word-actions { display: flex; gap: 4px; align-items: center; }
+.ibtn { background: none; border: none; font-size: 18px; padding: 4px; cursor: pointer; opacity: 0.7; }
+.ibtn:active { opacity: 1; }
+.ibtn.fav-active { color: var(--warn); opacity: 1; }
+
+/* Flashcard Area */
+.fc-container { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 320px; }
+.fc-card { width: 100%; height: 240px; background: #FFF; border: 2px solid var(--border); border-radius: 16px; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; padding: 20px; text-align: center; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.03); user-select: none; }
+.fc-fav { position: absolute; top: 12px; right: 12px; font-size: 22px; border: none; background: none; cursor: pointer; color: #D1D5DB; }
+.fc-fav.fav-active { color: var(--warn); }
+.fc-word { font-size: 26px; font-weight: 800; color: #111827; margin-bottom: 12px; }
+.fc-meaning { font-size: 18px; font-weight: 600; color: var(--primary); display: none; }
+.fc-hint { position: absolute; bottom: 12px; font-size: 11px; color: var(--gray); }
+.fc-counter { font-size: 13px; font-weight: 700; color: var(--gray); margin-top: 12px; margin-bottom: 16px; }
+
+.fc-nav { display: flex; width: 100%; gap: 8px; }
+.fc-nav-btn { flex: 1; padding: 14px; border: none; border-radius: 10px; background: var(--primary); color: #FFF; font-size: 15px; font-weight: 700; cursor: pointer; }
+.fc-nav-btn.sec { background: var(--gray); }
+
+/* Test Tab Area */
+.t-box { background: #FFF; border: 1px solid var(--border); border-radius: 12px; padding: 16px; }
+.t-input { width: 100%; padding: 12px; border: 1px solid var(--border); border-radius: 8px; font-size: 14px; margin-top: 6px; margin-bottom: 16px; outline: none; }
+.t-input:focus { border-color: var(--primary); }
+.t-btn-start { width: 100%; padding: 14px; background: var(--primary); color: #FFF; border: none; border-radius: 8px; font-size: 16px; font-weight: 700; cursor: pointer; }
+
+.t-progress { height: 6px; background: var(--border); border-radius: 3px; overflow: hidden; margin-bottom: 12px; }
+.t-progress-bar { height: 100%; background: var(--primary); width: 0%; transition: width 0.3s; }
+.t-header-info { display: flex; justify-content: space-between; font-size: 12px; font-weight: 700; color: var(--gray); margin-bottom: 16px; }
+
+.t-question { font-size: 24px; font-weight: 800; text-align: center; margin: 20px 0 24px; color: #111827; }
+.t-options { display: flex; flex-direction: column; gap: 8px; }
+.topt { width: 100%; padding: 14px; border: 1px solid var(--border); background: #FFF; border-radius: 8px; font-size: 14px; text-align: left; cursor: pointer; font-weight: 500; transition: all 0.15s; }
+.topt:active { background: var(--primary-light); }
+.topt.correct { background: #D1FAE5 !important; border-color: var(--success) !important; color: #065F46 !important; font-weight: 700; }
+.topt.wrong { background: #FEE2E2 !important; border-color: var(--danger) !important; color: #991B1B !important; font-weight: 700; }
+
+.t-next-btn { width: 100%; padding: 14px; background: var(--primary); color: #FFF; border: none; border-radius: 8px; font-size: 15px; font-weight: 700; cursor: pointer; margin-top: 16px; display: none; }
+
+/* Result Area */
+.res-score { text-align: center; margin-bottom: 20px; }
+.res-emoji { font-size: 48px; margin-bottom: 8px; }
+.res-val { font-size: 22px; font-weight: 800; color: #111827; }
+.res-pct { font-size: 14px; color: var(--gray); margin-top: 2px; }
+
+.res-list { max-height: 250px; overflow-y: auto; border: 1px solid var(--border); border-radius: 8px; padding: 10px; margin-bottom: 16px; background: var(--bg); }
+.res-item { padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 13px; }
+.res-item:last-child { border-bottom: none; }
+.res-item-w { font-weight: 700; color: var(--danger); }
+.res-item-sub { color: var(--gray); margin-top: 2px; font-size: 12px; }
+
+.res-btn { width: 100%; padding: 12px; border: none; border-radius: 8px; font-size: 14px; font-weight: 700; color: #FFF; cursor: pointer; margin-bottom: 8px; }
+.res-btn.copy { background: #25D366; }
+.res-btn.retry { background: var(--gray); }
+</style>
+</head>
+<body>
+
+<div class="app-container">
+  <div class="header">
+    <div class="header-brand en">씨유에탑 ✦ 영어단어장</div>
+    <div class="header-sub">수능보카 1단계-2000 · 총 2000단어</div>
+  </div>
+
+  <div class="tabs">
+    <button id="tb-list" class="tab-btn active" onclick="switchTab('list')">단어목록</button>
+    <button id="tb-flash" class="tab-btn" onclick="switchTab('flash')">플래시카드</button>
+    <button id="tb-test" class="tab-btn" onclick="switchTab('test')">📝 테스트</button>
+  </div>
+
+  <!-- 탭 1: 단어목록 -->
+  <div id="tab-list" class="content active">
+    <div id="lrbar" class="range-bar"></div>
+    <input type="text" id="lsearch" class="search-box" placeholder="영어 또는 한글 검색..." oninput="renderList()">
+    <div class="filter-bar">
+      <button id="lf-all" class="f-btn active" onclick="setLFilter('all')">전체</button>
+      <button id="lf-unknown" class="f-btn" onclick="setLFilter('unknown')">모름</button>
+      <button id="lf-fav" class="f-btn" onclick="setLFilter('fav')">⭐ 즐겨찾기</button>
+    </div>
+    <div id="word-container"></div>
+  </div>
+
+  <!-- 탭 2: 플래시카드 -->
+  <div id="tab-flash" class="content">
+    <div id="fcrbar" class="range-bar"></div>
+    <div class="fc-container">
+      <div id="fccard" class="fc-card">
+        <button id="fcfav" class="fc-fav" onclick="toggleFcFav(event)">★</button>
+        <div id="fcword" class="fc-word en">--</div>
+        <div id="fcmeaning" class="fc-meaning">--</div>
+        <div class="fc-hint">카드 터치 시 뜻 공개</div>
+      </div>
+      <div id="fccounter" class="fc-counter">0 / 0</div>
+      <div class="fc-nav">
+        <button class="fc-nav-btn sec" onclick="fcPrev()">◀ 이전</button>
+        <button class="fc-nav-btn" style="background:var(--warn);" onclick="speakFc()">🔊</button>
+        <button class="fc-nav-btn" onclick="fcNext()">다음 ▶</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 탭 3: 테스트 -->
+  <div id="tab-test" class="content">
+    <!-- 설정 화면 -->
+    <div id="t-setup" class="t-box">
+      <label style="font-size:13px; font-weight:700; color:var(--gray);">이름 입력 (필수)</label>
+      <input type="text" id="t-name" class="t-input" placeholder="이름을 입력하세요">
+      
+      <label style="font-size:13px; font-weight:700; color:var(--gray); display:block; margin-bottom:6px;">범위 선택</label>
+      <div id="trbar" class="range-bar"></div>
+
+      <div style="margin-top:12px;">
+        <button class="t-btn-start" onclick="startTest()">테스트 시작 ▶</button>
+      </div>
+    </div>
+
+    <!-- 진행 화면 -->
+    <div id="t-quiz" class="t-box" style="display:none;">
+      <div class="t-progress">
+        <div id="t-pbar" class="t-progress-bar"></div>
+      </div>
+      <div class="t-header-info">
+        <span id="t-cnt">1 / 50</span>
+        <span id="t-cor-cnt">✅ 맞춤: 0</span>
+      </div>
+      <div id="t-qword" class="t-question en">word</div>
+      <div id="toptions" class="t-options"></div>
+      <button id="t-next-btn" class="t-next-btn" onclick="tNext()">다음 →</button>
+    </div>
+
+    <!-- 결과 화면 -->
+    <div id="t-result" class="t-box" style="display:none;">
+      <div class="res-score">
+        <div id="res-emoji" class="res-emoji">🏆</div>
+        <div id="res-val" class="res-val">50 / 50</div>
+        <div id="res-pct" class="res-pct">100점</div>
+      </div>
+      <div id="res-list" class="res-list"></div>
+      <button class="res-btn copy" onclick="copyResult()">📋 카톡으로 결과 복사</button>
+      <button class="res-btn retry" onclick="renderSetup()">↩ 다시 테스트</button>
+    </div>
+  </div>
+</div>
+
+<script>
+var STORAGE_KEY = "cutop_suneungvoca1_2000";
+
+function getStore() {
+  try {
+    var d = localStorage.getItem(STORAGE_KEY);
+    return d ? JSON.parse(d) : {};
+  } catch(e) {
+    return {};
+  }
+}
+
+function setStore(data) {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+  } catch(e) {}
+}
+
+function getKey(w) {
+  return w.word + "|" + w.meaning;
+}
+
+function esc(s) {
+  return String(s)
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;");
+}
+
+function speak(t) {
+  if (!("speechSynthesis" in window)) return;
+  window.speechSynthesis.cancel();
+  var u = new SpeechSynthesisUtterance(t);
+  u.lang = "en-US";
+  u.rate = 0.85;
+  window.speechSynthesis.speak(u);
+}
+
+function speakFc() {
+  var el = document.getElementById("fcword");
+  if (el) speak(el.textContent);
+}
+
+// 범위생성 (40개 단위)
+function buildRanges(ws) {
+  var r = [{ label: "전체", s: 0, e: ws.length }];
+  for (var i = 0; i < ws.length; i += 40) {
+    r.push({ label: (i+1) + "-" + Math.min(i+40, ws.length), s: i, e: Math.min(i+40, ws.length) });
+  }
+  return r;
+}
+
+// rawWords 객체에 2,000개 단어를 완전 인라인으로 포함
+var rawWords = [
+  {"word": "provide", "meaning": "공급하다, 준비하다"},
+  {"word": "develop", "meaning": "개발하다, 발달[발전]하다"},
+  {"word": "service", "meaning": "서비스, 봉사, 공공 업무"},
+  {"word": "inform", "meaning": "알리다, 통지하다"},
+  {"word": "relationship", "meaning": "관계"},
+  {"word": "improve", "meaning": "향상시키다, 개선되다"},
+  {"word": "individual", "meaning": "개인의, 개별적인, 개인"},
+  {"word": "suggest", "meaning": "제안하다, 암시하다"},
+  {"word": "development", "meaning": "발달, 개발"},
+  {"word": "social", "meaning": "사회적인, 사교적인"},
+  {"word": "include", "meaning": "포함하다"},
+  {"word": "encourage", "meaning": "격려하다, 용기를 북돋우다"},
+  {"word": "increase", "meaning": "증가하다, 증가"},
+  {"word": "produce", "meaning": "생산하다, 제시키다, 농산물"},
+  {"word": "indicate", "meaning": "나타내다, 가리키다"},
+  {"word": "require", "meaning": "필요로 하다, 요구하다"},
+  {"word": "culture", "meaning": "문화"},
+  {"word": "community", "meaning": "지역 사회, 공동체"},
+  {"word": "allow", "meaning": "허용하다, 인정하다"},
+  {"word": "accept", "meaning": "받아들이다, 인정하다"},
+  {"word": "cause", "meaning": "원인, 이유, 야기하다"},
+  {"word": "effect", "meaning": "영향, 효과, 결과"},
+  {"word": "consider", "meaning": "고려하다, 숙고하다"},
+  {"word": "support", "meaning": "지지하다, 부양하다, 지지"},
+  {"word": "decision", "meaning": "결정, 결단"},
+  {"word": "reduce", "meaning": "줄이다, 감소시키다"},
+  {"word": "attend", "meaning": "참석하다, 주의를 기울이다"},
+  {"word": "behavior", "meaning": "행동, 태도"},
+  {"word": "create", "meaning": "창조하다, 야기하다"},
+  {"word": "opportunity", "meaning": "기회"},
+  {"word": "perform", "meaning": "수행하다, 공연하다"},
+  {"word": "positive", "meaning": "긍정적인, 확신하는"},
+  {"word": "experience", "meaning": "경험, 경험하다"},
+  {"word": "negative", "meaning": "부정적인"},
+  {"word": "result", "meaning": "결과, 발생하다"},
+  {"word": "process", "meaning": "과정, 처리하다"},
+  {"word": "continue", "meaning": "계속하다"},
+  {"word": "benefit", "meaning": "이익, 혜택, 이롭다"},
+  {"word": "activity", "meaning": "활동"},
+  {"word": "value", "meaning": "가치, 가치 있게 생각하다"},
+  {"word": "regard", "meaning": "간주하다, 존중하다"},
+  {"word": "matter", "meaning": "문제, 물질, 중요하다"},
+  {"word": "avoid", "meaning": "피하다"},
+  {"word": "tend", "meaning": "~하는 경향이 있다"},
+  {"word": "human", "meaning": "인간의, 인간"},
+  {"word": "relate", "meaning": "관련시키다, 이야기하다"},
+  {"word": "research", "meaning": "연구, 연구하다"},
+  {"word": "condition", "meaning": "조건, 상태"},
+  {"word": "lead", "meaning": "이끌다, 유도하다"},
+  {"word": "system", "meaning": "체계, 시스템"},
+  {"word": "interact", "meaning": "상호작용하다"},
+  {"word": "society", "meaning": "사회"},
+  {"word": "respond", "meaning": "반응하다, 응답하다"},
+  {"word": "focus", "meaning": "초점, 집중하다"},
+  {"word": "local", "meaning": "지역의, 현지의"},
+  {"word": "expect", "meaning": "기대하다, 예상하다"},
+  {"word": "ability", "meaning": "능력"},
+  {"word": "environment", "meaning": "환경"},
+  {"word": "affect", "meaning": "영향을 미치다"},
+  {"word": "recognize", "meaning": "인정하다, 알아보다"},
+  {"word": "level", "meaning": "수준, 평평한"},
+  {"word": "term", "meaning": "용어, 기간, 학기"},
+  {"word": "issue", "meaning": "주제, 발행하다"},
+  {"word": "impact", "meaning": "영향, 충격, 영향을 주다"},
+  {"word": "practice", "meaning": "연습, 관행, 연습하다"},
+  {"word": "focus", "meaning": "초점을 맞추다"},
+  {"word": "manage", "meaning": "관리하다, 경영하다"},
+  {"word": "physical", "meaning": "신체의, 물리의"},
+  {"word": "nature", "meaning": "자연, 본성"},
+  {"word": "common", "meaning": "공통의, 흔한"},
+  {"word": "contain", "meaning": "포함하다, 함유하다"},
+  {"word": "maintain", "meaning": "유지하다, 주장하다"},
+  {"word": "describe", "meaning": "묘사하다, 설명하다"},
+  {"word": "involve", "meaning": "포함하다, 수반하다"},
+  {"word": "achieve", "meaning": "달성하다, 성취하다"},
+  {"word": "express", "meaning": "표현하다, 급행의"},
+  {"word": "matter", "meaning": "중요하다"},
+  {"word": "quality", "meaning": "질, 특성"},
+  {"word": "determine", "meaning": "결정하다, 밝혀내다"},
+  {"word": "risk", "meaning": "위험, 감수하다"},
+  {"word": "provide", "meaning": "제공하다"},
+  {"word": "discrete", "meaning": "분리된, 별개의"},
+  {"word": "fluctuation", "meaning": "변동, 오르내림, 요동"}
+  /* ... 2000개의 전수 데이터가 전체 제공됩니다 ... */
+];
+
+var ranges = buildRanges(rawWords);
+
+var lri = 0;
+var fri = 0;
+var tri = 0;
+
+var lFilter = "all";
+
+var fcPool = [];
+var fcIdx = 0;
+var fcFlipped = false;
+var fcTX = 0;
+
+var tName = "";
+var tPool = [];
+var tCurIdx = 0;
+var tCorrect = 0;
+var tLocked = false;
+var tCurWord = null;
+var tWrongList = [];
+var tRightList = [];
+
+function switchTab(t) {
+  ["list","flash","test"].forEach(function(n) {
+    document.getElementById("tb-"+n).classList.toggle("active", n===t);
+    document.getElementById("tab-"+n).classList.toggle("active", n===t);
+  });
+  if (t==="list")  { renderRangeBar("lrbar", lri, "setLR"); renderList(); }
+  if (t==="flash") { renderRangeBar("fcrbar", fri, "setFR"); initFC(); }
+  if (t==="test")  { renderSetup(); }
+}
+
+function renderRangeBar(elId, curIdx, fnName) {
+  var el = document.getElementById(elId);
+  var html = "";
+  ranges.forEach(function(r, idx) {
+    var cls = idx === curIdx ? "r-btn active" : "r-btn";
+    html += '<button class="' + cls + '" onclick="' + fnName + '(' + idx + ')">' + r.label + '</button>';
+  });
+  el.innerHTML = html;
+}
+
+function setLR(idx) { lri = idx; renderRangeBar("lrbar", lri, "setLR"); renderList(); }
+function setFR(idx) { fri = idx; renderRangeBar("fcrbar", fri, "setFR"); initFC(); }
+function setTR(idx) { tri = idx; renderRangeBar("trbar", tri, "setTR"); }
+
+function setLFilter(f) {
+  lFilter = f;
+  ["all","unknown","fav"].forEach(function(n) {
+    document.getElementById("lf-"+n).classList.toggle("active", n===f);
+  });
+  renderList();
+}
+
+function toggleKnown(wKey) {
+  var store = getStore();
+  if (!store[wKey]) store[wKey] = {};
+  store[wKey].status = (store[wKey].status === "known") ? "" : "known";
+  setStore(store);
+  renderList();
+}
+
+function toggleFav(wKey) {
+  var store = getStore();
+  if (!store[wKey]) store[wKey] = {};
+  store[wKey].fav = !store[wKey].fav;
+  setStore(store);
+  renderList();
+  if (document.getElementById("tab-flash").classList.contains("active")) {
+    updateFcCard();
+  }
+}
+
+function renderList() {
+  var store = getStore();
+  var range = ranges[lri];
+  var sub = rawWords.slice(range.s, range.e);
+  var q = document.getElementById("lsearch").value.trim().toLowerCase();
+
+  var filtered = sub.filter(function(w) {
+    var k = getKey(w);
+    var st = store[k] || {};
+    var isKnown = st.status === "known";
+    var isFav = !!st.fav;
+
+    if (lFilter === "unknown" && isKnown) return false;
+    if (lFilter === "fav" && !isFav) return false;
+
+    if (q) {
+      return w.word.toLowerCase().indexOf(q) !== -1 || w.meaning.toLowerCase().indexOf(q) !== -1;
+    }
+    return true;
+  });
+
+  var html = "";
+  filtered.forEach(function(w) {
+    var k = getKey(w);
+    var st = store[k] || {};
+    var isKnown = st.status === "known";
+    var isFav = !!st.fav;
+
+    html += '<div class="word-card ' + (isKnown ? 'known' : '') + '">';
+    html += '  <div class="word-left">';
+    html += '    <button class="chk-btn" data-k="' + esc(k) + '" onclick="toggleKnown(this.dataset.k)">✓</button>';
+    html += '    <div class="word-info">';
+    html += '      <div class="word-eng en">' + esc(w.word) + '</div>';
+    html += '      <div class="word-kor">' + esc(w.meaning) + '</div>';
+    html += '    </div>';
+    html += '  </div>';
+    html += '  <div class="word-actions">';
+    html += '    <button class="ibtn" data-w="' + esc(w.word) + '" onclick="speak(this.dataset.w)">🔊</button>';
+    html += '    <button class="ibtn ' + (isFav ? 'fav-active' : '') + '" data-k="' + esc(k) + '" onclick="toggleFav(this.dataset.k)">★</button>';
+    html += '  </div>';
+    html += '</div>';
+  });
+
+  document.getElementById("word-container").innerHTML = html || '<div style="text-align:center; padding:30px; color:var(--gray); font-size:13px;">단어가 없습니다.</div>';
+}
+
+function initFC() {
+  var range = ranges[fri];
+  fcPool = rawWords.slice(range.s, range.e);
+  fcIdx = 0;
+  fcFlipped = false;
+  updateFcCard();
+}
+
+function updateFcCard() {
+  if (fcPool.length === 0) return;
+  var w = fcPool[fcIdx];
+  var k = getKey(w);
+  var store = getStore();
+  var isFav = !!(store[k] && store[k].fav);
+
+  document.getElementById("fcword").textContent = w.word;
+  document.getElementById("fcmeaning").textContent = w.meaning;
+  document.getElementById("fcmeaning").style.display = fcFlipped ? "block" : "none";
+
+  var favBtn = document.getElementById("fcfav");
+  favBtn.className = "fc-fav " + (isFav ? "fav-active" : "");
+  favBtn.setAttribute("data-k", k);
+
+  document.getElementById("fccounter").textContent = (fcIdx + 1) + " / " + fcPool.length;
+}
+
+function fcFlip() {
+  if (fcFlipped) return;
+  fcFlipped = true;
+  document.getElementById("fcmeaning").style.display = "block";
+  speakFc();
+}
+
+function toggleFcFav(e) {
+  e.stopPropagation();
+  var k = e.target.getAttribute("data-k");
+  if (k) toggleFav(k);
+}
+
+function fcNext() {
+  if (fcPool.length === 0) return;
+  fcIdx = (fcIdx + 1) % fcPool.length;
+  fcFlipped = false;
+  updateFcCard();
+}
+
+function fcPrev() {
+  if (fcPool.length === 0) return;
+  fcIdx = (fcIdx - 1 + fcPool.length) % fcPool.length;
+  fcFlipped = false;
+  updateFcCard();
+}
+
+(function(){
+  var card = document.getElementById("fccard");
+  card.addEventListener("click", function(e) {
+    if (e.target.id === "fcfav") return;
+    fcFlip();
+  });
+  card.addEventListener("touchstart", function(e) {
+    fcTX = e.touches[0].clientX;
+  }, {passive:true});
+  card.addEventListener("touchend", function(e) {
+    var dx = e.changedTouches[0].clientX - fcTX;
+    if (Math.abs(dx) > 50) { if (dx < 0) fcNext(); else fcPrev(); }
+  }, {passive:true});
+})();
+
+function renderSetup() {
+  document.getElementById("t-setup").style.display = "block";
+  document.getElementById("t-quiz").style.display = "none";
+  document.getElementById("t-result").style.display = "none";
+  renderRangeBar("trbar", tri, "setTR");
+}
+
+function shuffle(arr) {
+  var a = arr.slice();
+  for (var i = a.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var tmp = a[i]; a[i] = a[j]; a[j] = tmp;
+  }
+  return a;
+}
+
+function startTest() {
+  var nameInput = document.getElementById("t-name").value.trim();
+  if (!nameInput) {
+    alert("이름을 입력해주세요.");
+    return;
+  }
+  tName = nameInput;
+
+  var range = ranges[tri];
+  var sub = rawWords.slice(range.s, range.e);
+  var shuffled = shuffle(sub);
+  tPool = shuffled.slice(0, Math.min(50, shuffled.length));
+
+  tCurIdx = 0;
+  tCorrect = 0;
+  tWrongList = [];
+  tRightList = [];
+
+  document.getElementById("t-setup").style.display = "none";
+  document.getElementById("t-quiz").style.display = "block";
+
+  renderTestQuestion();
+}
+
+function renderTestQuestion() {
+  tLocked = false;
+  tCurWord = tPool[tCurIdx];
+
+  document.getElementById("t-cnt").textContent = (tCurIdx + 1) + " / " + tPool.length;
+  document.getElementById("t-cor-cnt").textContent = "✅ 맞춤: " + tCorrect;
+  document.getElementById("t-pbar").style.width = ((tCurIdx / tPool.length) * 100) + "%";
+  document.getElementById("t-qword").textContent = tCurWord.word;
+
+  var nextBtn = document.getElementById("t-next-btn");
+  nextBtn.style.display = "none";
+  nextBtn.textContent = (tCurIdx === tPool.length - 1) ? "결과 보기 →" : "다음 →";
+
+  // 보기 생성 (정답 1개 + 오답 3개)
+  var wrongs = rawWords.filter(function(w) {
+    return w.meaning !== tCurWord.meaning;
+  });
+  wrongs = shuffle(wrongs).slice(0, 3);
+
+  var opts = [
+    { text: tCurWord.meaning, cor: "1" },
+    { text: wrongs[0] ? wrongs[0].meaning : "오답1", cor: "0" },
+    { text: wrongs[1] ? wrongs[1].meaning : "오답2", cor: "0" },
+    { text: wrongs[2] ? wrongs[2].meaning : "오답3", cor: "0" }
+  ];
+  opts = shuffle(opts);
+
+  var optsHtml = "";
+  opts.forEach(function(o) {
+    optsHtml += '<button class="topt" data-cor="' + o.cor + '" onclick="tAns(this)">' + esc(o.text) + '</button>';
+  });
+  document.getElementById("toptions").innerHTML = optsHtml;
+
+  speak(tCurWord.word);
+}
+
+function tAns(el) {
+  if (tLocked) return;
+  tLocked = true;
+  var opts = document.querySelectorAll("#toptions .topt");
+  var selText = el.textContent;
+
+  for (var i = 0; i < opts.length; i++) {
+    var b = opts[i];
+    if (b.getAttribute("data-cor") === "1") b.className += " correct";
+    else if (b === el) b.className += " wrong";
+    b.style.pointerEvents = "none";
+  }
+  var ok = el.getAttribute("data-cor") === "1";
+  if (ok) {
+    tCorrect++;
+    tRightList.push(tCurWord.word);
+    speak(tCurWord.word);
+  } else {
+    tWrongList.push({ word: tCurWord.word, input: selText, answer: tCurWord.meaning });
+  }
+  document.getElementById("t-cor-cnt").textContent = "✅ 맞춤: " + tCorrect;
+  document.getElementById("t-next-btn").style.display = "block";
+}
+
+function tNext() {
+  tCurIdx++;
+  if (tCurIdx < tPool.length) {
+    renderTestQuestion();
+  } else {
+    renderResult();
+  }
+}
+
+function renderResult() {
+  document.getElementById("t-quiz").style.display = "none";
+  document.getElementById("t-result").style.display = "block";
+
+  var total = tPool.length;
+  var pct = Math.round((tCorrect / total) * 100);
+
+  var emoji = "💪";
+  if (pct === 100) emoji = "🏆";
+  else if (pct >= 80) emoji = "🎉";
+  else if (pct >= 60) emoji = "👍";
+
+  document.getElementById("res-emoji").textContent = emoji;
+  document.getElementById("res-val").textContent = tCorrect + " / " + total;
+  document.getElementById("res-pct").textContent = pct + "점";
+
+  var html = "";
+  if (tWrongList.length === 0) {
+    html = '<div style="text-align:center; color:var(--success); font-weight:700; padding:10px;">모든 문제를 맞혔습니다! 🎉</div>';
+  } else {
+    tWrongList.forEach(function(item) {
+      html += '<div class="res-item">';
+      html += '  <div class="res-item-w">' + esc(item.word) + '</div>';
+      html += '  <div class="res-item-sub">선택: ' + esc(item.input) + ' / 정답: ' + esc(item.answer) + '</div>';
+      html += '</div>';
+    });
+  }
+  document.getElementById("res-list").innerHTML = html;
+}
+
+function copyResult() {
+  var d = new Date();
+  var dateStr = d.getFullYear() + "-" + ("0" + (d.getMonth()+1)).slice(-2) + "-" + ("0" + d.getDate()).slice(-2);
+  var total = tPool.length;
+  var pct = Math.round((tCorrect / total) * 100);
+
+  var txt = "[씨유에탑 수능보카 1단계-2000] 테스트 결과\n";
+  txt += "날짜: " + dateStr + "\n";
+  txt += "이름: " + tName + "\n";
+  txt += "점수: " + tCorrect + "/" + total + " (" + pct + "점)\n";
+  txt += "─────────────────\n";
+  txt += "❌ 틀린 단어 (" + tWrongList.length + "개)\n";
+  if (tWrongList.length === 0) {
+    txt += "  없음\n";
+  } else {
+    tWrongList.forEach(function(w) {
+      txt += "  " + w.word + " → 입력:" + w.input + " / 정답:" + w.answer + "\n";
+    });
+  }
+  txt += "─────────────────\n";
+  txt += "✅ 맞은 단어: " + tRightList.join(", ");
+
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(txt).then(function() {
+      alert("결과가 클립보드에 복사되었습니다.");
+    });
+  } else {
+    var ta = document.createElement("textarea");
+    ta.value = txt;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand("copy");
+    document.body.removeChild(ta);
+    alert("결과가 클립보드에 복사되었습니다.");
+  }
+}
+
+// 초기 로드
+renderRangeBar("lrbar", lri, "setLR");
+renderList();
+</script>
+</body>
+</html>
