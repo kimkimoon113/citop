@@ -299,8 +299,8 @@ function renderStudy(q){
     </div>
     <div class="stage">${stageText}</div>
     ${it.s.length?`<div class="modes" role="group" aria-label="보기 방식">${MODES.map(m=>`<button class="chip${m.id===rec?' rec':''}" data-mode="${m.id}" aria-pressed="${m.id===mode}">${m.label}</button>`).join('')}</div>
-    <div class="toggles"><label><input type="checkbox" id="tko" ${view.showKo||mode==='ko'?'checked':''} ${mode==='ko'?'disabled':''}> 해석 보기</label><label><input type="checkbox" id="tloop" ${view.loop?'checked':''}> 끝나면 자동으로 다시 듣기</label></div>`
-    :`<div class="toggles"><label><input type="checkbox" id="tloop" ${view.loop?'checked':''}> 끝나면 자동으로 다시 듣기</label></div>`}
+    <div class="toggles"><label><input type="checkbox" id="tko" ${view.showKo||mode==='ko'?'checked':''} ${mode==='ko'?'disabled':''}> 해석 보기</label></div>`
+    :''}
     ${body}
     ${it.v.length?`<details class="vocab"><summary>어휘 ${it.v.length}개</summary><div class="vgrid">${it.v.map(v=>`<div><span>${esc(v.en)}</span><span>${esc(v.ko)}</span></div>`).join('')}</div></details>`:''}`;
   $('#back').onclick=()=>{location.hash=''};
@@ -308,7 +308,6 @@ function renderStudy(q){
   document.querySelectorAll('[data-rev]').forEach(b=>b.onclick=()=>{view.revealed.add(+b.dataset.rev);renderStudy(q)});
   document.querySelectorAll('.bl').forEach(b=>{const f=()=>b.classList.toggle('show');b.onclick=f;b.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();f()}}});
   const tko=$('#tko'); if(tko) tko.onchange=()=>{view.showKo=tko.checked;renderStudy(q)};
-  $('#tloop').onchange=e=>{view.loop=e.target.checked};
   setupPlayer(q);
 }
 
@@ -328,7 +327,7 @@ function updPlayer(){
   const d=dur(), pct=Math.min(100,P.played/d*100);
   $('#pfill').style.width=(aud.currentTime/d*100)+'%';
   const c=cnt(P.q);
-  $('#pinfo').innerHTML=`<b>${P.q}번 · ${c+1}회째</b><br>이번 회차 ${Math.floor(pct)}% 들음 · 끝까지 들으면 1회`;
+  $('#pinfo').innerHTML=`<b>${P.q}번 · ${c+1}회째</b><br>이번 회차 ${Math.floor(pct)}% 들음 · 끝까지 들으면 자동으로 1회 체크`;
   const playing=!aud.paused;
   $('#picon').innerHTML = playing?'<path d="M6 4h4v16H6zM14 4h4v16h-4z"/>':'<path d="M7 4v16l13-8z"/>';
   $('#pplay').setAttribute('aria-label',playing?'일시정지':'재생');
@@ -349,14 +348,13 @@ aud.addEventListener('ended',()=>{
   if(ok){
     S.counts[q]=cnt(q)+1; const d=today(); S.daily[d]=(S.daily[d]||0)+1; S.last=Date.now(); save();
     const c=cnt(q);
-    toast(c===GOAL?`${q}번 20회 완료! 🎉`:`${q}번 ${c}회 완료`);
+    toast(c===GOAL?`${q}번 20회 완료! 🎉`:`${q}번 ${c}회 체크 완료 · ▶를 누르면 다시 들어요`);
     if(view.q===q && location.hash==='#q'+q){
       const keep=view.mode, rec=recMode(c);
       if(rec!==recMode(c-1)) view.mode=rec; renderStudy(q);
     }
   } else toast('중간을 건너뛰어서 이번 회차는 세지 않았어요.');
   aud.currentTime=0; updPlayer();
-  if(view.loop && location.hash==='#q'+q) setTimeout(()=>aud.play().catch(()=>{}),900);
 });
 
 let tt; function toast(m){const t=$('#toast');t.textContent=m;t.hidden=false;clearTimeout(tt);tt=setTimeout(()=>t.hidden=true,2600)}
