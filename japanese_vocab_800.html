@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>씨유에탑 일본어단어장 — 기본어휘 800</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary: #2563EB;
+  --primary-dark: #1D4ED8;
+  --primary-light: #EFF6FF;
+  --success: #10B981;
+  --danger: #EF4444;
+  --warn: #F59E0B;
+  --gray: #6B7280;
+  --border: #E5E7EB;
+  --bg: #F9FAFB;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+body { font-family: 'Noto Sans KR', sans-serif; background: var(--bg); color: #111827; max-width: 420px; margin: 0 auto; min-height: 100vh; display: flex; flex-direction: column; }
+header { background: var(--primary); color: #fff; padding: 14px 16px 10px; text-align: center; flex-shrink: 0; }
+header .htop { font-family: 'Nunito', sans-serif; font-size: 13px; font-weight: 800; letter-spacing: 1px; opacity: 0.9; }
+header .hsub { font-size: 12px; opacity: 0.8; margin-top: 2px; }
+.tabs { display: flex; background: #fff; border-bottom: 2px solid var(--border); flex-shrink: 0; }
+.tab { flex: 1; padding: 10px 4px; text-align: center; font-size: 11px; font-weight: 600; color: var(--gray); cursor: pointer; border: none; background: none; font-family: 'Noto Sans KR', sans-serif; }
+.tab.on { color: var(--primary); border-bottom: 2px solid var(--primary); margin-bottom: -2px; }
+.pane { display: none; flex: 1; overflow-y: auto; padding: 12px; flex-direction: column; }
+.pane.on { display: flex; }
+.rbar { display: flex; gap: 6px; overflow-x: auto; padding: 0 0 8px 0; margin-bottom: 8px; -webkit-overflow-scrolling: touch; scrollbar-width: none; flex-shrink: 0; }
+.rbar::-webkit-scrollbar { display: none; }
+.rbtn { flex-shrink: 0; padding: 6px 12px; border-radius: 20px; border: 1.5px solid var(--border); background: #fff; font-size: 12px; font-weight: 600; color: var(--gray); cursor: pointer; white-space: nowrap; font-family: 'Nunito', sans-serif; }
+.rbtn.on { background: var(--primary); border-color: var(--primary); color: #fff; }
+/* Tab 1 */
+.search-wrap { display: flex; gap: 8px; margin-bottom: 8px; flex-shrink: 0; }
+.search-wrap input { flex: 1; padding: 8px 12px; border: 1.5px solid var(--border); border-radius: 20px; font-size: 13px; font-family: 'Noto Sans KR', sans-serif; outline: none; }
+.search-wrap input:focus { border-color: var(--primary); }
+.filter-row { display: flex; gap: 6px; margin-bottom: 10px; flex-shrink: 0; }
+.fbtn { padding: 5px 12px; border-radius: 20px; border: 1.5px solid var(--border); background: #fff; font-size: 12px; font-weight: 600; color: var(--gray); cursor: pointer; white-space: nowrap; font-family: 'Noto Sans KR', sans-serif; }
+.fbtn.on { background: var(--primary); border-color: var(--primary); color: #fff; }
+#wlist { display: flex; flex-direction: column; gap: 8px; }
+.wcard { display: flex; align-items: center; background: #fff; border-radius: 12px; padding: 10px 10px 10px 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); gap: 6px; transition: opacity 0.2s; }
+.wcard.known { opacity: 0.35; }
+.chk { width: 32px; height: 32px; border-radius: 50%; border: 2px solid var(--border); background: #fff; font-size: 14px; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--gray); font-family: 'Nunito', sans-serif; }
+.chk.on { background: var(--success); border-color: var(--success); color: #fff; }
+.wbody { flex: 1; min-width: 0; }
+.wword { font-family: 'Nunito', sans-serif; font-size: 15px; font-weight: 700; color: #111; word-break: break-all; }
+.wmean { font-size: 12px; color: var(--gray); margin-top: 2px; }
+.wacts { display: flex; flex-direction: column; gap: 4px; flex-shrink: 0; }
+.ibtn { width: 30px; height: 30px; border-radius: 50%; border: 1.5px solid var(--border); background: #fff; font-size: 15px; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+.favbtn.on { color: var(--warn); border-color: var(--warn); background: #fffbeb; }
+/* Tab 2 */
+.fc-wrap { display: flex; flex-direction: column; height: 100%; }
+#fccard { background: #fff; border-radius: 18px; box-shadow: 0 4px 16px rgba(0,0,0,0.1); min-height: 220px; display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer; position: relative; padding: 24px 20px; margin-bottom: 12px; user-select: none; flex-shrink: 0; }
+#fcctr { position: absolute; top: 12px; right: 14px; font-family: 'Nunito', sans-serif; font-size: 12px; color: var(--gray); font-weight: 700; }
+#fcfavbtn { position: absolute; top: 10px; left: 12px; background: none; border: none; font-size: 20px; cursor: pointer; color: var(--gray); }
+#fcfavbtn.on { color: var(--warn); }
+#fcword { font-family: 'Nunito', sans-serif; font-size: 26px; font-weight: 800; color: #111; text-align: center; word-break: break-all; }
+#fcmean { font-size: 16px; color: var(--primary); text-align: center; margin-top: 12px; font-weight: 600; }
+#fctap { font-size: 12px; color: var(--gray); margin-top: 14px; }
+.fcnav { display: flex; gap: 8px; flex-shrink: 0; }
+.fcbtn { flex: 1; padding: 12px; border-radius: 12px; border: none; background: var(--primary); color: #fff; font-size: 14px; font-weight: 700; cursor: pointer; font-family: 'Nunito', sans-serif; }
+.fcbtn.sec { background: var(--border); color: #374151; }
+/* Test options (4지선다) */
+.qopts { display: flex; flex-direction: column; gap: 8px; }
+.qopt { padding: 10px 14px; border-radius: 10px; border: 1.5px solid var(--border); background: #fff; font-size: 13px; cursor: pointer; text-align: left; font-family: 'Noto Sans KR', sans-serif; }
+.qopt.correct { background: #dcfce7; border-color: var(--success); color: #065f46; }
+.qopt.wrong { background: #fee2e2; border-color: var(--danger); color: #991b1b; }
+/* Tab 4 */
+#tsetup, #trun, #tres { display: none; flex-direction: column; gap: 10px; }
+#tsetup.on, #trun.on, #tres.on { display: flex; }
+.tcard { background: #fff; border-radius: 14px; padding: 16px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+.tlabel { font-size: 12px; font-weight: 700; color: var(--gray); margin-bottom: 6px; }
+.tinput { width: 100%; padding: 10px 14px; border: 1.5px solid var(--border); border-radius: 10px; font-size: 14px; font-family: 'Noto Sans KR', sans-serif; outline: none; }
+.tinput:focus { border-color: var(--primary); }
+.tstart-btn { padding: 14px; border-radius: 12px; border: none; background: var(--primary); color: #fff; font-size: 15px; font-weight: 700; cursor: pointer; font-family: 'Nunito', sans-serif; }
+.tprog-bar { width: 100%; height: 6px; background: var(--border); border-radius: 3px; overflow: hidden; margin-bottom: 6px; }
+.tprog-fill { height: 100%; background: var(--primary); border-radius: 3px; transition: width 0.3s; }
+.tprog-info { display: flex; justify-content: space-between; font-size: 12px; color: var(--gray); font-family: 'Nunito', sans-serif; font-weight: 700; margin-bottom: 12px; }
+.tword-disp { font-family: 'Nunito', sans-serif; font-size: 28px; font-weight: 800; color: #111; text-align: center; margin: 20px 0; }
+.tansbtn { padding: 12px; border-radius: 12px; border: none; background: var(--primary); color: #fff; font-size: 14px; font-weight: 700; cursor: pointer; font-family: 'Nunito', sans-serif; margin-top: 8px; }
+.twrong-list { display: flex; flex-direction: column; gap: 6px; margin-top: 10px; }
+.twrong-item { background: #fee2e2; border-radius: 10px; padding: 8px 12px; font-size: 12px; }
+.twrong-word { font-family: 'Nunito', sans-serif; font-weight: 700; }
+.tcopy-btn { padding: 12px; border-radius: 12px; border: none; background: #25D366; color: #fff; font-size: 14px; font-weight: 700; cursor: pointer; font-family: 'Nunito', sans-serif; }
+.tretry-btn { padding: 12px; border-radius: 12px; border: none; background: var(--primary); color: #fff; font-size: 14px; font-weight: 700; cursor: pointer; font-family: 'Nunito', sans-serif; }
+.tres-score { font-family: 'Nunito', sans-serif; font-size: 40px; font-weight: 800; color: var(--primary); text-align: center; }
+.tres-pct { font-size: 14px; color: var(--gray); text-align: center; margin-top: 4px; }
+.tcorrect-list { font-size: 12px; color: #065f46; background: #dcfce7; border-radius: 10px; padding: 10px 12px; line-height: 1.8; }
+.wword, #fcword, .tword-disp, .twrong-word { font-family: 'Noto Sans JP', 'Noto Sans KR', sans-serif; }
+.wkanji { font-size: 13px; font-weight: 500; color: #374151; margin-left: 6px; }
+.wpron { font-size: 12px; color: var(--primary); font-weight: 600; margin-top: 1px; }
+.wpos, .fcpos { display: inline-block; font-size: 10px; font-weight: 700; color: var(--primary-dark); background: var(--primary-light); border-radius: 6px; padding: 1px 6px; margin-right: 6px; font-family: 'Noto Sans JP', sans-serif; vertical-align: 1px; }
+#fckanji { font-family: 'Noto Sans JP', sans-serif; font-size: 18px; color: #374151; margin-top: 6px; font-weight: 500; }
+#fcpron { font-size: 17px; color: var(--success); font-weight: 700; margin-top: 8px; }
+.fcpos { font-size: 11px; }
+.tword-disp { margin: 14px 0 4px; }
+.tsub { text-align: center; margin-bottom: 16px; font-size: 15px; }
+.tkanji { font-family: 'Noto Sans JP', sans-serif; color: #374151; }
+.tpron { color: var(--success); font-weight: 700; }
+</style>
+</head>
+<body>
+<header>
+  <div class="htop">씨유에탑 ✦ 일본어단어장</div>
+  <div class="hsub">일본어 기본어휘 · 총 800단어</div>
+</header>
+<div class="tabs">
+  <button class="tab on" id="tb-w" onclick="showTab('w')">📚 단어</button>
+  <button class="tab" id="tb-fc" onclick="showTab('fc')">🃏 플래시</button>
+  <button class="tab" id="tb-t" onclick="showTab('t')">📝 테스트</button>
+</div>
+<!-- Tab 1 -->
+<div class="pane on" id="pane-w">
+  <div class="rbar" id="wrbar"></div>
+  <div class="search-wrap">
+    <input type="text" id="wsearch" placeholder="단어·한자·발음·뜻 검색..." oninput="renderList()">
+  </div>
+  <div class="filter-row">
+    <button class="fbtn on" id="flt-all" onclick="setFilter('all')">전체</button>
+    <button class="fbtn" id="flt-unk" onclick="setFilter('unk')">모름</button>
+    <button class="fbtn" id="flt-fav" onclick="setFilter('fav')">⭐즐겨찾기</button>
+  </div>
+  <div id="wlist"></div>
+</div>
+<!-- Tab 2 -->
+<div class="pane" id="pane-fc">
+  <div class="rbar" id="fcrbar"></div>
+  <div class="fc-wrap">
+    <div id="fccard">
+      <span id="fcctr"></span>
+      <button id="fcfavbtn" onclick="fcToggleFav()">☆</button>
+      <div id="fcword"></div>
+      <div id="fckanji"></div>
+      <div id="fcpron"></div>
+      <div id="fcmean"></div>
+      <div id="fctap">탭하여 발음 듣기 · 뜻 보기</div>
+    </div>
+    <div class="fcnav">
+      <button class="fcbtn sec" onclick="fcPrev()">◀ 이전</button>
+      <button class="fcbtn" style="background:var(--warn);" onclick="speakFc()">🔊</button>
+      <button class="fcbtn" onclick="fcNext()">다음 ▶</button>
+    </div>
+  </div>
+</div>
+<!-- Tab 4 -->
+<div class="pane" id="pane-t">
+  <div id="tsetup" class="on">
+    <div class="tcard">
+      <div class="tlabel">이름</div>
+      <input class="tinput" type="text" id="tname" placeholder="이름을 입력하세요">
+    </div>
+    <div class="tcard">
+      <div class="tlabel">문제 수 (최대 50)</div>
+      <input class="tinput" type="number" id="tcount" value="20" min="1" max="50">
+    </div>
+    <div class="tcard">
+      <div class="tlabel">범위 (20단어씩)</div>
+      <div class="rbar" id="trbar"></div>
+    </div>
+    <button class="tstart-btn" onclick="tStart()">테스트 시작 ▶</button>
+  </div>
+  <div id="trun">
+    <div class="tprog-bar"><div class="tprog-fill" id="tpfill"></div></div>
+    <div class="tprog-info"><span id="tpnum"></span><span id="tpcor"></span></div>
+    <div class="tcard" style="text-align:center;">
+      <div class="tword-disp" id="tworddisp"></div>
+      <div class="tsub" id="tsubdisp"></div>
+      <div class="qopts" id="topts"></div>
+      <button class="tansbtn" id="tnext" onclick="tNext()" style="width:100%; display:none;">다음 →</button>
+    </div>
+  </div>
+  <div id="tres">
+    <div class="tcard" style="text-align:center;">
+      <div id="testemoji" style="font-size:48px; margin-bottom:6px;"></div>
+      <div class="tres-score" id="tresscore"></div>
+      <div class="tres-pct" id="trespct"></div>
+    </div>
+    <div class="tcard" id="twrongcard" style="display:none;">
+      <div class="tlabel">❌ 틀린 단어</div>
+      <div class="twrong-list" id="twronglist"></div>
+    </div>
+    <div class="tcard" id="tcorcard" style="display:none;">
+      <div class="tlabel">✅ 맞은 단어</div>
+      <div class="tcorrect-list" id="tcorlist"></div>
+    </div>
+    <button class="tcopy-btn" onclick="tCopy()">📋 카톡으로 결과 복사</button>
+    <button class="tretry-btn" onclick="tRetry()">↩ 다시 테스트</button>
+  </div>
+</div>
+<script>
+var rawWords = [{"word": "あいさつ", "kanji": "", "pron": "아이사쯔", "pos": "名", "meaning": "인사, 인사말"}, {"word": "あいだ", "kanji": "間", "pron": "아이다", "pos": "名", "meaning": "사이, 동안, 간격, ～하는 한"}, {"word": "あいにく", "kanji": "", "pron": "아이니쿠", "pos": "副", "meaning": "공교롭게, (때)마침"}, {"word": "あう", "kanji": "合う", "pron": "아우", "pos": "5自", "meaning": "합쳐지다, 맞다, 합류하다, 서로 ～하다"}, {"word": "あう", "kanji": "", "pron": "아우", "pos": "5自", "meaning": "만나다, 대면하다, 우연히 만나다, (비를)맞다"}, {"word": "あおい", "kanji": "靑い", "pron": "아오이", "pos": "形", "meaning": "푸르다, 파랗다, 창백하다, 미숙하다"}, {"word": "あかい", "kanji": "赤い", "pron": "아카이", "pos": "形", "meaning": "빨갛다, (빛깔이 붉고)아름답다, 공산주의적이다"}, {"word": "あがる", "kanji": "上がる", "pron": "아가루", "pos": "5自", "meaning": "오르다, 나오다, 일어나다, 입학(진학)하다"}, {"word": "あかるい", "kanji": "明るい", "pron": "아카루이", "pos": "形", "meaning": "밝다, 환하다, 전망이 좋다, 정통하다"}, {"word": "あき", "kanji": "秋", "pron": "아키", "pos": "名", "meaning": "가을"}, {"word": "あける", "kanji": "開ける", "pron": "아케루", "pos": "下1他", "meaning": "열다, 사이를 떼다(두다)"}, {"word": "あげる", "kanji": "上げる", "pron": "아게루", "pos": "下1他", "meaning": "올리다, 안내하다, 끝내다"}, {"word": "あさ", "kanji": "朝", "pron": "아사", "pos": "名", "meaning": "아침"}, {"word": "あさい", "kanji": "淺い", "pron": "아사이", "pos": "形", "meaning": "얕다, (정도가) 덜하다, 천박하다"}, {"word": "あさって", "kanji": "", "pron": "아삿테", "pos": "名", "meaning": "모레 = みょうごにち"}, {"word": "あし", "kanji": "足", "pron": "아시", "pos": "名", "meaning": "발, 다리, (발)걸음, 발자취, 움직임"}, {"word": "あじ", "kanji": "味", "pron": "아지", "pos": "名", "meaning": "맛, 멋, 운치, (～な)제법 신통한"}, {"word": "あした", "kanji": "", "pron": "아시타", "pos": "名", "meaning": "내일 = あす"}, {"word": "あせ", "kanji": "汗", "pron": "아세", "pos": "名", "meaning": "땀, (표면에 서린)물방울"}, {"word": "あそぶ", "kanji": "遊ぶ", "pron": "아소부", "pos": "5自", "meaning": "놀다, (…に ～꼴로)유람하다, 유학하다"}, {"word": "あたたかい", "kanji": "暖かい", "pron": "아타타카이", "pos": "形", "meaning": "따뜻하다, 포근하다, 다정하다"}, {"word": "あたためる", "kanji": "暖める", "pron": "아타타메루", "pos": "下1他", "meaning": "따뜻하게 하다, 덥게 하다, 알을 품다"}, {"word": "あたま", "kanji": "頭", "pron": "아타마", "pos": "名", "meaning": "머리, 머리카락, 인원수, 우두머리, 꼭대기"}, {"word": "あたらしい", "kanji": "新しい", "pron": "아타라시이", "pos": "形", "meaning": "새롭다, 오래지 않다, 싱싱하다, 현대적, 진보적"}, {"word": "あたる", "kanji": "当たる", "pron": "아타루", "pos": "5自", "meaning": "맞다, 명중하다, 당하다, 상대하다, 성공하다"}, {"word": "あつい", "kanji": "厚い", "pron": "아쯔이", "pos": "形", "meaning": "두껍다, 두텁다, (이익이)많다"}, {"word": "あつい", "kanji": "熱い", "pron": "아쯔이", "pos": "形", "meaning": "뜨겁다, 열렬하다"}, {"word": "あつい", "kanji": "署い", "pron": "아쯔이", "pos": "形", "meaning": "덥다"}, {"word": "あつまる", "kanji": "集まる", "pron": "아쯔마루", "pos": "5自", "meaning": "모이다, 집중하다, 떼지어 모이다"}, {"word": "あつめる", "kanji": "集める", "pron": "아쯔메루", "pos": "下1他", "meaning": "모으다, 집중시키다"}, {"word": "あてる", "kanji": "当てる", "pron": "아테루", "pos": "下1他", "meaning": "맞히다, 명중시키다, 얹다, (불을)쬐다, (토를)달다"}, {"word": "あと", "kanji": "後", "pron": "아토", "pos": "名", "meaning": "후, 뒤, 나중, 다음, 후임자, 후손, 그외의 일"}, {"word": "あな", "kanji": "穴", "pron": "아나", "pos": "名", "meaning": "구멍, 굴, 은신처"}, {"word": "あに", "kanji": "兄", "pron": "아니", "pos": "名", "meaning": "형, 오빠"}, {"word": "あね", "kanji": "姉", "pron": "아네", "pos": "名", "meaning": "누나, 언니, 배우자의 손위의 여자 형제"}, {"word": "あぶない", "kanji": "危ない", "pron": "아부나이", "pos": "形", "meaning": "위험하다, 위태롭다, 불안하다, (連用형으로)하마터면, 간신히"}, {"word": "あまい", "kanji": "甘い", "pron": "아마이", "pos": "形", "meaning": "(맛이)달다, 싱겁다, 달콤하다, 시시하다, 약하다"}, {"word": "あまり", "kanji": "", "pron": "아마리", "pos": "名 / 副", "meaning": "(名) 나머지, 여분, 남짓, ～한 나머지 / (副) 너무, 지나치게, (+부정)그다지"}, {"word": "あめ", "kanji": "雨", "pron": "아메", "pos": "名", "meaning": "비, 우천, 빗발치듯 쏟아지는 모양"}, {"word": "あやまる", "kanji": "謝る", "pron": "아야마루", "pos": "5他", "meaning": "사과하다, 사죄하다, 사절하다, 손들다"}, {"word": "あらう", "kanji": "洗う", "pron": "아라우", "pos": "5他", "meaning": "씻다, 세탁하다, 자세히 조사하다"}, {"word": "あらわれる", "kanji": "現われる", "pron": "아라와레루", "pos": "下1自", "meaning": "나타나다, 드러나다"}, {"word": "ありがたう", "kanji": "有り難う", "pron": "아리가타우", "pos": "感", "meaning": "고맙다, 고마워, 고맙소"}, {"word": "ある", "kanji": "有る", "pron": "아루", "pos": "5自", "meaning": "있다, (무게·넓이·높이 따위가)얼만큼 되다"}, {"word": "あるく", "kanji": "步く", "pron": "아루쿠", "pos": "5自", "meaning": "걷다, 산책하다"}, {"word": "あわせる", "kanji": "合わせる", "pron": "아와세루", "pos": "下1他", "meaning": "함치다, 맞추다, 모으다, 합주하다"}, {"word": "あんぜん", "kanji": "安全", "pron": "안젠", "pos": "名", "meaning": "안전"}, {"word": "あんない", "kanji": "案內", "pron": "안나이", "pos": "名", "meaning": "안내, 통지"}, {"word": "いい", "kanji": "", "pron": "이이", "pos": "形", "meaning": "좋다, (동사연용형에 붙어)～하기 쉽다"}, {"word": "いう", "kanji": "言う", "pron": "이우", "pos": "5他 / 5自", "meaning": "(5他) 말하다, 이야기하다 / (5自) 소리가 나다, 소리가 들리다"}, {"word": "いえ", "kanji": "家", "pron": "이에", "pos": "名", "meaning": "집, 주택, 가정, 짐안, 가문"}, {"word": "いきる", "kanji": "生きる", "pron": "이키루", "pos": "下1自", "meaning": "살다, 생존하다, 효과가 있다, 보람있다"}, {"word": "いく", "kanji": "行く", "pron": "이쿠", "pos": "5自", "meaning": "가다, 되다, 진척되다"}, {"word": "いくつ", "kanji": "幾つ", "pron": "이쿠쯔", "pos": "名", "meaning": "몇, 몇 개, 몇 살"}, {"word": "いけない", "kanji": "", "pron": "이케나이", "pos": "連語", "meaning": "안된다, 좋지 않다, 나쁘다"}, {"word": "いけん", "kanji": "意見", "pron": "이켄", "pos": "名", "meaning": "의견"}, {"word": "いし", "kanji": "石", "pron": "이시", "pos": "名", "meaning": "돌, 가공한 돌, (가위, 바위, 보의)바위"}, {"word": "いしゃ", "kanji": "医者", "pron": "이샤", "pos": "名", "meaning": "의사"}, {"word": "いす", "kanji": "", "pron": "이스", "pos": "名", "meaning": "의자"}, {"word": "いそがしい", "kanji": "忙しい", "pron": "이소가시이", "pos": "形", "meaning": "바쁘다, 겨를이 없다, 닥치어 들뜨다"}, {"word": "いそぐ", "kanji": "急ぐ", "pron": "이소구", "pos": "5他自", "meaning": "서두르다"}, {"word": "いたい", "kanji": "痛い", "pron": "이타이", "pos": "形", "meaning": "아프다, 쓰리다, 뜨끔하다"}, {"word": "いたす", "kanji": "致す", "pron": "이타스", "pos": "5他", "meaning": "하다의 겸양어"}, {"word": "いただき", "kanji": "頂", "pron": "이타다키", "pos": "名", "meaning": "정상, 꼭대기"}, {"word": "いだたく", "kanji": "頂く", "pron": "이다타쿠", "pos": "5他", "meaning": "이다, 먹다, 마시다, 받다, 얻다의 겸양어"}, {"word": "いち", "kanji": "位置", "pron": "이치", "pos": "名", "meaning": "위치"}, {"word": "いっしょ", "kanji": "一緖", "pron": "잇쇼", "pos": "名", "meaning": "함께함, 동시, 한꺼번"}, {"word": "いっぱい", "kanji": "", "pron": "잇파이", "pos": "副", "meaning": "가득, ～껏, 온～"}, {"word": "いつも", "kanji": "", "pron": "이쯔모", "pos": "副", "meaning": "언제나, 늘, 항상"}, {"word": "いなか", "kanji": "田舍", "pron": "이나카", "pos": "名", "meaning": "시골, 지방, 전원, 고향"}, {"word": "いぬ", "kanji": "犬", "pron": "이누", "pos": "名", "meaning": "개, 앞잡이"}, {"word": "いのる", "kanji": "祈る", "pron": "이노루", "pos": "5他", "meaning": "빌다, 기도하다, 기원하다, 희망하다"}, {"word": "いま", "kanji": "今", "pron": "이마", "pos": "名 / 副", "meaning": "(名) 지금, 이제, 현재 / (副) 방금, 막, 곧 바로"}, {"word": "いみ", "kanji": "意味", "pron": "이미", "pos": "名", "meaning": "의미, 뜻, 의도, 까닭, 가치, 보람"}, {"word": "いもうと", "kanji": "妹", "pron": "이모우토", "pos": "名", "meaning": "여동생, 누이동생"}, {"word": "いやだ", "kanji": "嫌だ", "pron": "이야다", "pos": "形動", "meaning": "싫다, 바라지 않는다"}, {"word": "いらっしゃる", "kanji": "", "pron": "이랏샤루", "pos": "5自", "meaning": "가시다, 오시다, 계시다"}, {"word": "いる", "kanji": "居る", "pron": "이루", "pos": "上1自", "meaning": "있다, 앉다, 가만히 있다"}, {"word": "いれる", "kanji": "入れる", "pron": "이레루", "pos": "下1他", "meaning": "넣다, 듣다, 두다, 놓다, 들이다, 손질하다"}, {"word": "いろ", "kanji": "色", "pron": "이로", "pos": "名", "meaning": "색, 빛깔, 분"}, {"word": "いわう", "kanji": "祝う", "pron": "이와우", "pos": "5他", "meaning": "축하하다, 축복하다"}, {"word": "うえ", "kanji": "上", "pron": "우에", "pos": "名", "meaning": "위"}, {"word": "うかがう", "kanji": "伺う", "pron": "우카가우", "pos": "5他", "meaning": "묻다, 듣다, 찾아뵙다의 겸양어"}, {"word": "うかぶ", "kanji": "浮かぶ", "pron": "우카부", "pos": "5自", "meaning": "떠오르다, 뜨다, (표면에)나타나다"}, {"word": "うく", "kanji": "浮く", "pron": "우쿠", "pos": "5自", "meaning": "뜨다, 들뜨다, 근거가 없다"}, {"word": "うける", "kanji": "受ける", "pron": "우케루", "pos": "下1他", "meaning": "받다, 이어받다, 받아들이다, 당하다"}, {"word": "うごかす", "kanji": "動かす", "pron": "우고카스", "pos": "5他", "meaning": "움직이게 하다"}, {"word": "うごく", "kanji": "動く", "pron": "우고쿠", "pos": "5自", "meaning": "움직이다, 옮아가다, 작동하다, 흔들리다"}, {"word": "うしろ", "kanji": "後ろ", "pron": "우시로", "pos": "名", "meaning": "뒤쪽, 뒤, 그늘, 뒷모습"}, {"word": "うすい", "kanji": "薄い", "pron": "우스이", "pos": "形", "meaning": "얇다, 엷다"}, {"word": "うそ", "kanji": "", "pron": "우소", "pos": "名", "meaning": "거짓말, 틀림, 잘못"}, {"word": "うた", "kanji": "歌", "pron": "우타", "pos": "名", "meaning": "노래"}, {"word": "うたう", "kanji": "歌う", "pron": "우타우", "pos": "5他", "meaning": "노래부르다, 새가 지저귀다, 읊다"}, {"word": "うたがう", "kanji": "疑う", "pron": "우타가우", "pos": "5他", "meaning": "의심하다"}, {"word": "うち", "kanji": "內", "pron": "우치", "pos": "名", "meaning": "안, 속, ┈중"}, {"word": "うつ", "kanji": "打つ", "pron": "우쯔", "pos": "5他", "meaning": "치다, 부딪치다, 게시하다"}, {"word": "うつくしい", "kanji": "美しい", "pron": "우쯔쿠시이", "pos": "形", "meaning": "아름답다, 곱다"}, {"word": "うつす", "kanji": "移す", "pron": "우쯔스", "pos": "5他", "meaning": "옮기다, 시작하다"}, {"word": "うつす", "kanji": "写す", "pron": "우쯔스", "pos": "5他", "meaning": "베끼다, 사진을 찍다, 그리다, 묘사하다"}, {"word": "うつる", "kanji": "映る", "pron": "우쯔루", "pos": "5他", "meaning": "찍히다, 속이 비쳐 보이다"}, {"word": "うで", "kanji": "腕", "pron": "우데", "pos": "名", "meaning": "팔, 완력, 솜씨, 실력, 기술"}, {"word": "うまい", "kanji": "", "pron": "우마이", "pos": "形", "meaning": "맛있다, 잘하다, 좋다, 훌륭하다"}, {"word": "うまれる", "kanji": "生まれる", "pron": "우마레루", "pos": "下1自", "meaning": "태어나다, 출생하다, 없던 것이 새로 생기다"}, {"word": "うみ", "kanji": "海", "pron": "우미", "pos": "名", "meaning": "바다"}, {"word": "うむ", "kanji": "生む", "pron": "우무", "pos": "5他", "meaning": "낳다, 만들어 내다"}, {"word": "うら", "kanji": "裏", "pron": "우라", "pos": "名", "meaning": "뒤, 뒤쪽, 뒷면, 안, 안감, 이면, 내막"}, {"word": "うる", "kanji": "", "pron": "우루", "pos": "5他", "meaning": "팔다, 걸다"}, {"word": "うるさい", "kanji": "", "pron": "우루사이", "pos": "形", "meaning": "귀찮다, 시끄럽다, 번거롭다"}, {"word": "うれしい", "kanji": "", "pron": "우레시이", "pos": "形", "meaning": "즐겁고 기쁘다, 고맙다"}, {"word": "うんてん", "kanji": "運車云", "pron": "운텐", "pos": "名", "meaning": "운전, (돈의)회전, 활용"}, {"word": "うんどうじょう", "kanji": "運動場", "pron": "운도우조우", "pos": "名", "meaning": "운동장 = うんとうば"}, {"word": "え", "kanji": "糸夽", "pron": "에", "pos": "名", "meaning": "그림"}, {"word": "えいが", "kanji": "", "pron": "에이가", "pos": "名", "meaning": "영화 = キネマ, シネマ"}, {"word": "えき", "kanji": "馬尺", "pron": "에키", "pos": "名", "meaning": "역, 정거장"}, {"word": "えらぶ", "kanji": "選ぶ", "pron": "에라부", "pos": "5他", "meaning": "고르다, 뽑다, 가리다"}, {"word": "えん", "kanji": "円", "pron": "엔", "pos": "名", "meaning": "원, 엔(화폐 단위)"}, {"word": "えんぴつ", "kanji": "鉛筆", "pron": "엔피쯔", "pos": "名", "meaning": "연필"}, {"word": "えんりょ", "kanji": "遠慮", "pron": "엔료", "pos": "名", "meaning": "사양, 겸손, 거리낌"}, {"word": "おいしい", "kanji": "", "pron": "오이시이", "pos": "形", "meaning": "맛있다, 맛좋다 = うまい"}, {"word": "おおい", "kanji": "多い", "pron": "오오이", "pos": "形", "meaning": "많다"}, {"word": "おおきい", "kanji": "大きい", "pron": "오오키이", "pos": "形", "meaning": "크다, (수량, 나이가)많다, (정도가)심하다"}, {"word": "おおぜい", "kanji": "大熱", "pron": "오오제이", "pos": "名", "meaning": "여럿, 많은 사람"}, {"word": "おかげ", "kanji": "", "pron": "오카게", "pos": "名", "meaning": "덕택, 덕분, 은혜, 탓"}, {"word": "おかしい", "kanji": "", "pron": "오카시이", "pos": "形", "meaning": "우습다, 이상하다, 수상하다"}, {"word": "おきる", "kanji": "起きる", "pron": "오키루", "pos": "上1自", "meaning": "일어나다, 기상하다, 눈을 뜨다, 생기다"}, {"word": "おく", "kanji": "置く", "pron": "오쿠", "pos": "5他", "meaning": "두다, 놓다, 거르다, 점치다"}, {"word": "おく", "kanji": "奧", "pron": "오쿠", "pos": "名", "meaning": "(깊숙한)안, 끝, 비장"}, {"word": "おくる", "kanji": "送る", "pron": "오쿠루", "pos": "5他", "meaning": "보내다, 좁히다"}, {"word": "おくれる", "kanji": "遲れる", "pron": "오쿠레루", "pos": "下1自", "meaning": "늦어지다, 더디다"}, {"word": "おこす", "kanji": "起こす", "pron": "오코스", "pos": "5他", "meaning": "일으키다, 깨우다, 들어올리다"}, {"word": "おこなう", "kanji": "行なう", "pron": "오코나우", "pos": "5他", "meaning": "행하다, 취급하다, 처리하다, 시행하다"}, {"word": "おこる", "kanji": "起こる", "pron": "오코루", "pos": "5自", "meaning": "일어나다, 생기다, 발생하다"}, {"word": "おしえる", "kanji": "敎える", "pron": "오시에루", "pos": "下1他", "meaning": "가르치다, 깨우치다, 훈계하다"}, {"word": "おす", "kanji": "押す", "pron": "오스", "pos": "5他", "meaning": "밀다, 누르다, 붙이다"}, {"word": "おそい", "kanji": "遲い", "pron": "오소이", "pos": "形", "meaning": "늦다, 느리다, 더디다 = のろい"}, {"word": "おそれる", "kanji": "恐れる", "pron": "오소레루", "pos": "下1自", "meaning": "무서워하다, 두려워하다, 걱정하다, 우려하다"}, {"word": "おちゃ", "kanji": "お茶", "pron": "오차", "pos": "名", "meaning": "차, 다도"}, {"word": "おちる", "kanji": "落ちる", "pron": "오치루", "pos": "上1自", "meaning": "떨어지다, 낙하하다, 빠지다, 약해지다"}, {"word": "おっしゃる", "kanji": "", "pron": "옷샤루", "pos": "5自", "meaning": "말씀하시다 = 言(い)われる"}, {"word": "おっと", "kanji": "夫", "pron": "옷토", "pos": "名", "meaning": "남편"}, {"word": "おと", "kanji": "音", "pron": "오토", "pos": "名", "meaning": "음, 소리, 소식"}, {"word": "おとうと", "kanji": "弟", "pron": "오토우토", "pos": "名", "meaning": "남동생, 아우"}, {"word": "おとこ", "kanji": "男", "pron": "오토코", "pos": "名", "meaning": "남자, 사나이, 남성"}, {"word": "おとす", "kanji": "落とす", "pron": "오토스", "pos": "5他", "meaning": "떨어뜨리다, 내리다, 함락시키다"}, {"word": "おととい", "kanji": "", "pron": "오토토이", "pos": "名", "meaning": "그저께, 재작일"}, {"word": "おとな", "kanji": "大人", "pron": "오토나", "pos": "名", "meaning": "어른, 성인"}, {"word": "おどろく", "kanji": "驚", "pron": "오도로쿠", "pos": "5他", "meaning": "놀라다, 경악하다"}, {"word": "おなか", "kanji": "", "pron": "오나카", "pos": "名", "meaning": "배"}, {"word": "おなじだ", "kanji": "同じだ", "pron": "오나지다", "pos": "形動", "meaning": "같다"}, {"word": "おぼえる", "kanji": "覚える", "pron": "오보에루", "pos": "下1他", "meaning": "기억하다, 외우다, 느끼다, 배우다"}, {"word": "おもい", "kanji": "重い", "pron": "오모이", "pos": "形", "meaning": "무겁다, 언동이 가볍지 않다, 중대하다"}, {"word": "おもう", "kanji": "思う", "pron": "오모우", "pos": "5他", "meaning": "생각하다, 예상하다, 느끼다, 회상하다"}, {"word": "おもしろい", "kanji": "面白い", "pron": "오모시로이", "pos": "形", "meaning": "재미있다, 우습다, 이상하다"}, {"word": "おもて", "kanji": "表", "pron": "오모테", "pos": "名", "meaning": "겉, 표면, 집 앞"}, {"word": "おもに", "kanji": "主に", "pron": "오모니", "pos": "副", "meaning": "주로, 대부분"}, {"word": "おや", "kanji": "親", "pron": "오야", "pos": "名", "meaning": "어버이, 부모, 선조, 원조"}, {"word": "およぐ", "kanji": "泳ぐ", "pron": "오요구", "pos": "5自", "meaning": "헤엄치다, 수영하다"}, {"word": "おりる", "kanji": "降(下)りる", "pron": "오리루", "pos": "上1自", "meaning": "내리다, 물러나다, 포기하다"}, {"word": "おわる", "kanji": "終わる", "pron": "오와루", "pos": "5自", "meaning": "끝나다"}, {"word": "おんがく", "kanji": "音樂", "pron": "온가쿠", "pos": "名", "meaning": "음악"}, {"word": "おんな", "kanji": "女", "pron": "온나", "pos": "名", "meaning": "여자, 여성, 여인"}, {"word": "がいこく", "kanji": "外國", "pron": "가이코쿠", "pos": "名", "meaning": "외국"}, {"word": "かいしゃ", "kanji": "", "pron": "카이샤", "pos": "名", "meaning": "회사"}, {"word": "かいだん", "kanji": "階段", "pron": "카이단", "pos": "名", "meaning": "계단, 단계"}, {"word": "かいもの", "kanji": "買い物", "pron": "카이모노", "pos": "名", "meaning": "쇼핑, 물건을 삼"}, {"word": "かう", "kanji": "買う", "pron": "카우", "pos": "5他", "meaning": "사다, 구입하다"}, {"word": "かえる", "kanji": "", "pron": "카에루", "pos": "5自", "meaning": "돌아가(오)다"}, {"word": "かお", "kanji": "顔", "pron": "카오", "pos": "名", "meaning": "얼굴, 낯, 용모, 체면, 면목"}, {"word": "かがく", "kanji": "科字", "pron": "카가쿠", "pos": "名", "meaning": "과학"}, {"word": "かぎ", "kanji": "", "pron": "카기", "pos": "名", "meaning": "열쇠 = キー"}, {"word": "かく", "kanji": "書く", "pron": "카쿠", "pos": "5他", "meaning": "쓰다, 그리다"}, {"word": "がくせい", "kanji": "", "pron": "가쿠세이", "pos": "名", "meaning": "학생"}, {"word": "かくれる", "kanji": "隱くれる", "pron": "카쿠레루", "pos": "下1自", "meaning": "숨다, (고귀한 분이)죽다"}, {"word": "かける", "kanji": "掛ける", "pron": "카케루", "pos": "下1他", "meaning": "걸다, 늘어뜨리다, 달다"}, {"word": "かさ", "kanji": "傘", "pron": "카사", "pos": "名", "meaning": "우산, 양산"}, {"word": "かし", "kanji": "菓子", "pron": "카시", "pos": "名", "meaning": "과자"}, {"word": "かす", "kanji": "貸す", "pron": "카스", "pos": "5他", "meaning": "빌려 주다, 이용케하다, 조력하다, 도와주다"}, {"word": "かず", "kanji": "數", "pron": "카즈", "pos": "名", "meaning": "수, 다수"}, {"word": "かぜ", "kanji": "風", "pron": "카제", "pos": "名", "meaning": "바람, (사물의)형세, 형편, (바람처럼)막연한 것"}, {"word": "かぞく", "kanji": "家族", "pron": "카조쿠", "pos": "名", "meaning": "가족"}, {"word": "かた", "kanji": "肩", "pron": "카타", "pos": "名", "meaning": "어깨"}, {"word": "かたい", "kanji": "固い", "pron": "카타이", "pos": "形", "meaning": "단단하다, 딱딱하다, 굳다, 확실하다, 질기다"}, {"word": "かたち", "kanji": "形", "pron": "카타치", "pos": "名", "meaning": "꼴, 모양, 형상, 형체, 형태"}, {"word": "かつ", "kanji": "勝つ", "pron": "카쯔", "pos": "5他", "meaning": "이기다, 승리하다, 쟁취하다, 획득하다"}, {"word": "がっこう", "kanji": "", "pron": "갓코우", "pos": "名", "meaning": "학교"}, {"word": "かてい", "kanji": "家庭", "pron": "카테이", "pos": "名", "meaning": "가정"}, {"word": "かな", "kanji": "仮名", "pron": "카나", "pos": "名", "meaning": "가나(일본 문자)"}, {"word": "かなしい", "kanji": "悲しい", "pron": "카나시이", "pos": "形", "meaning": "슬프다, 애처롭다"}, {"word": "かならず", "kanji": "必ず", "pron": "카나라즈", "pos": "副", "meaning": "반드시, 꼭 = きっと"}, {"word": "かなり", "kanji": "", "pron": "카나리", "pos": "副", "meaning": "꽤, 제법, 어지간히, 상당히"}, {"word": "かね", "kanji": "金", "pron": "카네", "pos": "名", "meaning": "돈, 금속"}, {"word": "かばん", "kanji": "", "pron": "카반", "pos": "名", "meaning": "가방"}, {"word": "かぶる", "kanji": "", "pron": "카부루", "pos": "5他 / 5自", "meaning": "(5他) 머리에 쓰다, 뒤집어 쓰다 / (5自) (연극이)끝나다, 파하다 = はねる"}, {"word": "かべ", "kanji": "壁", "pron": "카베", "pos": "名", "meaning": "벽, 암벽"}, {"word": "がまん", "kanji": "我慢", "pron": "가만", "pos": "名", "meaning": "참음"}, {"word": "かみ", "kanji": "紙", "pron": "카미", "pos": "名", "meaning": "종이"}, {"word": "かみ", "kanji": "神", "pron": "카미", "pos": "名", "meaning": "신, 하느님"}, {"word": "かみ", "kanji": "髮", "pron": "카미", "pos": "名", "meaning": "머리카락"}, {"word": "かむ", "kanji": "", "pron": "카무", "pos": "5他", "meaning": "씹다, 물다, (코를)풀다"}, {"word": "かよう", "kanji": "通う", "pron": "카요우", "pos": "5自", "meaning": "(같은 곳을)다니다, 왕래하다, 닮다, 비슷하다"}, {"word": "からい", "kanji": "辛い", "pron": "카라이", "pos": "形", "meaning": "맵다, 얼얼하다, 짜다, 가혹하다, 괴롭다(=うらい)"}, {"word": "からだ", "kanji": "体", "pron": "카라다", "pos": "名", "meaning": "몸, 신체, 육체"}, {"word": "かりる", "kanji": "借りる", "pron": "카리루", "pos": "上1他", "meaning": "빌다, 꾸다"}, {"word": "かるい", "kanji": "", "pron": "카루이", "pos": "形", "meaning": "가볍다(=かろい)"}, {"word": "かわいい", "kanji": "", "pron": "카와이이", "pos": "形", "meaning": "귀엽다, 사랑스럽다"}, {"word": "かわる", "kanji": "変わる", "pron": "카와루", "pos": "5自", "meaning": "변하다, 바뀌다, 틀리다"}, {"word": "かんがえる", "kanji": "考える", "pron": "칸가에루", "pos": "下1他", "meaning": "생각하다, 고안하다"}, {"word": "かんけい", "kanji": "關係", "pron": "칸케이", "pos": "名", "meaning": "관계"}, {"word": "かんじ", "kanji": "漢字", "pron": "칸지", "pos": "名", "meaning": "한자"}, {"word": "かんしゃ", "kanji": "感謝", "pron": "칸샤", "pos": "名", "meaning": "감사"}, {"word": "かんじる", "kanji": "感じる", "pron": "칸지루", "pos": "下1自他", "meaning": "느끼다, 감동하다, 반응하다"}, {"word": "かんぜん", "kanji": "完全", "pron": "칸젠", "pos": "名", "meaning": "완전"}, {"word": "かんたん", "kanji": "簡單", "pron": "칸탄", "pos": "名", "meaning": "간단"}, {"word": "がんばる", "kanji": "", "pron": "간바루", "pos": "5自", "meaning": "분발하다, 우기다, 강경히 버티다"}, {"word": "き", "kanji": "木", "pron": "키", "pos": "名", "meaning": "나무, 수목"}, {"word": "き", "kanji": "", "pron": "키", "pos": "名", "meaning": "기분, 마음, 신경, 성질, 감정"}, {"word": "きいろい", "kanji": "黃色い", "pron": "키이로이", "pos": "形", "meaning": "노랗다"}, {"word": "きえる", "kanji": "消える", "pron": "키에루", "pos": "下1自", "meaning": "사라지다, 꺼지다, 없어지다"}, {"word": "きかい", "kanji": "機械", "pron": "키카이", "pos": "名", "meaning": "기계"}, {"word": "きく", "kanji": "聞く", "pron": "키쿠", "pos": "5他", "meaning": "듣다, 묻다, 시음하다"}, {"word": "きこえる", "kanji": "聞こえる", "pron": "키코에루", "pos": "下1自", "meaning": "들리다, (보통 부정형으로)이해하다, 납득하다"}, {"word": "ぎじゅつ", "kanji": "技術", "pron": "기주쯔", "pos": "名", "meaning": "기술"}, {"word": "きず", "kanji": "傷", "pron": "키즈", "pos": "名", "meaning": "상처, 흠, 결점"}, {"word": "きせつ", "kanji": "季節", "pron": "키세쯔", "pos": "名", "meaning": "계절, 절기 = シーズン"}, {"word": "きそ", "kanji": "基礎", "pron": "키소", "pos": "名", "meaning": "기초"}, {"word": "きそく", "kanji": "規則", "pron": "키소쿠", "pos": "名", "meaning": "규칙"}, {"word": "きた", "kanji": "北", "pron": "키타", "pos": "名", "meaning": "북, 북쪽, 북풍"}, {"word": "きたい", "kanji": "期待", "pron": "키타이", "pos": "名", "meaning": "기대"}, {"word": "きたない", "kanji": "汚い", "pron": "키타나이", "pos": "形", "meaning": "더럽다, 불결하다, 지저분하다, 추잡하다"}, {"word": "きって", "kanji": "切手", "pron": "킷테", "pos": "名", "meaning": "우표, 수표, 어음"}, {"word": "きっと", "kanji": "", "pron": "킷토", "pos": "副", "meaning": "틀림없이, 꼭, 반드시"}, {"word": "きっぷ", "kanji": "切符", "pron": "킷푸", "pos": "名", "meaning": "표 = チクット"}, {"word": "きねん", "kanji": "記念", "pron": "키넨", "pos": "名", "meaning": "기념"}, {"word": "きのう", "kanji": "昨日", "pron": "키노우", "pos": "名", "meaning": "어제"}, {"word": "きぼう", "kanji": "希望", "pron": "키보우", "pos": "名", "meaning": "희망"}, {"word": "きまる", "kanji": "決まる", "pron": "키마루", "pos": "5自", "meaning": "정해지다, 결정되다"}, {"word": "ぎむ", "kanji": "義務", "pron": "기무", "pos": "名", "meaning": "의무"}, {"word": "きめる", "kanji": "決める", "pron": "키메루", "pos": "下1他", "meaning": "정하다, 결정하다, 작정하다, 결성하다"}, {"word": "きもち", "kanji": "", "pron": "키모치", "pos": "名", "meaning": "기분. 감정, (부사적으로)어느 정도, 약간"}, {"word": "きもの", "kanji": "着物", "pron": "키모노", "pos": "名", "meaning": "옷, 의복"}, {"word": "きゃく", "kanji": "客", "pron": "캬쿠", "pos": "名", "meaning": "손님, 여객, 나그네"}, {"word": "きゅうにゅう", "kanji": "牛乳", "pron": "큐우뉴우", "pos": "名", "meaning": "우유 = ミルク"}, {"word": "きゅう", "kanji": "急", "pron": "큐우", "pos": "名", "meaning": "위급, 긴급, 돌연, 갑작스러움 cf. きゅうに : 갑자기"}, {"word": "きょういく", "kanji": "敎育", "pron": "쿄우이쿠", "pos": "名", "meaning": "교육"}, {"word": "きょうぎ", "kanji": "競技", "pron": "쿄우기", "pos": "名", "meaning": "경기"}, {"word": "きょうしつ", "kanji": "敎室", "pron": "쿄우시쯔", "pos": "名", "meaning": "교실, 대학의 연구실, 강습"}, {"word": "きょうだい", "kanji": "兄弟", "pron": "쿄우다이", "pos": "名", "meaning": "형제, 동기"}, {"word": "きょねん", "kanji": "去年", "pron": "쿄넨", "pos": "名", "meaning": "작년, 지난 해"}, {"word": "きらい", "kanji": "嫌い", "pron": "키라이", "pos": "名", "meaning": "싫음, 마음에 들지 않음, 구별, 차별"}, {"word": "きる", "kanji": "着る", "pron": "키루", "pos": "下1他", "meaning": "입다, 뒤집어 쓰다"}, {"word": "きる", "kanji": "切る", "pron": "키루", "pos": "5他", "meaning": "베다, 자르다, 끊다, 절단하다"}, {"word": "きれい", "kanji": "", "pron": "키레이", "pos": "名", "meaning": "고움, 예쁨, 아름다움, 깨끗함"}, {"word": "きろく", "kanji": "記錄", "pron": "키로쿠", "pos": "名", "meaning": "기록 = レコード"}, {"word": "ぎんこう", "kanji": "銀行", "pron": "긴코우", "pos": "名", "meaning": "은행"}, {"word": "ぐあい", "kanji": "具合", "pron": "구아이", "pos": "名", "meaning": "상태, 형편, 방식"}, {"word": "くうき", "kanji": "", "pron": "쿠우키", "pos": "名", "meaning": "공기, 대기, 분위기"}, {"word": "くさ", "kanji": "草", "pron": "쿠사", "pos": "名", "meaning": "풀"}, {"word": "くさる", "kanji": "腐る", "pron": "쿠사루", "pos": "5自", "meaning": "썩다, 상하다, 부패하다, 타락하다"}, {"word": "くすり", "kanji": "藥", "pron": "쿠스리", "pos": "名", "meaning": "약, 유익, 도움"}, {"word": "くださる", "kanji": "下さる", "pron": "쿠다사루", "pos": "5他", "meaning": "주시다"}, {"word": "くだもの", "kanji": "果物", "pron": "쿠다모노", "pos": "名", "meaning": "과일 = フルーツ"}, {"word": "くち", "kanji": "口", "pron": "쿠치", "pos": "名", "meaning": "입, 말, 입구, 미각"}, {"word": "くつ", "kanji": "靴", "pron": "쿠쯔", "pos": "名", "meaning": "신, 신발, 구두"}, {"word": "くに", "kanji": "", "pron": "쿠니", "pos": "名", "meaning": "나라, 고향, 지역, 영지"}, {"word": "くび", "kanji": "首", "pron": "쿠비", "pos": "名", "meaning": "목, 해고, 면직"}, {"word": "くべつ", "kanji": "", "pron": "쿠베쯔", "pos": "名", "meaning": "구별"}, {"word": "くも", "kanji": "雲", "pron": "쿠모", "pos": "名", "meaning": "구름, 높은 지위"}, {"word": "くもる", "kanji": "曇", "pron": "쿠모루", "pos": "5自", "meaning": "흐리다, (마음이)어두워지다, 우울해지다"}, {"word": "くらい", "kanji": "暗い", "pron": "쿠라이", "pos": "形", "meaning": "어둡다, 희망이 없다, 우울하다, 칙칙하다"}, {"word": "くらす", "kanji": "幕らす", "pron": "쿠라스", "pos": "5他", "meaning": "살다, 생활하다, 세월을 보내다"}, {"word": "くらべる", "kanji": "比べる", "pron": "쿠라베루", "pos": "下1他", "meaning": "견주다, 비교하다, 대조하다, 경쟁하다"}, {"word": "くる", "kanji": "來る", "pron": "쿠루", "pos": "カ変", "meaning": "오다, 다가오다, 이리로 오다"}, {"word": "くるしい", "kanji": "苦しい", "pron": "쿠루시이", "pos": "形", "meaning": "괴롭다, 난처하다"}, {"word": "くるま", "kanji": "車", "pron": "쿠루마", "pos": "名", "meaning": "자동차, 바퀴"}, {"word": "くれる", "kanji": "", "pron": "쿠레루", "pos": "下1他", "meaning": "주다(남이 나에게)"}, {"word": "くれる", "kanji": "幕れる", "pron": "쿠레루", "pos": "下1自", "meaning": "저물다, 해가 지다, 한 해가(계절이)끝나다"}, {"word": "くろい", "kanji": "黑い", "pron": "쿠로이", "pos": "形", "meaning": "검다, 까맣다, (범죄 등의)혐의가 짙다"}, {"word": "くろう", "kanji": "苦勞", "pron": "쿠로우", "pos": "名", "meaning": "고생, 수고, 노고, 애씀"}, {"word": "くわしい", "kanji": "詳しい", "pron": "쿠와시이", "pos": "形", "meaning": "자세하다, 상세하다, 소상하다, 정통하다, 환하다"}, {"word": "け", "kanji": "毛", "pron": "케", "pos": "名", "meaning": "털, 체모"}, {"word": "けいけん", "kanji": "經驗", "pron": "케이켄", "pos": "名", "meaning": "경험"}, {"word": "けいざい", "kanji": "經濟", "pron": "케이자이", "pos": "名", "meaning": "경제"}, {"word": "けいさん", "kanji": "計算", "pron": "케이산", "pos": "名", "meaning": "계산"}, {"word": "けが", "kanji": "", "pron": "케가", "pos": "名", "meaning": "상처, 부상, 잘못, 과실"}, {"word": "けさ", "kanji": "今朝", "pron": "케사", "pos": "名", "meaning": "오늘 아침"}, {"word": "けしき", "kanji": "景色", "pron": "케시키", "pos": "名", "meaning": "경치, 풍경"}, {"word": "けす", "kanji": "消す", "pron": "케스", "pos": "5他", "meaning": "끄다, 지우다, 없애다, 감추다"}, {"word": "けっか", "kanji": "結果", "pron": "켓카", "pos": "名", "meaning": "결과, 되어진 상황"}, {"word": "けっこう", "kanji": "結構う", "pron": "켓코우", "pos": "名", "meaning": "훌륭함, 좋음, 만족스러움, 괜찮음"}, {"word": "けっこん", "kanji": "結婚", "pron": "켓콘", "pos": "名", "meaning": "결혼"}, {"word": "けっして", "kanji": "決して", "pron": "켓시테", "pos": "副", "meaning": "결코, 절대로"}, {"word": "ける", "kanji": "", "pron": "케루", "pos": "5他", "meaning": "(발로)차다"}, {"word": "げんいん", "kanji": "原因", "pron": "겐인", "pos": "名", "meaning": "원인"}, {"word": "げんき", "kanji": "", "pron": "겐키", "pos": "名", "meaning": "원기, 건강, 기력"}, {"word": "けんこう", "kanji": "健康", "pron": "켄코우", "pos": "名", "meaning": "건강, 건전"}, {"word": "けんせつ", "kanji": "建設", "pron": "켄세쯔", "pos": "名", "meaning": "건설"}, {"word": "こ", "kanji": "子", "pron": "코", "pos": "名", "meaning": "아이, 자식"}, {"word": "こい", "kanji": "濃い", "pron": "코이", "pos": "形", "meaning": "짙다, 진하다, 사이가 좋다, 정답다"}, {"word": "こうえん", "kanji": "公園", "pron": "코우엔", "pos": "名", "meaning": "공원"}, {"word": "こうぎょう", "kanji": "工業", "pron": "코우교우", "pos": "名", "meaning": "공업"}, {"word": "こうこうせい", "kanji": "高校生", "pron": "코우코우세이", "pos": "名", "meaning": "고교생"}, {"word": "こうこく", "kanji": "", "pron": "코우코쿠", "pos": "名", "meaning": "광고"}, {"word": "こうじょう", "kanji": "工場", "pron": "코우조우", "pos": "名", "meaning": "공장"}, {"word": "こうつう", "kanji": "交通", "pron": "코우쯔우", "pos": "名", "meaning": "교통"}, {"word": "コ—ヒ", "kanji": "", "pron": "코—히", "pos": "名", "meaning": "커피"}, {"word": "こうふく", "kanji": "幸福", "pron": "코우후쿠", "pos": "名", "meaning": "행복 = さいわい · しあわせ"}, {"word": "こえ", "kanji": "声", "pron": "코에", "pos": "名", "meaning": "목소리"}, {"word": "こえる", "kanji": "越える", "pron": "코에루", "pos": "下1自", "meaning": "넘다, 지나다, 초월하다"}, {"word": "こおる", "kanji": "凍る", "pron": "코오루", "pos": "5自", "meaning": "얼다"}, {"word": "こくみん", "kanji": "匡民", "pron": "코쿠민", "pos": "名", "meaning": "국민"}, {"word": "ごご", "kanji": "午後", "pron": "고고", "pos": "名", "meaning": "오후 = ひるすぎ"}, {"word": "こころ", "kanji": "心", "pron": "코코로", "pos": "名", "meaning": "마음, 느낌, 기분, 생각, 의향, 정성"}, {"word": "ごぜん", "kanji": "午前", "pron": "고젠", "pos": "名", "meaning": "오전, 상오"}, {"word": "こたえる", "kanji": "答える", "pron": "코타에루", "pos": "下1自", "meaning": "대답하다, 해답하다"}, {"word": "こと", "kanji": "", "pron": "코토", "pos": "名", "meaning": "일, 것, 수, 짓, 기, 사항, 사건"}, {"word": "ことし", "kanji": "今年", "pron": "코토시", "pos": "名", "meaning": "금년, 올해 = 本年(ほんねん)"}, {"word": "ことば", "kanji": "言葉", "pron": "코토바", "pos": "名", "meaning": "말, 언어, 이야기"}, {"word": "こども", "kanji": "子供", "pron": "코도모", "pos": "名", "meaning": "어린이, 아이, 자식"}, {"word": "ことわる", "kanji": "斷わる", "pron": "코토와루", "pos": "5他", "meaning": "거절하다, 사절하다, 사퇴하다, 사죄하다"}, {"word": "ごはん", "kanji": "御飯", "pron": "고한", "pos": "名", "meaning": "식사, 밥"}, {"word": "こまかい", "kanji": "細かい", "pron": "코마카이", "pos": "形", "meaning": "잘다, 세심하다, 미세하다, 촘촘하다, 세세하다"}, {"word": "こまる", "kanji": "因る", "pron": "코마루", "pos": "5自", "meaning": "곤란해지다, 시달리다, 난처하다"}, {"word": "こむ", "kanji": "迋む", "pron": "코무", "pos": "5自", "meaning": "붐비다, 혼잡하다, 복작거리다, 복잡하다"}, {"word": "こめ", "kanji": "米", "pron": "코메", "pos": "名", "meaning": "쌀"}, {"word": "こわい", "kanji": "怖い", "pron": "코와이", "pos": "形", "meaning": "무섭다, 두렵다, 위험하다, 험악하다"}, {"word": "こわす", "kanji": "壞す", "pron": "코와스", "pos": "5他", "meaning": "부수다, 파괴하다, 고장내다, 망치다"}, {"word": "こんど", "kanji": "今度", "pron": "콘도", "pos": "名", "meaning": "이번(=このたび), 이 다음(=このつぎ)"}, {"word": "さいきん", "kanji": "最近", "pron": "사이킨", "pos": "名", "meaning": "최근"}, {"word": "ざいりょう", "kanji": "材料", "pron": "자이료우", "pos": "名", "meaning": "재료, 원료, 자재"}, {"word": "さがす", "kanji": "搜す, 探す", "pron": "사가스", "pos": "5他", "meaning": "찾다"}, {"word": "さかな", "kanji": "魚", "pron": "사카나", "pos": "名", "meaning": "물고기, 생선"}, {"word": "さき", "kanji": "先", "pron": "사키", "pos": "名", "meaning": "끝, 앞, 먼저, 서두, 장래"}, {"word": "さく", "kanji": "咲く", "pron": "사쿠", "pos": "5自", "meaning": "꽃피다"}, {"word": "さす", "kanji": "指す", "pron": "사스", "pos": "5他", "meaning": "가리키다, 지적하다, 향하다"}, {"word": "さそう", "kanji": "誘う", "pron": "사소우", "pos": "5他", "meaning": "권유하다, 유혹하다, 부르다, ～하게 하다"}, {"word": "ざっし", "kanji": "雜誌", "pron": "잣시", "pos": "名", "meaning": "잡지"}, {"word": "さとう", "kanji": "砂糖", "pron": "사토우", "pos": "名", "meaning": "설탕"}, {"word": "さびしい", "kanji": "寂しい", "pron": "사비시이", "pos": "形", "meaning": "쓸쓸하다, 허전하다, 외럽다, 적적하다, 섭섭하다"}, {"word": "さむい", "kanji": "寒い", "pron": "사무이", "pos": "形", "meaning": "춥다, 차다, 오싹하다"}, {"word": "さら", "kanji": "皿", "pron": "사라", "pos": "名", "meaning": "접시"}, {"word": "さんぎょう", "kanji": "産業", "pron": "산교우", "pos": "名", "meaning": "산업"}, {"word": "ざんねん", "kanji": "殘念", "pron": "잔넨", "pos": "名", "meaning": "유감스러움, 분함, 억울함"}, {"word": "さんぽ", "kanji": "散步", "pron": "산포", "pos": "名", "meaning": "산책, 산보"}, {"word": "じ", "kanji": "字", "pron": "지", "pos": "名", "meaning": "글자, 글씨"}, {"word": "しお", "kanji": "塩", "pron": "시오", "pos": "名", "meaning": "소금, 식염, 소금기"}, {"word": "しかる", "kanji": "", "pron": "시카루", "pos": "5他", "meaning": "꾸짖다, 나무라다, 야단치다"}, {"word": "じかん", "kanji": "時間", "pron": "지칸", "pos": "名", "meaning": "시간, 때, 시각"}, {"word": "しけん", "kanji": "試驗", "pron": "시켄", "pos": "名", "meaning": "시험, 테스트"}, {"word": "しごと", "kanji": "仕事", "pron": "시고토", "pos": "名", "meaning": "일, 직업, 업무"}, {"word": "じしょ", "kanji": "舌辛書", "pron": "지쇼", "pos": "名", "meaning": "사전 = じてん(舌辛書, 字典)"}, {"word": "しずかだ", "kanji": "靜かだ", "pron": "시즈카다", "pos": "形動", "meaning": "조용하다, 고요하다"}, {"word": "しずむ", "kanji": "沈む", "pron": "시즈무", "pos": "5自", "meaning": "가라앉다, (해·달이)지다, (불행 등에)빠지다"}, {"word": "しぜん", "kanji": "自然", "pron": "시젠", "pos": "名", "meaning": "자연, 천성, 본성"}, {"word": "した", "kanji": "下", "pron": "시타", "pos": "名", "meaning": "아래, 밑, 하위, 겸손"}, {"word": "じだい", "kanji": "時代", "pron": "지다이", "pos": "名", "meaning": "시대"}, {"word": "したがう", "kanji": "從う", "pron": "시타가우", "pos": "5自", "meaning": "따르다, 좇다, 쏠리다"}, {"word": "したく", "kanji": "支度", "pron": "시타쿠", "pos": "名", "meaning": "준비, 채비"}, {"word": "したしい", "kanji": "親しい", "pron": "시타시이", "pos": "形", "meaning": "친하다, 사이좋다, 의좋다"}, {"word": "しっかり", "kanji": "", "pron": "싯카리", "pos": "副", "meaning": "단단히, 꼭, 꽉, 튼튼히, 똑독히"}, {"word": "じっけん", "kanji": "實驗", "pron": "짓켄", "pos": "名", "meaning": "실험"}, {"word": "しつもん", "kanji": "質問", "pron": "시쯔몬", "pos": "名", "meaning": "질문"}, {"word": "しつれい", "kanji": "失礼", "pron": "시쯔레이", "pos": "名", "meaning": "실례, 예의가 없음, 무례"}, {"word": "しぬ", "kanji": "死ぬ", "pron": "시누", "pos": "5自", "meaning": "죽다, 활동이 멈추다, 활기가 없다"}, {"word": "しばらく", "kanji": "", "pron": "시바라쿠", "pos": "副", "meaning": "잠시, 오래간만, 당분간"}, {"word": "じぶん", "kanji": "自分", "pron": "지분", "pos": "名", "meaning": "자기, 자신"}, {"word": "しま", "kanji": "島", "pron": "시마", "pos": "名", "meaning": "섬"}, {"word": "しまう", "kanji": "仕舞う", "pron": "시마우", "pos": "5自", "meaning": "끝나다, 끝내다, 안에 넣다, 간수하다"}, {"word": "しまる", "kanji": "閉まる", "pron": "시마루", "pos": "5自", "meaning": "닫히다 ↔ ひらく․あく"}, {"word": "しめる", "kanji": "閉める", "pron": "시메루", "pos": "下1他", "meaning": "닫다 = とじる․とざす ↔ ひらく․あける"}, {"word": "しゃかい", "kanji": "社合", "pron": "샤카이", "pos": "名", "meaning": "사회"}, {"word": "しゃしん", "kanji": "与眞", "pron": "샤신", "pos": "名", "meaning": "사진"}, {"word": "じゃま", "kanji": "邪魔", "pron": "자마", "pos": "名", "meaning": "방해, 장애, 거추장스러움"}, {"word": "じゆう", "kanji": "自由", "pron": "지유우", "pos": "名", "meaning": "자유"}, {"word": "しゅうかん", "kanji": "習慣", "pron": "슈우칸", "pos": "名", "meaning": "습관, 관습 = しきたり․あらわし"}, {"word": "じゅうしょ", "kanji": "住所", "pron": "주우쇼", "pos": "名", "meaning": "주소"}, {"word": "じゅうぶん", "kanji": "十分", "pron": "주우분", "pos": "名", "meaning": "충분"}, {"word": "じゅうよう", "kanji": "重要", "pron": "주우요우", "pos": "名", "meaning": "중요"}, {"word": "しゅっぱつ", "kanji": "出發", "pron": "슛파쯔", "pos": "名", "meaning": "출발"}, {"word": "しゅみ", "kanji": "趣味", "pron": "슈미", "pos": "名", "meaning": "취미, 멋, 정취, 풍류, 취향"}, {"word": "しょうかい", "kanji": "紹介", "pron": "쇼우카이", "pos": "名", "meaning": "소개 = ひきあわせ"}, {"word": "しょうぎょう", "kanji": "商業", "pron": "쇼우교우", "pos": "名", "meaning": "상업 = あきない"}, {"word": "じょうず", "kanji": "上手", "pron": "조우즈", "pos": "名", "meaning": "잘하다, 능숙하다"}, {"word": "しょくじ", "kanji": "食事", "pron": "쇼쿠지", "pos": "名", "meaning": "식사"}, {"word": "しょくどう", "kanji": "食堂", "pron": "쇼쿠도우", "pos": "名", "meaning": "식당"}, {"word": "しらべる", "kanji": "調べる", "pron": "시라베루", "pos": "下1他", "meaning": "조사하다, 연구하다, 검토하다, 점검하다"}, {"word": "しる", "kanji": "知る", "pron": "시루", "pos": "5他", "meaning": "알다"}, {"word": "しろい", "kanji": "白い", "pron": "시로이", "pos": "形", "meaning": "희다"}, {"word": "しんじる", "kanji": "信じる", "pron": "신지루", "pos": "上1他", "meaning": "믿다, 신용하다, 신앙하다"}, {"word": "しんせつ", "kanji": "親切", "pron": "신세쯔", "pos": "名", "meaning": "친절"}, {"word": "しんぱい", "kanji": "心酉己", "pron": "신파이", "pos": "名", "meaning": "근심, 걱정, 심려"}, {"word": "しんぶん", "kanji": "新聞", "pron": "신분", "pos": "名", "meaning": "신문"}, {"word": "ず", "kanji": "図", "pron": "즈", "pos": "名", "meaning": "도면, 도표, 그림, 심려"}, {"word": "ずいぶん", "kanji": "", "pron": "즈이분", "pos": "副", "meaning": "몹시, 꽤, 대단히, 아주, 퍽"}, {"word": "すう", "kanji": "吸う", "pron": "스우", "pos": "5他", "meaning": "들이마시다, 빨다, 빨아들이다"}, {"word": "すがた", "kanji": "姿", "pron": "스가타", "pos": "名", "meaning": "모습, 모양, 형체, 자태"}, {"word": "すき", "kanji": "好き", "pron": "스키", "pos": "名", "meaning": "좋아함, 호기심"}, {"word": "すぎる", "kanji": "過ぎる", "pron": "스기루", "pos": "上1自", "meaning": "지나가다, 경과하다, 통과하다, 지나다"}, {"word": "すぐ", "kanji": "", "pron": "스구", "pos": "副", "meaning": "곧, 즉시, 바로"}, {"word": "すくない", "kanji": "少ない", "pron": "스쿠나이", "pos": "形", "meaning": "적다, 어리다"}, {"word": "すこし", "kanji": "少し", "pron": "스코시", "pos": "副", "meaning": "조금, 약간, 좀 = ちょっと · わずか"}, {"word": "すごす", "kanji": "過ごす", "pron": "스고스", "pos": "5他", "meaning": "(시간을)보내다, 지내다, 소비하다, 도를 넘치다"}, {"word": "すずしい", "kanji": "凉しい", "pron": "스즈시이", "pos": "形", "meaning": "서늘하다, 시원하다"}, {"word": "すすむ", "kanji": "進む", "pron": "스스무", "pos": "5自", "meaning": "나아가다, (시계가) 빨리지다, 증진하다, 승진하다"}, {"word": "すすめる", "kanji": "勸める", "pron": "스스메루", "pos": "下1他", "meaning": "권하다, 권장하다, 권유하다"}, {"word": "すすめる", "kanji": "進める", "pron": "스스메루", "pos": "下1他", "meaning": "전진시키다, 진척시키다, 진행하다, 진보하다"}, {"word": "すっかり", "kanji": "", "pron": "슷카리", "pos": "副", "meaning": "완전히, 몽땅, 모두, 홀딱, 온통"}, {"word": "ずっと", "kanji": "", "pron": "즛토", "pos": "副", "meaning": "훨씬, 쭉(계속하여), 매우, 아주, 획(=ずかと·ずいと)"}, {"word": "すてる", "kanji": "捨てる", "pron": "스테루", "pos": "5自", "meaning": "버리다"}, {"word": "すばらしい", "kanji": "", "pron": "스바라시이", "pos": "形", "meaning": "훌륭하다, 멋있다, 근사하다, 굉장하다"}, {"word": "すべて", "kanji": "", "pron": "스베테", "pos": "名, 副", "meaning": "모두, 통틀어, 전부, 전체, 모조리"}, {"word": "すべる", "kanji": "滑る", "pron": "스베루", "pos": "5自", "meaning": "미끄러지다"}, {"word": "すむ", "kanji": "住む", "pron": "스무", "pos": "5自", "meaning": "살다, 거주하다"}, {"word": "すむ", "kanji": "濟む", "pron": "스무", "pos": "5自", "meaning": "끝내다, 완료하다, 해결되다"}, {"word": "する", "kanji": "", "pron": "스루", "pos": "サ変", "meaning": "하다"}, {"word": "すわる", "kanji": "座る", "pron": "스와루", "pos": "5自", "meaning": "앉다, 단단히 자리잡다"}, {"word": "せ", "kanji": "背", "pron": "세", "pos": "名", "meaning": "등, 키, 신장 = せい"}, {"word": "せいかつ", "kanji": "生活", "pron": "세이카쯔", "pos": "名", "meaning": "생활"}, {"word": "せいしつ", "kanji": "性質", "pron": "세이시쯔", "pos": "名", "meaning": "성질 = たち"}, {"word": "せいせき", "kanji": "成績", "pron": "세이세키", "pos": "名", "meaning": "성적 = できばえ"}, {"word": "せいと", "kanji": "生徒", "pron": "세이토", "pos": "名", "meaning": "생도, 학생(중·고교생)"}, {"word": "せかい", "kanji": "世界", "pron": "세카이", "pos": "名", "meaning": "세계"}, {"word": "せき", "kanji": "席", "pron": "세키", "pos": "名", "meaning": "자리, 좌석"}, {"word": "せっかく", "kanji": "折角", "pron": "셋카쿠", "pos": "副", "meaning": "모처럼, 애써, 힘써, 부디, 아무쪼록"}, {"word": "せつめい", "kanji": "說明", "pron": "세쯔메이", "pos": "名", "meaning": "설명"}, {"word": "ぜひ", "kanji": "", "pron": "제히", "pos": "副", "meaning": "부디, 꼭, 제발, 아무쪼록 = どうしても·かならず"}, {"word": "せまい", "kanji": "狹い", "pron": "세마이", "pos": "形", "meaning": "좁다"}, {"word": "せわ", "kanji": "世話", "pron": "세와", "pos": "名", "meaning": "보살핌, 폐, 신세"}, {"word": "せんせい", "kanji": "先生", "pron": "센세이", "pos": "名", "meaning": "선생, 스승"}, {"word": "ぜんぜん", "kanji": "全然", "pron": "젠젠", "pos": "副", "meaning": "전혀, 전연"}, {"word": "そうじ", "kanji": "掃除", "pron": "소우지", "pos": "名", "meaning": "청소"}, {"word": "そうだん", "kanji": "相談", "pron": "소우단", "pos": "名", "meaning": "상담, 의논, 상의 = 談合(だんごう)"}, {"word": "そだてる", "kanji": "育てる", "pron": "소다테루", "pos": "下1他", "meaning": "기르다, 양욱하다, 키우다"}, {"word": "そつぎょう", "kanji": "卒業", "pron": "소쯔교우", "pos": "名", "meaning": "졸업"}, {"word": "そと", "kanji": "外", "pron": "소토", "pos": "名", "meaning": "밖, 바깥, 겉, 표면, 외부"}, {"word": "そば", "kanji": "", "pron": "소바", "pos": "名", "meaning": "곁, 옆"}, {"word": "そら", "kanji": "空", "pron": "소라", "pos": "名", "meaning": "하늘, 날씨, (허공에 뜬)신세, 처지"}, {"word": "だいがくせい", "kanji": "大學生", "pron": "다이가쿠세이", "pos": "名", "meaning": "대학생"}, {"word": "たいせつ", "kanji": "大切", "pron": "타이세쯔", "pos": "名", "meaning": "중요, 소중, 조심"}, {"word": "だいたい", "kanji": "大体", "pron": "다이타이", "pos": "副", "meaning": "대강, 도대체, 대강, 적당히, 정말"}, {"word": "たいてい", "kanji": "大抵", "pron": "타이테이", "pos": "副", "meaning": "대개, 대부분, 대강, 적당히, 정말"}, {"word": "だいどころ", "kanji": "台所", "pron": "다이도코로", "pos": "名", "meaning": "부엌 = だとこ·くりや"}, {"word": "だいひょう", "kanji": "代表", "pron": "다이효우", "pos": "名", "meaning": "대표"}, {"word": "だいぶ", "kanji": "大分", "pron": "다이부", "pos": "副", "meaning": "상당히, 꽤, 어지간히"}, {"word": "たいへん", "kanji": "", "pron": "타이헨", "pos": "副", "meaning": "대단히, 몹시, 매우"}, {"word": "たおれる", "kanji": "倒れる", "pron": "타오레루", "pos": "下1自", "meaning": "넘어지다, 쓰러지다, 무너지다, 망하다"}, {"word": "たかい", "kanji": "高い", "pron": "타카이", "pos": "形", "meaning": "높다, 비싸다"}, {"word": "たくさん", "kanji": "氵尺産", "pron": "타쿠산", "pos": "副", "meaning": "많이, 충분함"}, {"word": "タクシー", "kanji": "", "pron": "타쿠시-", "pos": "名", "meaning": "택시"}, {"word": "だす", "kanji": "出す", "pron": "다스", "pos": "5他", "meaning": "내다, 내밀다, 드러내다, 분명히 제시하다"}, {"word": "たすける", "kanji": "助ける", "pron": "타스케루", "pos": "下1他", "meaning": "구하다, 돕다, 구조하다, 살리다"}, {"word": "ただ", "kanji": "", "pron": "타다", "pos": "名, 副", "meaning": "거저, 그냥, 단지, 보통, 예사, 다만"}, {"word": "たたかう", "kanji": "戰う", "pron": "타타카우", "pos": "5自", "meaning": "싸우다, 전투하다, 전쟁하다, 투쟁하다"}, {"word": "ただしい", "kanji": "正しい", "pron": "타다시이", "pos": "形", "meaning": "옳다, 올바르다, 바르다, 맞다"}, {"word": "たつ", "kanji": "立つ", "pron": "타쯔", "pos": "5自", "meaning": "일어서다, 서다, 나서다, 곤두서다, 치솟다"}, {"word": "たてもの", "kanji": "建物", "pron": "타테모노", "pos": "名", "meaning": "건물, 건축물"}, {"word": "たてる", "kanji": "立てる", "pron": "타테루", "pos": "下1他", "meaning": "세우다, 일으키다, 꽃다, 돋치다"}, {"word": "たとえば", "kanji": "例えば", "pron": "타토에바", "pos": "副", "meaning": "예를 들면, 가령, 에컨데"}, {"word": "たのしい", "kanji": "樂しい", "pron": "타노시이", "pos": "形", "meaning": "즐겁다"}, {"word": "たのむ", "kanji": "賴む", "pron": "타노무", "pos": "5他", "meaning": "부탁하다, 의뢰하다, 당부하다, 청하다"}, {"word": "たぶん", "kanji": "", "pron": "타분", "pos": "副", "meaning": "아마 대개 = たいてい·おそらく·おおかた"}, {"word": "たべもの", "kanji": "食べ物", "pron": "타베모노", "pos": "名", "meaning": "먹을 것, 음식물 = しょくもつ"}, {"word": "たべる", "kanji": "食べる", "pron": "타베루", "pos": "下1他", "meaning": "먹다"}, {"word": "たまご", "kanji": "卵", "pron": "타마고", "pos": "名", "meaning": "알, 계란"}, {"word": "ため", "kanji": "", "pron": "타메", "pos": "名", "meaning": "유익, 위함, 때문"}, {"word": "だめ", "kanji": "馱", "pron": "다메", "pos": "名", "meaning": "소용없음, 효과가 없음(=むだ), 불가능"}, {"word": "たりる", "kanji": "足りる", "pron": "타리루", "pos": "上1自", "meaning": "족하다, 충분하다, 충족되다, 가치가 있다"}, {"word": "たんじょうび", "kanji": "誕生日", "pron": "탄조우비", "pos": "名", "meaning": "탄생일, 생일"}, {"word": "だんだん", "kanji": "", "pron": "단단", "pos": "副", "meaning": "점점, 차차"}, {"word": "ちいさい", "kanji": "小さい", "pron": "치이사이", "pos": "形", "meaning": "작다, 크지 않다"}, {"word": "ちかい", "kanji": "近い", "pron": "치카이", "pos": "形", "meaning": "가깝다, 친하다, 성질·내용이 비슷하다"}, {"word": "ちがう", "kanji": "違う", "pron": "치가우", "pos": "5自", "meaning": "틀리다, 다르다, 잘못되다, 어긋나다"}, {"word": "ちかてつ", "kanji": "地下金失", "pron": "치카테쯔", "pos": "名", "meaning": "지하철"}, {"word": "ちから", "kanji": "力", "pron": "치카라", "pos": "名", "meaning": "힘, 능력, 실력, 역량, 의지, 효능, 효력"}, {"word": "ちず", "kanji": "地図", "pron": "치즈", "pos": "名", "meaning": "지도"}, {"word": "ちち", "kanji": "父", "pron": "치치", "pos": "名", "meaning": "아버지, (기독교에서)하나님, 선구자"}, {"word": "ちゅうい", "kanji": "注意", "pron": "추우이", "pos": "名", "meaning": "주의, 충고, 경계"}, {"word": "ちょうど", "kanji": "丁度", "pron": "초우도", "pos": "副", "meaning": "꼭, 마침, 마치, 알맞게"}, {"word": "ちょっと", "kanji": "", "pron": "촛토", "pos": "副", "meaning": "좀, 잠시, 꽤, 좀처럼, 잠깐, 어지간히, 상당히"}, {"word": "ちり", "kanji": "地理", "pron": "치리", "pos": "名", "meaning": "지리"}, {"word": "ちる", "kanji": "散る", "pron": "치루", "pos": "5自", "meaning": "지다, 흩어지다, 떨어지다, 없어지다"}, {"word": "つかう", "kanji": "使う", "pron": "쯔카우", "pos": "5他", "meaning": "쓰다, 사용하다"}, {"word": "つかむ", "kanji": "", "pron": "쯔카무", "pos": "5他", "meaning": "잡다, 붙잡다, 손에 넣다, 포착하다, 파악하다"}, {"word": "つかれる", "kanji": "疲れる", "pron": "쯔카레루", "pos": "下1自", "meaning": "지치다, 피로하다, 낡아지다, 진이 빠지다"}, {"word": "つき", "kanji": "月", "pron": "쯔키", "pos": "名", "meaning": "달, 달빛"}, {"word": "つぎ", "kanji": "次", "pron": "쯔기", "pos": "名", "meaning": "다음, 버금"}, {"word": "つく", "kanji": "着く", "pron": "쯔쿠", "pos": "5自", "meaning": "닿다, 도착하다"}, {"word": "つく", "kanji": "付く", "pron": "쯔쿠", "pos": "5自", "meaning": "붙다, 묻다, 생기다, 따르다, 기록되다"}, {"word": "つくえ", "kanji": "机", "pron": "쯔쿠에", "pos": "名", "meaning": "책상"}, {"word": "つくる", "kanji": "作る", "pron": "쯔쿠루", "pos": "5他", "meaning": "만들다, 조직하다, 설립하다, 꾸미다"}, {"word": "つける", "kanji": "付ける", "pron": "쯔케루", "pos": "下1他", "meaning": "붙이다, 달다, 첨가하다, 익히다"}, {"word": "つごう", "kanji": "都合", "pron": "쯔고우", "pos": "名", "meaning": "사정, 형편, 변통함 = ぐあい"}, {"word": "つたえる", "kanji": "伝える", "pron": "쯔타에루", "pos": "下1他", "meaning": "전하다, 전도하다, 알리다, 전래하다"}, {"word": "つち", "kanji": "土", "pron": "쯔치", "pos": "名", "meaning": "흙, 땅, 토양, 대지"}, {"word": "つづく", "kanji": "續く", "pron": "쯔즈쿠", "pos": "5自", "meaning": "이어지다, 계속되다, 연결되다, (뒤)따르다"}, {"word": "つとめる", "kanji": "勤める", "pron": "쯔토메루", "pos": "下1他", "meaning": "근무하다, 종사하다"}, {"word": "つまらない", "kanji": "", "pron": "쯔마라나이", "pos": "連語", "meaning": "시시하다, 하찮다 = くだらない"}, {"word": "つめたい", "kanji": "冷たい", "pron": "쯔메타이", "pos": "形", "meaning": "차다, 차갑다, 냉정하가, 쌀쌀하다, 매몰차다"}, {"word": "つもり", "kanji": "禾責り", "pron": "쯔모리", "pos": "名", "meaning": "어림, 견적, 예산"}, {"word": "つよい", "kanji": "强い", "pron": "쯔요이", "pos": "形", "meaning": "세다, 강하다, 단단하다, 튼튼하다"}, {"word": "つれる", "kanji": "連れる", "pron": "쯔레루", "pos": "下1他", "meaning": "데리고 오(가)다, 동반하다, 동행하다, 거느리다"}, {"word": "て", "kanji": "手", "pron": "테", "pos": "名", "meaning": "손, 팔, 일손, 방법, 수단"}, {"word": "ていねい", "kanji": "丁寧", "pron": "테이네이", "pos": "名", "meaning": "정중함, 공손함, 친절함, 신중함"}, {"word": "テーブル", "kanji": "", "pron": "테-부루", "pos": "名", "meaning": "테이블"}, {"word": "でかける", "kanji": "出かける", "pron": "데카케루", "pos": "下1自", "meaning": "(밖에)나가다, 나서다, 외출하다"}, {"word": "てがみ", "kanji": "手紙", "pron": "테가미", "pos": "名", "meaning": "편지, 서한 = 書簡[しょかん]"}, {"word": "てきとう", "kanji": "適当", "pron": "테키토우", "pos": "名", "meaning": "적당함, 적절함, (～に 꼴로)적당히, 요령있게"}, {"word": "できる", "kanji": "出來る", "pron": "데키루", "pos": "上1自", "meaning": "할 수 있다, 되다, 생기다, 가능하다"}, {"word": "てつどう", "kanji": "金失道", "pron": "테쯔도우", "pos": "名", "meaning": "철도"}, {"word": "デパート", "kanji": "", "pron": "데파-토", "pos": "名", "meaning": "백화점"}, {"word": "でる", "kanji": "出る", "pron": "데루", "pos": "下1自", "meaning": "나가(오)다, 전진하다, 진출하다"}, {"word": "テレビ", "kanji": "", "pron": "테레비", "pos": "名", "meaning": "텔레비전"}, {"word": "てんき", "kanji": "", "pron": "텐키", "pos": "名", "meaning": "날씨, 좋은 날씨, 일기, 기분"}, {"word": "でんき", "kanji": "", "pron": "덴키", "pos": "名", "meaning": "전기"}, {"word": "でんしゃ", "kanji": "電車", "pron": "덴샤", "pos": "名", "meaning": "전차"}, {"word": "でんわ", "kanji": "電話", "pron": "덴와", "pos": "名", "meaning": "전화"}, {"word": "どうぞ", "kanji": "", "pron": "도우조", "pos": "副", "meaning": "부디, 어서, 아무쪼록 = なにとぞ, どうか"}, {"word": "どうも", "kanji": "", "pron": "도우모", "pos": "副", "meaning": "참으로, 아무래도, 어딘가, 도무지"}, {"word": "とおい", "kanji": "遠い", "pron": "토오이", "pos": "形", "meaning": "멀다, 의식·감정이 흐릿하다"}, {"word": "とおる", "kanji": "通る", "pron": "토오루", "pos": "5自", "meaning": "지나가다, 통하다, 통과하다"}, {"word": "とき", "kanji": "", "pron": "토키", "pos": "名", "meaning": "때, 시간, 시각"}, {"word": "とく", "kanji": "解く", "pron": "토쿠", "pos": "5他", "meaning": "풀다, 꿰맨 것을 뜯다"}, {"word": "とくに", "kanji": "特に", "pron": "토쿠니", "pos": "形", "meaning": "특히, 각별히 = ことさら"}, {"word": "とけい", "kanji": "時計", "pron": "토케이", "pos": "名", "meaning": "시계"}, {"word": "ところ", "kanji": "", "pron": "토코로", "pos": "名", "meaning": "곳, 때, 점, 바, 부분, 정도"}, {"word": "としょかん", "kanji": "図書館", "pron": "토쇼칸", "pos": "名", "meaning": "도서관"}, {"word": "とじる", "kanji": "閉じる", "pron": "토지루", "pos": "上1自 / 上1他", "meaning": "(上1自) 닫히다 / (上1他) 닫다, 눈을 감다, 덮다, 끝내다"}, {"word": "とても", "kanji": "", "pron": "토테모", "pos": "副", "meaning": "대단히, 도저히, 아무리해도, 몹시"}, {"word": "とどける", "kanji": "屆ける", "pron": "토도케루", "pos": "下1他", "meaning": "보내다, 닿게 하다, 제출하다, 신고하다"}, {"word": "となり", "kanji": "隣", "pron": "토나리", "pos": "名", "meaning": "이웃, 이웃집"}, {"word": "とにかく", "kanji": "", "pron": "토니카쿠", "pos": "副", "meaning": "어쨌든, 좌우간, 하여간"}, {"word": "とぶ", "kanji": "飛ぶ", "pron": "토부", "pos": "5自", "meaning": "날다, 날아가다, 흩날리다, 퍼지다"}, {"word": "とまる", "kanji": "止まる", "pron": "토마루", "pos": "5自", "meaning": "멎다, 멈추다, 서다"}, {"word": "とめる", "kanji": "止める", "pron": "토메루", "pos": "下1他", "meaning": "세우다, 막다, 정지하다"}, {"word": "とめる", "kanji": "泊める", "pron": "토메루", "pos": "下1他", "meaning": "묵게 하다, 숙박시키다, 정박시키다"}, {"word": "ともだち", "kanji": "友達", "pron": "토모다치", "pos": "名", "meaning": "친구, 동무, 벗 = 友人[ゆうじん]"}, {"word": "とり", "kanji": "鳥", "pron": "토리", "pos": "名", "meaning": "새, 조류"}, {"word": "とりあつかう", "kanji": "取り扱う", "pron": "토리아쯔카우", "pos": "5他", "meaning": "취급하다, 다루다, 보살피다"}, {"word": "どりょく", "kanji": "努力", "pron": "도료쿠", "pos": "名", "meaning": "노력, 애씀"}, {"word": "とる", "kanji": "取る", "pron": "토루", "pos": "5他", "meaning": "잡다, 들다, 취하다, 공제하다, 없애다"}, {"word": "ない", "kanji": "無い", "pron": "나이", "pos": "形", "meaning": "없다"}, {"word": "なおす", "kanji": "直す", "pron": "나오스", "pos": "5他", "meaning": "고치다, 바로잡다, 앉히다"}, {"word": "なおる", "kanji": "直る", "pron": "나오루", "pos": "5自", "meaning": "고쳐지다, 바로잡히다, 복구되다, 회복되다"}, {"word": "なか", "kanji": "中", "pron": "나카", "pos": "名", "meaning": "안, 속, 가운데"}, {"word": "ながい", "kanji": "長い", "pron": "나가이", "pos": "形", "meaning": "길다, 오래다"}, {"word": "ながす", "kanji": "流す", "pron": "나가스", "pos": "5他", "meaning": "흘리다, 씻어내다, 떠애려 보내다, 퍼뜨리다"}, {"word": "なかなか", "kanji": "", "pron": "나카나카", "pos": "副", "meaning": "꽤, 좀처럼, 상당히, 어지간히 = ずいぶん"}, {"word": "ながめる", "kanji": "眺める", "pron": "나가메루", "pos": "下1他", "meaning": "바라보다, 전망하다, 멀리보다, 응시하다"}, {"word": "ながれる", "kanji": "流れる", "pron": "나가레루", "pos": "下1自", "meaning": "흐르다, 흘러내리다, 유창하다"}, {"word": "なく", "kanji": "泣く", "pron": "나쿠", "pos": "5自", "meaning": "울다, 고생하다"}, {"word": "なくなる", "kanji": "無くなる", "pron": "나쿠나루", "pos": "5自", "meaning": "없어지다, 보이지 않게 되다, 다하다"}, {"word": "なげる", "kanji": "投げる", "pron": "나게루", "pos": "下1他", "meaning": "던지다, 단념하다, 포기하다"}, {"word": "なさる", "kanji": "", "pron": "나사루", "pos": "5他", "meaning": "하시다"}, {"word": "なぜ", "kanji": "", "pron": "나제", "pos": "副", "meaning": "왜, 어째서 = なにゆえ"}, {"word": "なつ", "kanji": "夏", "pron": "나쯔", "pos": "名", "meaning": "여름"}, {"word": "なつかしい", "kanji": "懷かしい", "pron": "나쯔카시이", "pos": "形", "meaning": "그립다"}, {"word": "なまえ", "kanji": "名前", "pron": "나마에", "pos": "名", "meaning": "이름"}, {"word": "なみだ", "kanji": "淚", "pron": "나미다", "pos": "名", "meaning": "눈물"}, {"word": "ならう", "kanji": "習う", "pron": "나라우", "pos": "5他", "meaning": "배우다, 익히다, 연습하다"}, {"word": "ならぶ", "kanji": "並ぶ", "pron": "나라부", "pos": "5自", "meaning": "늘어서다, 나란히 서다, 병행하다, 견주다"}, {"word": "ならべる", "kanji": "並べる", "pron": "나라베루", "pos": "下1他", "meaning": "늘어 놓다, 나라히 세우다, 열거하다"}, {"word": "なる", "kanji": "", "pron": "나루", "pos": "5自", "meaning": "되다, 이루어지다, ～로 구성되다"}, {"word": "なる", "kanji": "鳴る", "pron": "나루", "pos": "5自", "meaning": "울리다, 떨치다, 널리 알려지다"}, {"word": "におい", "kanji": "", "pron": "니오이", "pos": "名", "meaning": "냄새, 향기(=かおり), 정취, 분위기"}, {"word": "にぎやか", "kanji": "", "pron": "니기야카", "pos": "名", "meaning": "번화함, 흥청거림, 활기참"}, {"word": "にく", "kanji": "肉", "pron": "니쿠", "pos": "名", "meaning": "살, 고기"}, {"word": "にげる", "kanji": "逃げる", "pron": "니게루", "pos": "下1自", "meaning": "도망하다, 달아나다, 도피하다"}, {"word": "にし", "kanji": "西", "pron": "니시", "pos": "名", "meaning": "서쪽, 서풍"}, {"word": "にもつ", "kanji": "荷物", "pron": "니모쯔", "pos": "名", "meaning": "짐, 화물"}, {"word": "にる", "kanji": "似る", "pron": "니루", "pos": "上1自", "meaning": "닮다, 비슷하다"}, {"word": "にわ", "kanji": "庭", "pron": "니와", "pos": "名", "meaning": "정원, 마당, 뜰"}, {"word": "にんぎょう", "kanji": "人形", "pron": "닌교우", "pos": "名", "meaning": "인형, 꼭두각시"}, {"word": "にんげん", "kanji": "人間", "pron": "닌겐", "pos": "名", "meaning": "인간, 사람, 세상"}, {"word": "ぬく", "kanji": "拔く", "pron": "누쿠", "pos": "5他", "meaning": "뽑다, 빼내다, 줄이다, 생략하다"}, {"word": "ぬぐ", "kanji": "脫ぐ", "pron": "누구", "pos": "5他", "meaning": "벗다"}, {"word": "ぬれる", "kanji": "", "pron": "누레루", "pos": "下1自", "meaning": "젖다"}, {"word": "ねがう", "kanji": "願う", "pron": "네가우", "pos": "5他", "meaning": "바라다, 원하다, 기원하다"}, {"word": "ねこ", "kanji": "猫", "pron": "네코", "pos": "名", "meaning": "고양이"}, {"word": "ねだん", "kanji": "値段", "pron": "네단", "pos": "名", "meaning": "값, 가격"}, {"word": "ねつ", "kanji": "熱", "pron": "네쯔", "pos": "名", "meaning": "열, 기후가 더움, 열중, 열의, 흥분함"}, {"word": "ねっしん", "kanji": "熱心", "pron": "넷신", "pos": "名", "meaning": "열심"}, {"word": "ねる", "kanji": "寢る", "pron": "네루", "pos": "下1自", "meaning": "잠자다, 눕다"}, {"word": "のうぎょう", "kanji": "農業", "pron": "노우교우", "pos": "名", "meaning": "농업, 농경"}, {"word": "ノート", "kanji": "", "pron": "노-토", "pos": "名", "meaning": "노트"}, {"word": "のこす", "kanji": "殘す", "pron": "노코스", "pos": "5他", "meaning": "남기다"}, {"word": "のこる", "kanji": "殘る", "pron": "노코루", "pos": "5自", "meaning": "남다, 여분이 생기다"}, {"word": "のばす", "kanji": "伸ばす", "pron": "노바스", "pos": "5他", "meaning": "늘이다, 펴다, 성장시키다"}, {"word": "のびる", "kanji": "伸びる", "pron": "노비루", "pos": "上1自", "meaning": "늘다, 자라다, 펴지다, 발전하다, 증가하다"}, {"word": "のぼる", "kanji": "上る", "pron": "노보루", "pos": "5自", "meaning": "올라가다, 상경하다, 상륙하다, ～로 오르다"}, {"word": "のぼる", "kanji": "登る", "pron": "노보루", "pos": "5自", "meaning": "오르다"}, {"word": "のむ", "kanji": "飮む", "pron": "노무", "pos": "5他", "meaning": "마시다, 복용하다, 삼키다, 참다"}, {"word": "のる", "kanji": "乘る", "pron": "노루", "pos": "5自", "meaning": "타다, 올라가다, 기회를 타다"}, {"word": "は", "kanji": "葉", "pron": "하", "pos": "名", "meaning": "잎, 잎사귀"}, {"word": "は", "kanji": "齒", "pron": "하", "pos": "名", "meaning": "이, 이빨"}, {"word": "ばあい", "kanji": "場合", "pron": "바아이", "pos": "名", "meaning": "경우, 사정, 때"}, {"word": "はいる", "kanji": "入る", "pron": "하이루", "pos": "5他", "meaning": "들어가(오)다, 첨가되다"}, {"word": "はく", "kanji": "履く", "pron": "하쿠", "pos": "5他", "meaning": "신발을 신다"}, {"word": "はげしい", "kanji": "激しい", "pron": "하게시이", "pos": "形", "meaning": "심하다, 격하다, 세차다"}, {"word": "はこ", "kanji": "箱", "pron": "하코", "pos": "名", "meaning": "상자, 궤짝, 함"}, {"word": "はこぶ", "kanji": "運ぶ", "pron": "하코부", "pos": "5他", "meaning": "나르다, 운반하다, 옮기다"}, {"word": "はし", "kanji": "橋", "pron": "하시", "pos": "名", "meaning": "다리"}, {"word": "はじまる", "kanji": "始まる", "pron": "하지마루", "pos": "5自", "meaning": "시작되다, 개시되다"}, {"word": "はじめる", "kanji": "始める", "pron": "하지메루", "pos": "下1他", "meaning": "시작하다, 개시하다"}, {"word": "ばしょ", "kanji": "場所", "pron": "바쇼", "pos": "名", "meaning": "장소, 위치, 경우"}, {"word": "はしる", "kanji": "走る", "pron": "하시루", "pos": "5自", "meaning": "달리다"}, {"word": "ベス", "kanji": "", "pron": "베스", "pos": "名", "meaning": "버스"}, {"word": "はずかしい", "kanji": "恥ずかしい", "pron": "하즈카시이", "pos": "形", "meaning": "부끄럽다, 면목없다, 작용하다"}, {"word": "はたらく", "kanji": "働く", "pron": "하타라쿠", "pos": "5自", "meaning": "일하다, 활동하다, 움직이다, 작용하다"}, {"word": "はっきり", "kanji": "", "pron": "핫키리", "pos": "副", "meaning": "뚜렷이, 문명히, 확실히, 명확히"}, {"word": "はっけん", "kanji": "發見", "pron": "핫켄", "pos": "名", "meaning": "발견"}, {"word": "はったつ", "kanji": "發達", "pron": "핫타쯔", "pos": "名", "meaning": "발달"}, {"word": "はな", "kanji": "花", "pron": "하나", "pos": "名", "meaning": "꽃"}, {"word": "はな", "kanji": "鼻", "pron": "하나", "pos": "名", "meaning": "코, 후각"}, {"word": "はなす", "kanji": "話す", "pron": "하나스", "pos": "5自", "meaning": "말하다, 이야기하다, 사의(의논)하다"}, {"word": "はは", "kanji": "母", "pron": "하하", "pos": "名", "meaning": "어머니, 모친"}, {"word": "はやい", "kanji": "速い", "pron": "하야이", "pos": "形", "meaning": "빠르다"}, {"word": "はらう", "kanji": "才厶う", "pron": "하라우", "pos": "5他", "meaning": "치르다, 치다, 털다, 제거하다"}, {"word": "はる", "kanji": "春", "pron": "하루", "pos": "名", "meaning": "봄, 새해, 한창 때"}, {"word": "はれる", "kanji": "晴れる", "pron": "하레루", "pos": "下1自", "meaning": "(하늘이)개이다, (괴로움 등이)사라지다"}, {"word": "パン", "kanji": "", "pron": "판", "pos": "名", "meaning": "빵"}, {"word": "はんたい", "kanji": "反對", "pron": "한타이", "pos": "名", "meaning": "반대"}, {"word": "はんぶん", "kanji": "半分", "pron": "한분", "pos": "名", "meaning": "반 = なかば"}, {"word": "ひ", "kanji": "日", "pron": "히", "pos": "名", "meaning": "해, 낮, 날"}, {"word": "ひ", "kanji": "火", "pron": "히", "pos": "名", "meaning": "불"}, {"word": "ビアノ", "kanji": "", "pron": "비아노", "pos": "名", "meaning": "피아노"}, {"word": "ひがし", "kanji": "東", "pron": "히가시", "pos": "名", "meaning": "동쪽, 동풍"}, {"word": "ひかる", "kanji": "光る", "pron": "히카루", "pos": "5自", "meaning": "빛나다, 출중하다, 뛰어나다"}, {"word": "ひく", "kanji": "引く", "pron": "히쿠", "pos": "5他", "meaning": "잡아당기다, 끌다, 활을 쏘다"}, {"word": "ひくい", "kanji": "低い", "pron": "히쿠이", "pos": "形", "meaning": "낮다, (소리가)크지 않다, 얕다"}, {"word": "ひこうき", "kanji": "飛行機", "pron": "히코우키", "pos": "名", "meaning": "비행기"}, {"word": "ひじょうに", "kanji": "非常に", "pron": "히조우니", "pos": "副", "meaning": "대단히, 몹시"}, {"word": "ひだり", "kanji": "左", "pron": "히다리", "pos": "名", "meaning": "왼쪽"}, {"word": "ひつよう", "kanji": "必要", "pron": "히쯔요우", "pos": "名", "meaning": "필요"}, {"word": "ひと", "kanji": "人", "pron": "히토", "pos": "名", "meaning": "사람, 남, 인류, 인간"}, {"word": "ひま", "kanji": "暇", "pron": "히마", "pos": "名", "meaning": "틈, 짬, 기회"}, {"word": "ひやす", "kanji": "冷やす", "pron": "히야스", "pos": "5他", "meaning": "식히다, 차게 하다"}, {"word": "びょういん", "kanji": "病原", "pron": "뵤우인", "pos": "名", "meaning": "병원"}, {"word": "びょうき", "kanji": "", "pron": "뵤우키", "pos": "名", "meaning": "병, 앓음, 질병 = やまい · わずらい"}, {"word": "ひょうげん", "kanji": "表現", "pron": "효우겐", "pos": "名", "meaning": "표현"}, {"word": "ひらく", "kanji": "開く", "pron": "히라쿠", "pos": "5自", "meaning": "열리다, 열다, 펴다, 벌어지다"}, {"word": "ひる", "kanji": "", "pron": "히루", "pos": "名", "meaning": "낮, 정오, 점심"}, {"word": "ひろい", "kanji": "廣い", "pron": "히로이", "pos": "形", "meaning": "넓다"}, {"word": "ひろう", "kanji": "拾う", "pron": "히로우", "pos": "5他", "meaning": "줍다, 골라내다, 등용하다"}, {"word": "ふえる", "kanji": "增える", "pron": "후에루", "pos": "下1自", "meaning": "늘다, 불어나다, 증가하다"}, {"word": "ふかい", "kanji": "深い", "pron": "후카이", "pos": "形", "meaning": "깊다, 심하다"}, {"word": "ふく", "kanji": "吹く", "pron": "후쿠", "pos": "5自他", "meaning": "불다"}, {"word": "ふくむ", "kanji": "含む", "pron": "후쿠무", "pos": "5他", "meaning": "포함하다, 함유하다, 머금다"}, {"word": "ふせぐ", "kanji": "防ぐ", "pron": "후세구", "pos": "5他", "meaning": "막다, 방어하다, 가로막다"}, {"word": "ふつう", "kanji": "普通", "pron": "후쯔우", "pos": "副", "meaning": "보통, 대체로 = なみ"}, {"word": "ふとい", "kanji": "太い", "pron": "후토이", "pos": "形", "meaning": "굵다, 크다, 넉살좋다"}, {"word": "ふね", "kanji": "船", "pron": "후네", "pos": "名", "meaning": "배"}, {"word": "ぶぶん", "kanji": "部分", "pron": "부분", "pos": "名", "meaning": "부분 ↔ 全亻本[ぜんたい]"}, {"word": "ふむ", "kanji": "踏む", "pron": "후무", "pos": "5他", "meaning": "밟다, 디디다, 경험하다"}, {"word": "ふゆ", "kanji": "冬", "pron": "후유", "pos": "名", "meaning": "겨울"}, {"word": "ふる", "kanji": "降る", "pron": "후루", "pos": "5自", "meaning": "내리다(비·눈·서리 등)"}, {"word": "ふるい", "kanji": "古い", "pron": "후루이", "pos": "形", "meaning": "오래 되다, 낡다, 신식이 아니다"}, {"word": "ふろ", "kanji": "風呂", "pron": "후로", "pos": "名", "meaning": "목욕, 욕조"}, {"word": "ぶんか", "kanji": "文化", "pron": "분카", "pos": "名", "meaning": "문화"}, {"word": "へいわ", "kanji": "平和", "pron": "헤이와", "pos": "名", "meaning": "평화"}, {"word": "へた", "kanji": "下手", "pron": "헤타", "pos": "名", "meaning": "서투름"}, {"word": "べつ", "kanji": "別", "pron": "베쯔", "pos": "名", "meaning": "구별, 차이, 별도, 따로, 다름"}, {"word": "へや", "kanji": "部屋", "pron": "헤야", "pos": "名", "meaning": "방, 헛간"}, {"word": "へる", "kanji": "減る", "pron": "헤루", "pos": "5自", "meaning": "줄다, 적어지다"}, {"word": "へんか", "kanji": "変化", "pron": "헨카", "pos": "名", "meaning": "변화"}, {"word": "べんきょう", "kanji": "勉强", "pron": "벤쿄우", "pos": "名", "meaning": "공부, 에누리"}, {"word": "へんじ", "kanji": "返事", "pron": "헨지", "pos": "名", "meaning": "대답, 응답, 답장"}, {"word": "べんとう", "kanji": "", "pron": "벤토우", "pos": "名", "meaning": "도시락"}, {"word": "べんり", "kanji": "便利", "pron": "벤리", "pos": "名", "meaning": "편리"}, {"word": "ぼうえき", "kanji": "貿易", "pron": "보우에키", "pos": "名", "meaning": "무역"}, {"word": "ぼうし", "kanji": "帽子", "pron": "보우시", "pos": "名", "meaning": "모자"}, {"word": "ほうそう", "kanji": "放送", "pron": "호우소우", "pos": "名", "meaning": "방송"}, {"word": "ほうほう", "kanji": "方法", "pron": "호우호우", "pos": "名", "meaning": "방법"}, {"word": "ほうもん", "kanji": "訪問", "pron": "호우몬", "pos": "名", "meaning": "방문"}, {"word": "ボールペン", "kanji": "", "pron": "보-루펜", "pos": "名", "meaning": "볼펜"}, {"word": "ほし", "kanji": "星", "pron": "호시", "pos": "名", "meaning": "별, 세월, 운수"}, {"word": "ほしい", "kanji": "欲しい", "pron": "호시이", "pos": "形", "meaning": "가지고 싶다, ～하고 싶다, 탐나다"}, {"word": "ほそい", "kanji": "細い", "pron": "호소이", "pos": "形", "meaning": "가늘다, 좁다, 여우가 없다"}, {"word": "ほとんど", "kanji": "", "pron": "호톤도", "pos": "副", "meaning": "거의, 대부분, 대략, 하마터면"}, {"word": "ほね", "kanji": "骨", "pron": "호네", "pos": "名", "meaning": "뼈, 기골, (사물의)핵심"}, {"word": "ほめる", "kanji": "襃める", "pron": "호메루", "pos": "下1他", "meaning": "칭찬하다, 찬양하다"}, {"word": "ほん", "kanji": "本", "pron": "혼", "pos": "名", "meaning": "책, 서적, 대본"}, {"word": "ほんとう", "kanji": "本当", "pron": "혼토우", "pos": "名", "meaning": "진실, 정말, 진짜"}, {"word": "まいる", "kanji": "參る", "pron": "마이루", "pos": "5自", "meaning": "가다·오다의 겸양어, 참배하다"}, {"word": "まえ", "kanji": "前", "pron": "마에", "pos": "名", "meaning": "앞, 전"}, {"word": "まける", "kanji": "負ける", "pron": "마케루", "pos": "下1自", "meaning": "지다, 패하다(=やぶれる), 양보하다"}, {"word": "まじめだ", "kanji": "", "pron": "마지메다", "pos": "名", "meaning": "진지함, 진심, 진정"}, {"word": "また", "kanji": "又", "pron": "마타", "pos": "副", "meaning": "또, 다시, 또한"}, {"word": "まだ", "kanji": "", "pron": "마다", "pos": "副", "meaning": "아직, 여지껏, 더욱, 차라리, 오히려"}, {"word": "まち", "kanji": "町", "pron": "마치", "pos": "名", "meaning": "도회, 거리"}, {"word": "まちがう", "kanji": "間違う", "pron": "마치가우", "pos": "5自他", "meaning": "틀리다, 잘못되다, 잘못이 일어나다"}, {"word": "まつ", "kanji": "待つ", "pron": "마쯔", "pos": "5他", "meaning": "기다리다, 채비를 하고 맞이하다"}, {"word": "まったく", "kanji": "全く", "pron": "맛타쿠", "pos": "副", "meaning": "완전히, 아주, 전적으로, 전혀"}, {"word": "まど", "kanji": "窓", "pron": "마도", "pos": "名", "meaning": "창, 창문"}, {"word": "まにあう", "kanji": "間に合う", "pron": "마니아우", "pos": "5自", "meaning": "시간에 대다, 아쉬운대로 쓰다"}, {"word": "まもる", "kanji": "守る", "pron": "마모루", "pos": "5他", "meaning": "지키다, 소중히 하다, 보호하다"}, {"word": "まるい", "kanji": "丸い", "pron": "마루이", "pos": "形", "meaning": "둥글다, 원만하다, 포동포동 살찌다"}, {"word": "まわる", "kanji": "回る", "pron": "마와루", "pos": "5自", "meaning": "돌다, 회전하다, 들르다"}, {"word": "みえる", "kanji": "見える", "pron": "미에루", "pos": "下1自", "meaning": "보이다, 오시다"}, {"word": "みがく", "kanji": "磨く", "pron": "미가쿠", "pos": "5他", "meaning": "닦다, 갈다, 윤을 내다"}, {"word": "みぎ", "kanji": "右", "pron": "미기", "pos": "名", "meaning": "오른쪽, 우측"}, {"word": "みじかい", "kanji": "短い", "pron": "미지카이", "pos": "形", "meaning": "짧다, 키가 작다 = ひくい"}, {"word": "みず", "kanji": "水", "pron": "미즈", "pos": "名", "meaning": "물"}, {"word": "みせ", "kanji": "店", "pron": "미세", "pos": "名", "meaning": "가게, 상점, 점포"}, {"word": "みせる", "kanji": "見せる", "pron": "미세루", "pos": "下1他", "meaning": "보이다, 겉을 꾸미다"}, {"word": "みち", "kanji": "道", "pron": "미치", "pos": "名", "meaning": "길, 도로, 도리"}, {"word": "みつける", "kanji": "見つける", "pron": "미쯔케루", "pos": "下1他", "meaning": "찾아내다, 발견하다"}, {"word": "みとめる", "kanji": "認める", "pron": "미토메루", "pos": "下1他", "meaning": "인정하다, 인지하다, 판단하다"}, {"word": "みどり", "kanji": "綠", "pron": "미도리", "pos": "名", "meaning": "녹색, 초록(빛)"}, {"word": "みなみ", "kanji": "南", "pron": "미나미", "pos": "名", "meaning": "남쪽, 남부, 남풍, 마파람"}, {"word": "みみ", "kanji": "耳", "pron": "미미", "pos": "名", "meaning": "귀"}, {"word": "みやげ", "kanji": "土産", "pron": "미야게", "pos": "名", "meaning": "토산품, 선물"}, {"word": "みる", "kanji": "見る", "pron": "미루", "pos": "上1他", "meaning": "보다, 확인하다"}, {"word": "みんな", "kanji": "", "pron": "민나", "pos": "副", "meaning": "모두"}, {"word": "むかう", "kanji": "向かう", "pron": "무카우", "pos": "5自", "meaning": "향하다, 다가오다, 대항하다"}, {"word": "むかえる", "kanji": "迎える", "pron": "무카에루", "pos": "下1他", "meaning": "맞다, 맞이하다, 마중하다"}, {"word": "むかし", "kanji": "昔", "pron": "무카시", "pos": "名", "meaning": "옛날, 옛적, 예전"}, {"word": "むずかしい", "kanji": "難しい", "pron": "무즈카시이", "pos": "形", "meaning": "어렵다, 곤란하다, 까다롭다"}, {"word": "むすこ", "kanji": "息子", "pron": "무스코", "pos": "名", "meaning": "아들, 자식 = せがれ"}, {"word": "むすぶ", "kanji": "結ぶ", "pron": "무스부", "pos": "5自他", "meaning": "잇다, 맺다, 매다, 잡다, 쥐다"}, {"word": "むすめ", "kanji": "娘", "pron": "무스메", "pos": "名", "meaning": "딸, 미혼 여성"}, {"word": "むね", "kanji": "胸", "pron": "무네", "pos": "名", "meaning": "가슴, 마음, 심금, 폐"}, {"word": "むら", "kanji": "村", "pron": "무라", "pos": "名", "meaning": "마을, 촌락, 시골 = 村里[むらざと]"}, {"word": "め", "kanji": "目", "pron": "메", "pos": "名", "meaning": "눈, 안목, 시력"}, {"word": "めいし", "kanji": "名刺", "pron": "메이시", "pos": "名", "meaning": "명함"}, {"word": "めいれい", "kanji": "命令", "pron": "메이레이", "pos": "名", "meaning": "명령"}, {"word": "めいわく", "kanji": "迷惑", "pron": "메이와쿠", "pos": "名", "meaning": "귀찮음, 성가심, 폐, 괴로움"}, {"word": "めがね", "kanji": "眼鏡", "pron": "메가네", "pos": "名", "meaning": "안경 = がんきょう"}, {"word": "めずらしい", "kanji": "珍しい", "pron": "메즈라시이", "pos": "形", "meaning": "진귀하다, 드물다, 희귀하다, 신기하다, 새롭다"}, {"word": "もう", "kanji": "", "pron": "모우", "pos": "副", "meaning": "이미, 벌써, 이제, 더, 또, 곧"}, {"word": "もうす", "kanji": "申す", "pron": "모우스", "pos": "5他", "meaning": "말하다의 겸야어, 원하다, 부탁하다"}, {"word": "もくてき", "kanji": "目的", "pron": "모쿠테키", "pos": "名", "meaning": "목적 = めあて"}, {"word": "もつ", "kanji": "持つ", "pron": "모쯔", "pos": "5他", "meaning": "가지다, 들다, 소유하다"}, {"word": "もっと", "kanji": "", "pron": "못토", "pos": "副", "meaning": "더, 더욱, 좀더, 한층 = なお"}, {"word": "もとめる", "kanji": "求める", "pron": "모토메루", "pos": "下1他", "meaning": "구하다, 바라다, 요구하다, 찾다"}, {"word": "もどる", "kanji": "戾る", "pron": "모도루", "pos": "5自", "meaning": "되돌아가(오)다"}, {"word": "もの", "kanji": "", "pron": "모노", "pos": "名", "meaning": "물건, 것, 마련, 곤"}, {"word": "もらう", "kanji": "", "pron": "모라우", "pos": "5他", "meaning": "얻다, 받다, 인수하다"}, {"word": "もんだい", "kanji": "問題", "pron": "몬다이", "pos": "名", "meaning": "문제"}, {"word": "やかましい", "kanji": "", "pron": "야카마시이", "pos": "形", "meaning": "시끄럽다, 요란하다, 엄하다"}, {"word": "やく", "kanji": "燒く", "pron": "야쿠", "pos": "5他", "meaning": "태우다, 굽다, 애태우다, 달구다"}, {"word": "やくそく", "kanji": "約束", "pron": "야쿠소쿠", "pos": "名", "meaning": "약속, 언약, 운명, 인연"}, {"word": "やさい", "kanji": "野菜", "pron": "야사이", "pos": "名", "meaning": "채소, 야채, 푸성귀 = あおもの"}, {"word": "やさしい", "kanji": "易しい", "pron": "야사시이", "pos": "形", "meaning": "쉽다"}, {"word": "やさしい", "kanji": "優しい", "pron": "야사시이", "pos": "形", "meaning": "온순하다, 다정하다, 상냥하다, 우아하다"}, {"word": "やすい", "kanji": "安い", "pron": "야스이", "pos": "形", "meaning": "값이 싸다"}, {"word": "やすむ", "kanji": "休む", "pron": "야스무", "pos": "5自他", "meaning": "쉬다, 휴식하다, 자다"}, {"word": "やはり", "kanji": "矢張", "pron": "야하리", "pos": "副", "meaning": "역시, 전과 같이, 결국(=やっぱり)"}, {"word": "やま", "kanji": "山", "pron": "야마", "pos": "名", "meaning": "산, 광산"}, {"word": "やめる", "kanji": "", "pron": "야메루", "pos": "下1他", "meaning": "그만두다, 중지하다, 끊다 = とりせめる"}, {"word": "やる", "kanji": "", "pron": "야루", "pos": "5他", "meaning": "하다, 주다, 보내다"}, {"word": "やわらかい", "kanji": "柔らかい", "pron": "야와라카이", "pos": "形", "meaning": "부드럽다, 몰랑하다, 포근하다, 순순하다"}, {"word": "ゆうがた", "kanji": "夕方", "pron": "유우가타", "pos": "名", "meaning": "저녁때, 해질녘 = 夕刻[ゆうこく]"}, {"word": "ゆうびん", "kanji": "郵便", "pron": "유우빈", "pos": "名", "meaning": "우편"}, {"word": "ゆうべ", "kanji": "", "pron": "유우베", "pos": "名", "meaning": "어젯밤, 간밤 = 昨夜[さくや]"}, {"word": "ゆうめい", "kanji": "有名", "pron": "유우메이", "pos": "名", "meaning": "유명"}, {"word": "ゆき", "kanji": "雪", "pron": "유키", "pos": "名", "meaning": "눈, 흰 것의 비유"}, {"word": "ゆしゅつ", "kanji": "輸出", "pron": "유슈쯔", "pos": "名", "meaning": "수출"}, {"word": "ゆっくり", "kanji": "", "pron": "윳쿠리", "pos": "副", "meaning": "천천히, 서서히, 넉넉히, 충분히"}, {"word": "ゆび", "kanji": "指", "pron": "유비", "pos": "名", "meaning": "손가락과 발가락"}, {"word": "ゆめ", "kanji": "夢", "pron": "유메", "pos": "名", "meaning": "꿈"}, {"word": "ゆるす", "kanji": "許す", "pron": "유루스", "pos": "5他", "meaning": "허가하다, 용서하다, 허락하다"}, {"word": "よい", "kanji": "良い", "pron": "요이", "pos": "形", "meaning": "좋다, 잘 됐다"}, {"word": "ようじ", "kanji": "用事", "pron": "요우지", "pos": "名", "meaning": "볼 일, 용무 = 用[よう]"}, {"word": "ようす", "kanji": "樣", "pron": "요우스", "pos": "名", "meaning": "모양, 사정, 형편, 낌새, 눈치, 태도, 기색"}, {"word": "ようふん", "kanji": "洋服", "pron": "요우훈", "pos": "名", "meaning": "양복"}, {"word": "よこ", "kanji": "橫", "pron": "요코", "pos": "名", "meaning": "가로, 옆, 곁"}, {"word": "よごれる", "kanji": "汚れる", "pron": "요고레루", "pos": "下1自", "meaning": "더러워지다"}, {"word": "よぶ", "kanji": "呼ぶ", "pron": "요부", "pos": "5他", "meaning": "부르다, 끌다"}, {"word": "よむ", "kanji": "読む", "pron": "요무", "pos": "5他", "meaning": "읽다, 읊다"}, {"word": "よる", "kanji": "夜", "pron": "요루", "pos": "名", "meaning": "밤"}, {"word": "よろこぶ", "kanji": "喜こぶ", "pron": "요로코부", "pos": "5他", "meaning": "기뻐하다, 좋아하다, 즐거워하다"}, {"word": "よわい", "kanji": "弱い", "pron": "요와이", "pos": "形", "meaning": "약하다, 모자라다"}, {"word": "らいねん", "kanji": "來年", "pron": "라이넨", "pos": "名", "meaning": "내년, 평년"}, {"word": "ラヅオ", "kanji": "", "pron": "라즈오", "pos": "名", "meaning": "라디오"}, {"word": "りっぱ", "kanji": "立派", "pron": "릿파", "pos": "名", "meaning": "훌륭함, 정당함, 충분함"}, {"word": "りよう", "kanji": "利用", "pron": "리요우", "pos": "名", "meaning": "이용"}, {"word": "りょうしん", "kanji": "兩親", "pron": "료우신", "pos": "名", "meaning": "양친, 부모, 어버이"}, {"word": "りょうり", "kanji": "料理", "pron": "료우리", "pos": "名", "meaning": "요리, 음식"}, {"word": "りょこう", "kanji": "旅行", "pron": "료코우", "pos": "名", "meaning": "여행 = たび"}, {"word": "るす", "kanji": "留守", "pron": "루스", "pos": "名", "meaning": "부재 중, (빈 집을)지킴"}, {"word": "れきし", "kanji": "歷史", "pron": "레키시", "pos": "名", "meaning": "역사"}, {"word": "れんしゅう", "kanji": "練習", "pron": "렌슈우", "pos": "名", "meaning": "연습"}, {"word": "わかい", "kanji": "若い", "pron": "와카이", "pos": "形", "meaning": "젊다, 어리다, 미숙하다"}, {"word": "わかる", "kanji": "分かる", "pron": "와카루", "pos": "5自", "meaning": "알다, 판명되다, 잘 헤아리다"}, {"word": "わけ", "kanji": "言尺", "pron": "와케", "pos": "名", "meaning": "뜻, 까닭, 도리, 것, 셈"}, {"word": "わける", "kanji": "分ける", "pron": "와케루", "pos": "下1他", "meaning": "나누다, 말리다, 중재하다"}, {"word": "わすれる", "kanji": "忘れる", "pron": "와스레루", "pos": "下1自他", "meaning": "잊다"}, {"word": "わたす", "kanji": "渡す", "pron": "와타스", "pos": "5他", "meaning": "건네다, 건너지르다, 걸치다"}, {"word": "わたる", "kanji": "渡る", "pron": "와타루", "pos": "5自", "meaning": "건너다, 지나다, 인도되다"}, {"word": "わらう", "kanji": "笑う", "pron": "와라우", "pos": "5自他", "meaning": "웃다, 우습다"}, {"word": "わるい", "kanji": "惡い", "pron": "와루이", "pos": "形", "meaning": "나쁘다, 못 되다, 좋지 않다"}, {"word": "げやかん", "kanji": "玄開", "pron": "게야칸", "pos": "名", "meaning": "현관"}, {"word": "しゅじん", "kanji": "主人", "pron": "슈진", "pos": "名", "meaning": "주인, 일가의 가구주, 아내가 남편을 일컫는 말"}, {"word": "だいじょうぶ", "kanji": "大丈夫", "pron": "다이조우부", "pos": "名", "meaning": "괜찮음, 걱정없음, 틀림없음"}, {"word": "たずねる", "kanji": "尋ねる", "pron": "타즈네루", "pos": "下1他", "meaning": "묻다, 찾다"}, {"word": "てつだう", "kanji": "手伝う", "pron": "테쯔다우", "pos": "5他", "meaning": "같이 거들다, 돕다"}, {"word": "かわ", "kanji": "川", "pron": "카와", "pos": "名", "meaning": "강, 내, 시내"}, {"word": "かかる", "kanji": "掛る", "pron": "카카루", "pos": "5自", "meaning": "걸리다, 덤비다, 공격하다"}, {"word": "あく", "kanji": "開く", "pron": "아쿠", "pos": "5自", "meaning": "열리다, 뚫리다"}, {"word": "おこない", "kanji": "行い", "pron": "오코나이", "pos": "名", "meaning": "행위"}, {"word": "サービス", "kanji": "", "pron": "사-비스", "pos": "名", "meaning": "서비스"}];
+
+var STORE_KEY = 'cutop_jp_basic_800';
+var store = {};
+try { store = JSON.parse(localStorage.getItem(STORE_KEY)) || {}; } catch(e) { store = {}; }
+function save() { try { localStorage.setItem(STORE_KEY, JSON.stringify(store)); } catch(e) {} }
+function getS(w) { var k = w.word + '|' + w.meaning; if (!store[k]) store[k] = {status:'', fav:false}; return store[k]; }
+
+function esc(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function speak(t) {
+  if (!('speechSynthesis' in window)) return;
+  window.speechSynthesis.cancel();
+  var u = new SpeechSynthesisUtterance(t);
+  u.lang = 'ja-JP';
+  var vs = window.speechSynthesis.getVoices();
+  for (var vi = 0; vi < vs.length; vi++) { if (/^ja/i.test(vs[vi].lang)) { u.voice = vs[vi]; break; } }
+  u.rate = 0.85;
+  window.speechSynthesis.speak(u);
+}
+function speakFc() { if (fcPool.length) speak(fcPool[fcIdx].word); }
+
+function buildRanges(ws) {
+  var r = [{label:'전체', s:0, e:ws.length}];
+  for (var i = 0; i < ws.length; i += 20) {
+    var e = Math.min(i + 20, ws.length);
+    r.push({label:(i+1)+'~'+e, s:i, e:e});
+  }
+  return r;
+}
+var RANGES = buildRanges(rawWords);
+
+function renderRangeBar(barId, ri, fn) {
+  var bar = document.getElementById(barId);
+  if (!bar) return;
+  var h = [];
+  for (var i = 0; i < RANGES.length; i++) {
+    var cls = 'rbtn' + (i === ri ? ' on' : '');
+    h.push('<button class="' + cls + '" data-i="' + i + '" onclick="' + fn + '(this)">' + RANGES[i].label + '</button>');
+  }
+  bar.innerHTML = h.join('');
+}
+
+function wordsForRange(ri) {
+  var r = RANGES[ri];
+  return rawWords.slice(r.s, r.e);
+}
+
+// ===== Tab 1 =====
+var wri = 0;
+var wFilter = 'all';
+
+function setWR(btn) { wri = parseInt(btn.dataset.i); renderList(); }
+function setFilter(f) {
+  wFilter = f;
+  document.getElementById('flt-all').className = 'fbtn' + (f === 'all' ? ' on' : '');
+  document.getElementById('flt-unk').className = 'fbtn' + (f === 'unk' ? ' on' : '');
+  document.getElementById('flt-fav').className = 'fbtn' + (f === 'fav' ? ' on' : '');
+  renderList();
+}
+
+function renderList() {
+  renderRangeBar('wrbar', wri, 'setWR');
+  var pool = wordsForRange(wri);
+  var q = document.getElementById('wsearch').value.toLowerCase().replace(/\s/g,'');
+  var list = [];
+  for (var i = 0; i < pool.length; i++) {
+    var w = pool[i], s = getS(w);
+    if (wFilter === 'unk' && s.status === 'known') continue;
+    if (wFilter === 'fav' && !s.fav) continue;
+    if (q) {
+      var wl = w.word.toLowerCase().replace(/\s/g,'');
+      var ml = (w.meaning + '|' + w.kanji + '|' + w.pron).replace(/\s/g,'');
+      if (wl.indexOf(q) < 0 && ml.indexOf(q) < 0) continue;
+    }
+    list.push(w);
+  }
+  var h = [];
+  for (var i = 0; i < list.length; i++) {
+    var w = list[i], s = getS(w);
+    var known = s.status === 'known', fav = s.fav;
+    h.push('<div class="wcard' + (known ? ' known' : '') + '">');
+    h.push('<button class="chk' + (known ? ' on' : '') + '" data-wi="' + i + '" onclick="toggleKnown(this)">' + (known ? '✔' : '') + '</button>');
+    h.push('<div class="wbody">');
+    h.push('<div class="wword">' + esc(w.word) + (w.kanji ? '<span class="wkanji">' + esc(w.kanji) + '</span>' : '') + '</div>');
+    h.push('<div class="wpron">' + esc(w.pron) + '</div>');
+    h.push('<div class="wmean"><span class="wpos">' + esc(w.pos) + '</span>' + esc(w.meaning) + '</div>');
+    h.push('</div>');
+    h.push('<div class="wacts">');
+    h.push('<button class="ibtn" data-w="' + esc(w.word) + '" onclick="speak(this.dataset.w)">🔊</button>');
+    h.push('<button class="ibtn favbtn' + (fav ? ' on' : '') + '" data-wi="' + i + '" onclick="toggleFav(this)">' + (fav ? '★' : '☆') + '</button>');
+    h.push('</div>');
+    h.push('</div>');
+  }
+  document.getElementById('wlist').innerHTML = h.join('');
+  window._wlist = list;
+}
+
+function toggleKnown(btn) {
+  var i = parseInt(btn.dataset.wi);
+  var w = window._wlist[i];
+  var s = getS(w);
+  s.status = s.status === 'known' ? '' : 'known';
+  save();
+  renderList();
+}
+
+function toggleFav(btn) {
+  var i = parseInt(btn.dataset.wi);
+  var w = window._wlist[i];
+  var s = getS(w);
+  s.fav = !s.fav;
+  save();
+  renderList();
+}
+
+// ===== Tab 2 =====
+var fcPool = [];
+var fcIdx = 0;
+var fcFlipped = false;
+var fcTX = 0;
+var fcEvReg = false;
+var fri = 0;
+
+function setFCR(btn) { fri = parseInt(btn.dataset.i); fcInit(); }
+
+function fcRegisterEvents() {
+  if (fcEvReg) return;
+  fcEvReg = true;
+  var card = document.getElementById('fccard');
+  card.addEventListener('click', function(e) {
+    if (e.target.id === 'fcfavbtn') return;
+    fcFlip();
+  });
+  card.addEventListener('touchstart', function(e) {
+    fcTX = e.touches[0].clientX;
+  }, {passive:true});
+  card.addEventListener('touchend', function(e) {
+    var dx = e.changedTouches[0].clientX - fcTX;
+    if (Math.abs(dx) > 50) { if (dx < 0) fcNext(); else fcPrev(); }
+  }, {passive:true});
+}
+
+function fcInit() {
+  renderRangeBar('fcrbar', fri, 'setFCR');
+  fcPool = wordsForRange(fri);
+  if (fcIdx >= fcPool.length) fcIdx = 0;
+  fcRegisterEvents();
+  fcShow();
+}
+
+function fcShow() {
+  if (!fcPool.length) return;
+  fcFlipped = false;
+  var w = fcPool[fcIdx];
+  document.getElementById('fcword').textContent = w.word;
+  document.getElementById('fckanji').textContent = w.kanji ? '[' + w.kanji + ']' : '';
+  document.getElementById('fcpron').textContent = w.pron;
+  document.getElementById('fcmean').innerHTML = '<span class="fcpos">' + esc(w.pos) + '</span>' + esc(w.meaning);
+  document.getElementById('fcmean').style.display = 'none';
+  document.getElementById('fctap').style.display = 'block';
+  document.getElementById('fcctr').textContent = (fcIdx+1) + '/' + fcPool.length;
+  var s = getS(w);
+  var fb = document.getElementById('fcfavbtn');
+  fb.textContent = s.fav ? '★' : '☆';
+  fb.className = s.fav ? 'on' : '';
+}
+
+function fcFlip() {
+  if (fcFlipped) return;
+  if (!fcPool.length) return;
+  fcFlipped = true;
+  document.getElementById('fcmean').style.display = 'block';
+  document.getElementById('fctap').style.display = 'none';
+  speak(fcPool[fcIdx].word);
+}
+
+function fcNext() {
+  if (!fcPool.length) return;
+  fcIdx = (fcIdx + 1) % fcPool.length;
+  fcShow();
+}
+
+function fcPrev() {
+  if (!fcPool.length) return;
+  fcIdx = (fcIdx - 1 + fcPool.length) % fcPool.length;
+  fcShow();
+}
+
+function fcToggleFav() {
+  if (!fcPool.length) return;
+  var w = fcPool[fcIdx];
+  var s = getS(w);
+  s.fav = !s.fav;
+  save();
+  var fb = document.getElementById('fcfavbtn');
+  fb.textContent = s.fav ? '★' : '☆';
+  fb.className = s.fav ? 'on' : '';
+}
+
+// ===== Utils =====
+function shuffle(arr) {
+  var a = arr.slice();
+  for (var i = a.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i+1));
+    var t = a[i]; a[i] = a[j]; a[j] = t;
+  }
+  return a;
+}
+
+// ===== Tab 4 =====
+var tri = 0;
+var tPool = [];
+var tIdx = 0;
+var tCorCount = 0;
+var tResults = [];
+var tName = '';
+var tTotal = 0;
+var tLocked = false;
+
+function setTR(btn) { tri = parseInt(btn.dataset.i); renderRangeBar('trbar', tri, 'setTR'); }
+
+function tSetup() {
+  renderRangeBar('trbar', tri, 'setTR');
+  document.getElementById('tsetup').className = 'on';
+  document.getElementById('trun').className = '';
+  document.getElementById('tres').className = '';
+}
+
+function tStart() {
+  var name = document.getElementById('tname').value.trim();
+  if (!name) { alert('이름을 입력해 주세요.'); return; }
+  var cnt = parseInt(document.getElementById('tcount').value) || 20;
+  if (cnt < 1) cnt = 1;
+  if (cnt > 50) cnt = 50;
+  if (rawWords.length < 4) { alert('4지선다 테스트는 최소 4단어가 필요합니다.'); return; }
+  tName = name;
+  var base = wordsForRange(tri);
+  tPool = shuffle(base).slice(0, cnt);
+  tTotal = tPool.length;
+  tIdx = 0;
+  tCorCount = 0;
+  tResults = [];
+  document.getElementById('tsetup').className = '';
+  document.getElementById('trun').className = 'on';
+  document.getElementById('tres').className = '';
+  tShowQ();
+}
+
+function tShowQ() {
+  if (tIdx >= tPool.length) { tShowResult(); return; }
+  var w = tPool[tIdx];
+  tLocked = false;
+  var pct = Math.round(tIdx / tTotal * 100);
+  document.getElementById('tpfill').style.width = pct + '%';
+  document.getElementById('tpnum').textContent = (tIdx+1) + ' / ' + tTotal;
+  document.getElementById('tpcor').textContent = '✅ ' + tCorCount;
+  document.getElementById('tworddisp').textContent = w.word;
+  document.getElementById('tsubdisp').innerHTML = (w.kanji ? '<span class="tkanji">[' + esc(w.kanji) + ']</span> ' : '') + '<span class="tpron">' + esc(w.pron) + '</span>';
+  var opts = [w.meaning];
+  var others = shuffle(rawWords.filter(function(x){ return x.meaning !== w.meaning; }));
+  for (var j = 0; j < others.length && opts.length < 4; j++) {
+    if (opts.indexOf(others[j].meaning) < 0) opts.push(others[j].meaning);
+  }
+  opts = shuffle(opts);
+  var h = [];
+  for (var k = 0; k < opts.length; k++) {
+    var isC = opts[k] === w.meaning ? '1' : '0';
+    h.push('<button class="qopt" data-cor="' + isC + '" onclick="tPick(this)">' + esc(opts[k]) + '</button>');
+  }
+  document.getElementById('topts').innerHTML = h.join('');
+  document.getElementById('tnext').style.display = 'none';
+  speak(w.word);
+}
+
+function tPick(btn) {
+  if (tLocked) return;
+  tLocked = true;
+  var w = tPool[tIdx];
+  var cor = btn.dataset.cor === '1';
+  var opts = document.getElementById('topts').querySelectorAll('.qopt');
+  for (var i = 0; i < opts.length; i++) {
+    opts[i].style.pointerEvents = 'none';
+    if (opts[i].dataset.cor === '1') opts[i].className = 'qopt correct';
+  }
+  if (!cor) btn.className = 'qopt wrong';
+  else tCorCount++;
+  document.getElementById('tpcor').textContent = '✅ ' + tCorCount;
+  tResults.push({word: w.word, kanji: w.kanji, pron: w.pron, meaning: w.meaning, ans: btn.textContent, ok: cor});
+  var nb = document.getElementById('tnext');
+  nb.textContent = (tIdx + 1 >= tTotal) ? '결과 보기 →' : '다음 →';
+  nb.style.display = 'block';
+}
+
+function tNext() {
+  if (!tLocked) return;
+  tIdx++;
+  if (tIdx >= tPool.length) { document.getElementById('tpfill').style.width = '100%'; }
+  tShowQ();
+}
+
+function tShowResult() {
+  document.getElementById('trun').className = '';
+  document.getElementById('tres').className = 'on';
+  var pct = Math.round(tCorCount / tTotal * 100);
+  var emoji = pct === 100 ? '🏆' : pct >= 80 ? '🎉' : pct >= 60 ? '👍' : '💪';
+  document.getElementById('testemoji').textContent = emoji;
+  document.getElementById('tresscore').textContent = tCorCount + ' / ' + tTotal;
+  document.getElementById('trespct').textContent = pct + '점';
+  var wrong = tResults.filter(function(r){ return !r.ok; });
+  var corr = tResults.filter(function(r){ return r.ok; });
+  var wcard = document.getElementById('twrongcard');
+  var ccard = document.getElementById('tcorcard');
+  if (wrong.length > 0) {
+    wcard.style.display = 'block';
+    var h = [];
+    for (var i = 0; i < wrong.length; i++) {
+      var r = wrong[i];
+      h.push('<div class="twrong-item">');
+      h.push('<span class="twrong-word">' + esc(r.word) + (r.kanji ? ' [' + esc(r.kanji) + ']' : '') + '</span> <span style="color:#6B7280">' + esc(r.pron) + '</span>');
+      h.push(' → 입력:<b>' + esc(r.ans || '(없음)') + '</b> / 정답:<b>' + esc(r.meaning) + '</b>');
+      h.push('</div>');
+    }
+    document.getElementById('twronglist').innerHTML = h.join('');
+  } else {
+    wcard.style.display = 'none';
+  }
+  if (corr.length > 0) {
+    ccard.style.display = 'block';
+    var cwords = corr.map(function(r){ return r.word; }).join(', ');
+    document.getElementById('tcorlist').textContent = cwords;
+  } else {
+    ccard.style.display = 'none';
+  }
+}
+
+function tCopy() {
+  var now = new Date();
+  var dateStr = now.getFullYear() + '. ' + (now.getMonth()+1) + '. ' + now.getDate() + '.';
+  var pct = Math.round(tCorCount / tTotal * 100);
+  var wrong = tResults.filter(function(r){ return !r.ok; });
+  var corr = tResults.filter(function(r){ return r.ok; });
+  var lines = [];
+  lines.push('[씨유에탑 일본어 기본어휘] 테스트 결과');
+  lines.push('날짜: ' + dateStr);
+  lines.push('이름: ' + tName);
+  lines.push('점수: ' + tCorCount + '/' + tTotal + ' (' + pct + '점)');
+  lines.push('─────────────────');
+  lines.push('❌ 틀린 단어 (' + wrong.length + '개)');
+  for (var i = 0; i < wrong.length; i++) {
+    var r = wrong[i];
+    lines.push('  ' + r.word + (r.kanji ? '[' + r.kanji + ']' : '') + '(' + r.pron + ') → 입력:' + (r.ans || '(없음)') + ' / 정답:' + r.meaning);
+  }
+  lines.push('─────────────────');
+  lines.push('✅ 맞은 단어: ' + corr.map(function(r){ return r.word; }).join(', '));
+  var text = lines.join('\n');
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(text).then(function(){
+      alert('클립보드에 복사되었습니다!');
+    });
+  } else {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    alert('클립보드에 복사되었습니다!');
+  }
+}
+
+function tRetry() {
+  document.getElementById('tres').className = '';
+  document.getElementById('tsetup').className = 'on';
+}
+
+// ===== Tab switching =====
+var TABS = ['w','fc','t'];
+function showTab(id) {
+  for (var i = 0; i < TABS.length; i++) {
+    var t = TABS[i];
+    document.getElementById('pane-' + t).classList.toggle('on', t === id);
+    document.getElementById('tb-' + t).classList.toggle('on', t === id);
+  }
+  if (id === 'w')  { renderRangeBar('wrbar', wri, 'setWR'); renderList(); }
+  if (id === 'fc') { fcInit(); }
+  if (id === 't')  { tSetup(); }
+}
+
+// Init
+if ('speechSynthesis' in window) { window.speechSynthesis.getVoices(); }
+renderList();
+</script>
+</body>
+</html>
