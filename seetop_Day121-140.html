@@ -1,0 +1,2547 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>씨유에탑 영어단어장 · Day121-140</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary: #2563EB;
+  --primary-dark: #1D4ED8;
+  --primary-light: #EFF6FF;
+  --success: #10B981;
+  --danger: #EF4444;
+  --warn: #F59E0B;
+  --gray: #6B7280;
+  --border: #E5E7EB;
+  --bg: #F9FAFB;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+html, body { background: var(--bg); }
+body { font-family: 'Noto Sans KR', sans-serif; color: #111827; }
+.app { max-width: 420px; margin: 0 auto; min-height: 100vh; display: flex; flex-direction: column; background: var(--bg); }
+.hdr { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: #fff; padding: 18px 18px 14px; }
+.hdr h1 { font-size: 19px; font-weight: 900; letter-spacing: -0.3px; }
+.hdr h1 span { color: #FDE68A; margin: 0 4px; }
+.hdr p { font-size: 12px; opacity: .85; margin-top: 4px; font-family: 'Nunito', 'Noto Sans KR', sans-serif; font-weight: 700; }
+.tabs { display: flex; background: #fff; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 10; }
+.tab { flex: 1; padding: 12px 0; border: none; background: none; font-family: 'Noto Sans KR', sans-serif; font-size: 14px; font-weight: 700; color: var(--gray); cursor: pointer; border-bottom: 3px solid transparent; }
+.tab.on { color: var(--primary); border-bottom-color: var(--primary); }
+.pane { display: none; padding: 14px; flex: 1; }
+.pane.on { display: block; }
+
+.rbar { display: flex; gap: 6px; overflow-x: auto; padding: 0 0 8px 0; margin-bottom: 8px; -webkit-overflow-scrolling: touch; scrollbar-width: none; flex-shrink: 0; }
+.rbar::-webkit-scrollbar { display: none; }
+.rbtn { flex-shrink: 0; padding: 6px 12px; border-radius: 20px; border: 1.5px solid var(--border); background: #fff; font-size: 12px; font-weight: 600; color: var(--gray); cursor: pointer; white-space: nowrap; font-family: 'Nunito', sans-serif; }
+.rbtn.on { background: var(--primary); border-color: var(--primary); color: #fff; }
+
+.search { width: 100%; padding: 10px 14px; border: 1.5px solid var(--border); border-radius: 12px; font-size: 14px; font-family: 'Noto Sans KR', sans-serif; outline: none; background: #fff; margin-bottom: 8px; }
+.search:focus { border-color: var(--primary); }
+.filters { display: flex; gap: 6px; margin-bottom: 8px; }
+.fbtn { flex: 1; padding: 8px 0; border-radius: 10px; border: 1.5px solid var(--border); background: #fff; font-size: 13px; font-weight: 700; color: var(--gray); cursor: pointer; font-family: 'Noto Sans KR', sans-serif; }
+.fbtn.on { background: var(--primary-light); border-color: var(--primary); color: var(--primary); }
+.stat { font-size: 12px; color: var(--gray); margin-bottom: 8px; font-family: 'Nunito', 'Noto Sans KR', sans-serif; font-weight: 700; }
+.wcard { display: flex; align-items: center; gap: 10px; background: #fff; border: 1px solid var(--border); border-radius: 14px; padding: 12px; margin-bottom: 8px; transition: opacity .2s; }
+.wcard.known { opacity: 0.35; }
+.chk { width: 28px; height: 28px; flex-shrink: 0; border-radius: 8px; border: 2px solid var(--border); background: #fff; color: #fff; font-size: 15px; font-weight: 900; cursor: pointer; }
+.chk.on { background: var(--success); border-color: var(--success); }
+.wbody { flex: 1; min-width: 0; }
+.wword { font-family: 'Nunito', sans-serif; font-size: 17px; font-weight: 800; color: #111827; word-break: break-word; }
+.wmean { font-size: 14px; color: #374151; margin-top: 2px; word-break: keep-all; }
+.wacts { display: flex; gap: 4px; flex-shrink: 0; }
+.ibtn { width: 34px; height: 34px; border-radius: 10px; border: none; background: var(--primary-light); font-size: 16px; cursor: pointer; color: var(--warn); }
+.favbtn.on { background: #FEF3C7; }
+.empty { text-align: center; color: var(--gray); padding: 40px 0; font-size: 14px; }
+
+#fccard { position: relative; background: #fff; border-radius: 22px; border: 1px solid var(--border); box-shadow: 0 8px 24px rgba(37,99,235,.10); min-height: 300px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 30px 22px; text-align: center; cursor: pointer; user-select: none; margin-top: 4px; }
+#fcctr { position: absolute; top: 14px; left: 16px; font-family: 'Nunito', sans-serif; font-size: 13px; font-weight: 800; color: var(--gray); }
+#fcfavbtn { position: absolute; top: 10px; right: 12px; border: none; background: none; font-size: 26px; color: var(--warn); cursor: pointer; }
+#fcword { font-family: 'Nunito', sans-serif; font-size: 32px; font-weight: 900; color: #111827; word-break: break-word; }
+#fcmean { display: none; margin-top: 18px; font-size: 21px; font-weight: 700; color: var(--primary); word-break: keep-all; }
+#fctap { margin-top: 22px; font-size: 13px; color: var(--gray); }
+.fcnav { display: flex; gap: 8px; margin-top: 14px; }
+.fcbtn { flex: 1; padding: 14px 0; border-radius: 14px; border: none; background: var(--primary); color: #fff; font-size: 15px; font-weight: 800; cursor: pointer; font-family: 'Noto Sans KR', sans-serif; }
+.fcbtn.sec { background: #fff; color: var(--primary); border: 1.5px solid var(--primary); }
+.fchint { text-align: center; font-size: 12px; color: var(--gray); margin-top: 10px; }
+
+.tbox { background: #fff; border: 1px solid var(--border); border-radius: 18px; padding: 18px; }
+.tlabel { font-size: 13px; font-weight: 700; color: #374151; margin: 4px 0 8px; }
+.tinput { width: 100%; padding: 12px 14px; border: 1.5px solid var(--border); border-radius: 12px; font-size: 15px; font-family: 'Noto Sans KR', sans-serif; outline: none; margin-bottom: 14px; }
+.tinput:focus { border-color: var(--primary); }
+.qcnt { display: flex; gap: 6px; margin-bottom: 14px; }
+.qbtn { padding: 8px 16px; border-radius: 10px; border: 1.5px solid var(--primary); background: var(--primary-light); color: var(--primary); font-weight: 800; font-family: 'Nunito', 'Noto Sans KR', sans-serif; font-size: 13px; }
+.pbtn { width: 100%; padding: 14px 0; border-radius: 14px; border: none; background: var(--primary); color: #fff; font-size: 16px; font-weight: 800; cursor: pointer; font-family: 'Noto Sans KR', sans-serif; margin-top: 8px; }
+.pbtn:active { background: var(--primary-dark); }
+.ptrack { height: 8px; background: var(--border); border-radius: 4px; overflow: hidden; }
+.pfill { height: 100%; background: var(--primary); width: 0; transition: width .25s; }
+.tmeta { display: flex; justify-content: space-between; font-family: 'Nunito', 'Noto Sans KR', sans-serif; font-weight: 800; font-size: 13px; color: var(--gray); margin: 8px 0 14px; }
+.tmeta .ok { color: var(--success); }
+.tq { background: #fff; border: 1px solid var(--border); border-radius: 18px; padding: 26px 16px; text-align: center; margin-bottom: 14px; }
+.tqword { font-family: 'Nunito', sans-serif; font-size: 30px; font-weight: 900; word-break: break-word; }
+.tqpron { font-size: 14px; color: var(--gray); margin-top: 6px; min-height: 4px; }
+.tqspk { margin-top: 10px; border: none; background: var(--primary-light); color: var(--warn); border-radius: 10px; padding: 6px 14px; font-size: 16px; cursor: pointer; }
+.topt { display: block; width: 100%; text-align: left; padding: 14px 16px; margin-bottom: 8px; border-radius: 14px; border: 1.5px solid var(--border); background: #fff; font-size: 15px; font-weight: 600; font-family: 'Noto Sans KR', sans-serif; color: #111827; cursor: pointer; word-break: keep-all; }
+.topt.correct { background: #D1FAE5; border-color: var(--success); color: #065F46; }
+.topt.wrong { background: #FEE2E2; border-color: var(--danger); color: #991B1B; }
+#t-next-btn { display: none; }
+.rscore { text-align: center; padding: 10px 0 16px; }
+.remoji { font-size: 52px; }
+.rnum { font-family: 'Nunito', sans-serif; font-size: 34px; font-weight: 900; color: var(--primary); margin-top: 6px; }
+.rpct { font-size: 15px; color: var(--gray); font-weight: 700; margin-top: 2px; }
+.rname { font-size: 14px; color: #374151; margin-top: 6px; }
+.rsec { font-size: 14px; font-weight: 800; margin: 14px 0 8px; }
+.ritem { background: #FEF2F2; border: 1px solid #FECACA; border-radius: 12px; padding: 10px 12px; margin-bottom: 6px; }
+.ritem .rw { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 15px; }
+.ritem .ra { font-size: 13px; color: var(--danger); margin-top: 2px; }
+.ritem .rc { font-size: 13px; color: var(--success); margin-top: 1px; font-weight: 700; }
+.kbtn { background: #25D366; }
+.kbtn:active { background: #1EBE5A; }
+.sbtn { background: #fff; color: var(--primary); border: 1.5px solid var(--primary); }
+.sbtn:active { background: var(--primary-light); }
+.toast { position: fixed; left: 50%; bottom: 40px; transform: translateX(-50%); background: rgba(17,24,39,.9); color: #fff; padding: 10px 18px; border-radius: 20px; font-size: 13px; display: none; z-index: 99; }
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="hdr">
+    <h1>씨유에탑<span>✦</span>영어단어장</h1>
+    <p id="hsub"></p>
+  </div>
+  <div class="tabs">
+    <button class="tab on" id="tb-w" onclick="showTab('w')">📖 단어목록</button>
+    <button class="tab" id="tb-fc" onclick="showTab('fc')">🃏 플래시카드</button>
+    <button class="tab" id="tb-t" onclick="showTab('t')">📝 테스트</button>
+  </div>
+
+  <div class="pane on" id="pane-w">
+    <div class="rbar" id="wrbar"></div>
+    <input class="search" id="wsearch" type="text" placeholder="🔍 영어 또는 한글로 검색" oninput="renderList()">
+    <div class="filters">
+      <button class="fbtn on" id="flt-all" onclick="setFilter('all')">전체</button>
+      <button class="fbtn" id="flt-unk" onclick="setFilter('unk')">모름</button>
+      <button class="fbtn" id="flt-fav" onclick="setFilter('fav')">⭐즐겨찾기</button>
+    </div>
+    <div class="stat" id="wstat"></div>
+    <div id="wlist"></div>
+  </div>
+
+  <div class="pane" id="pane-fc">
+    <div class="rbar" id="fcrbar"></div>
+    <div id="fccard">
+      <div id="fcctr"></div>
+      <button id="fcfavbtn" onclick="fcToggleFav()">☆</button>
+      <div id="fcword"></div>
+      <div id="fcmean"></div>
+      <div id="fctap">👆 탭해서 뜻 보기</div>
+    </div>
+    <div class="fcnav">
+      <button class="fcbtn sec" onclick="fcPrev()">◀ 이전</button>
+      <button class="fcbtn" style="background:var(--warn);" onclick="speakFc()">🔊</button>
+      <button class="fcbtn" onclick="fcNext()">다음 ▶</button>
+    </div>
+    <div class="fchint">좌우로 스와이프해서 넘길 수 있어요</div>
+  </div>
+
+  <div class="pane" id="pane-t">
+    <div id="tarea"></div>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+var SERIES = 'Day121-140';
+var STORE_KEY = 'cutop_day121_140';
+var rawWords = [
+  {word:'achieve', meaning:'성취하다'},
+  {word:'attain', meaning:'성취하다'},
+  {word:'accomplish', meaning:'성취하다'},
+  {word:'tread', meaning:'밟다'},
+  {word:'returns', meaning:'보상'},
+  {word:'reward', meaning:'보상'},
+  {word:'payoff', meaning:'보상'},
+  {word:'derive', meaning:'끌어내다'},
+  {word:'elicit', meaning:'끌어내다'},
+  {word:'courageous', meaning:'용기있는'},
+  {word:'brave', meaning:'용기있는'},
+  {word:'lionhearted', meaning:'용기있는'},
+  {word:'daring', meaning:'용기있는'},
+  {word:'coward', meaning:'소심한, 겁많은'},
+  {word:'potential', meaning:'잠재력'},
+  {word:'promise', meaning:'잠재력'},
+  {word:'latent ability', meaning:'잠재력'},
+  {word:'bold', meaning:'용기있는'},
+  {word:'bald', meaning:'머리가 벗겨진'},
+  {word:'specialise', meaning:'전문으로 하다'},
+  {word:'rejection', meaning:'거절'},
+  {word:'refusal', meaning:'거절'},
+  {word:'denial', meaning:'거절'},
+  {word:'shrink', meaning:'줄어들다'},
+  {word:'contract', meaning:'줄어들다, 수축하다'},
+  {word:'expand', meaning:'팽창하다'},
+  {word:'mass', meaning:'부피'},
+  {word:'volume', meaning:'부피'},
+  {word:'domesticate', meaning:'길들이다'},
+  {word:'habituate', meaning:'길들이다'},
+  {word:'tame', meaning:'길들이다'},
+  {word:'outsource', meaning:'위탁하다'},
+  {word:'entrust', meaning:'위탁하다'},
+  {word:'ancestor', meaning:'조상'},
+  {word:'forebears', meaning:'조상'},
+  {word:'forefather', meaning:'조상'},
+  {word:'characteristic', meaning:'특징'},
+  {word:'feature', meaning:'특징'},
+  {word:'trait', meaning:'특징'},
+  {word:'attribute', meaning:'특징'},
+  {word:'property', meaning:'특징'},
+  {word:'dumber', meaning:'어리석은 사람'},
+  {word:'dumb', meaning:'어리석은'},
+  {word:'stupid', meaning:'어리석은'},
+  {word:'unintelligent', meaning:'어리석은'},
+  {word:'not necessarily', meaning:'꼭 ~것은 아니다'},
+  {word:'wired up', meaning:'타고난'},
+  {word:'inborn', meaning:'타고난'},
+  {word:'inherent', meaning:'타고난'},
+  {word:'hardwired', meaning:'타고난'},
+  {word:'somehow', meaning:'어떻게든'},
+  {word:'somewhat', meaning:'다소, 약간'},
+  {word:'improve', meaning:'향상시키다'},
+  {word:'enhance', meaning:'향상시키다'},
+  {word:'worsen', meaning:'악화시키다'},
+  {word:'groundless', meaning:'근거없는'},
+  {word:'unfounded', meaning:'근거없는'},
+  {word:'circulation', meaning:'순환'},
+  {word:'aggressive', meaning:'적극적인, 공격적인'},
+  {word:'assertive', meaning:'적극적인, 단호한'},
+  {word:'active', meaning:'적극적인'},
+  {word:'eliminate', meaning:'제거하다'},
+  {word:'get rid of', meaning:'제거하다'},
+  {word:'eradicate', meaning:'제거하다'},
+  {word:'temporary', meaning:'일시적인'},
+  {word:'short-term', meaning:'일시적인'},
+  {word:'permanent', meaning:'영구적인'},
+  {word:'regain', meaning:'회복하다, 되찾다'},
+  {word:'recover', meaning:'회복하다'},
+  {word:'otherwise', meaning:'그렇지 않으면'},
+  {word:'if not', meaning:'그렇지 않으면'},
+  {word:'likewise', meaning:'마찬가지로'},
+  {word:'pack', meaning:'포장하다'},
+  {word:'wrap', meaning:'포장하다'},
+  {word:'dispatch', meaning:'발송하다'},
+  {word:'tiny', meaning:'아주 작은'},
+  {word:'minimise', meaning:'최소화하다, 줄이다'},
+  {word:'lessen', meaning:'줄이다'},
+  {word:'maximise', meaning:'최대화하다'},
+  {word:'magnify', meaning:'최대화하다'},
+  {word:'flesh', meaning:'살'},
+  {word:'adapt', meaning:'적응하다'},
+  {word:'adjust', meaning:'적응하다'},
+  {word:'take over', meaning:'가져가다'},
+  {word:'opposable', meaning:'마주 볼 수 있는'},
+  {word:'prevailing', meaning:'지배적인'},
+  {word:'prevalent', meaning:'지배적인'},
+  {word:'widespread', meaning:'지배적인'},
+  {word:'contributor', meaning:'기여자'},
+  {word:'context', meaning:'환경'},
+  {word:'circumstances', meaning:'환경'},
+  {word:'play a role in', meaning:'역할을 하다'},
+  {word:'play a part in', meaning:'역할을 하다'},
+  {word:'interact', meaning:'상호작용하다'},
+  {word:'interaction', meaning:'상호작용'},
+  {word:'interplay', meaning:'상호작용'},
+  {word:'infant', meaning:'유아'},
+  {word:'one-on-one', meaning:'일대일'},
+  {word:'engage', meaning:'(관심을)끌다'},
+  {word:'attract', meaning:'(관심을)끌다'},
+  {word:'hidden', meaning:'숨겨진'},
+  {word:'concealed', meaning:'숨겨진'},
+  {word:'term', meaning:'용어'},
+  {word:'exotic', meaning:'외국의, 이국적인'},
+  {word:'foreign', meaning:'외국의'},
+  {word:'reliance', meaning:'의존'},
+  {word:'dependence', meaning:'의존'},
+  {word:'pesticide', meaning:'살충제'},
+  {word:'wastage', meaning:'낭비'},
+  {word:'legally', meaning:'법적으로'},
+  {word:'illegally', meaning:'불법적으로'},
+  {word:'institutional', meaning:'제도적인'},
+  {word:'systematic', meaning:'제도적인'},
+  {word:'expose', meaning:'폭로하다'},
+  {word:'uncover', meaning:'폭로하다'},
+  {word:'reveal', meaning:'폭로하다'},
+  {word:'disclose', meaning:'폭로하다'},
+  {word:'retail', meaning:'소매의'},
+  {word:'wholesale', meaning:'도매의'},
+  {word:'exceed', meaning:'초과하다'},
+  {word:'surpass', meaning:'초과하다'},
+  {word:'outdo', meaning:'초과하다'},
+  {word:'participant', meaning:'(실험)참가자'},
+  {word:'subject', meaning:'(실험)참가자'},
+  {word:'trick', meaning:'속임수'},
+  {word:'deception', meaning:'속임수'},
+  {word:'be comprised of', meaning:'~로 구성되다'},
+  {word:'consist of', meaning:'~로 구성되다'},
+  {word:'be made up of', meaning:'~로 구성되다'},
+  {word:'in other words', meaning:'즉, 다시 말해'},
+  {word:'that is (to say)', meaning:'즉, 다시 말해'},
+  {word:'namely', meaning:'즉, 다시 말해'},
+  {word:'i.e.', meaning:'즉, 다시 말해'},
+  {word:'fast-paced', meaning:'빠른 속도의'},
+  {word:'radically', meaning:'급격하게'},
+  {word:'drastically', meaning:'급격하게'},
+  {word:'dramatically', meaning:'급격하게'},
+  {word:'tourism', meaning:'관광산업'},
+  {word:'tourist industry', meaning:'관광산업'},
+  {word:'hospitality industry', meaning:'서비스업'},
+  {word:'hospitality', meaning:'환대'},
+  {word:'competitiveness', meaning:'경쟁'},
+  {word:'competition', meaning:'경쟁'},
+  {word:'competence', meaning:'능력'},
+  {word:'eventually', meaning:'결국에는'},
+  {word:'in the end', meaning:'결국에는'},
+  {word:'ultimately', meaning:'결국에는'},
+  {word:'at last', meaning:'결국에는'},
+  {word:'loyalty', meaning:'충성'},
+  {word:'royalty', meaning:'왕족, 저작권사용료'},
+  {word:'boost', meaning:'상승'},
+  {word:'rise', meaning:'상승'},
+  {word:'escalation', meaning:'상승'},
+  {word:'represent', meaning:'대표하다'},
+  {word:'stand for', meaning:'대표하다'},
+  {word:'empower', meaning:'권한을 주다'},
+  {word:'authorize', meaning:'권한을 주다'},
+  {word:'entitle', meaning:'권한을 주다'},
+  {word:'considerable', meaning:'상당한, 수많은'},
+  {word:'innumerable', meaning:'상당한, 수많은'},
+  {word:'numerous', meaning:'상당한, 수많은'},
+  {word:'considerate', meaning:'사려깊은'},
+  {word:'profit', meaning:'수익'},
+  {word:'bottom line', meaning:'수익'},
+  {word:'return', meaning:'수익'},
+  {word:'yield', meaning:'수익'},
+  {word:'gain', meaning:'수익'},
+  {word:'obviously', meaning:'분명, 확실히'},
+  {word:'reliably', meaning:'분명, 확실히'},
+  {word:'definitely', meaning:'분명, 확실히'},
+  {word:'poverty', meaning:'빈곤'},
+  {word:'net', meaning:'순~'},
+  {word:'net sale', meaning:'(세금뺀) 순 판매액'},
+  {word:'afford to~', meaning:'~할 여유가 되다'},
+  {word:'starve', meaning:'굶주리다'},
+  {word:'grand', meaning:'거대한'},
+  {word:'magnificent', meaning:'거대한'},
+  {word:'scheme', meaning:'체계'},
+  {word:'order', meaning:'체계'},
+  {word:'novel', meaning:'새로운, 소설'},
+  {word:'noble', meaning:'고귀한, 귀족'},
+  {word:'tackle', meaning:'(문제) 다루다'},
+  {word:'address', meaning:'(문제) 다루다'},
+  {word:'deal with', meaning:'다루다'},
+  {word:'treat', meaning:'다루다'},
+  {word:'handle', meaning:'다루다'},
+  {word:'attack', meaning:'착수하다, 공격하다'},
+  {word:'undertake', meaning:'착수하다'},
+  {word:'vice versa', meaning:'그 반대도 마찬가지다'},
+  {word:'alert', meaning:'각성된, 주의력있는'},
+  {word:'awakened', meaning:'각성된, 주의력있는'},
+  {word:'muse', meaning:'영감'},
+  {word:'inspiration', meaning:'영감'},
+  {word:'roam', meaning:'거닐다'},
+  {word:'stroll', meaning:'거닐다'},
+  {word:'mental', meaning:'정신적인'},
+  {word:'physical', meaning:'신체의, 물리적인'},
+  {word:'machinery', meaning:'기제(기계적 조직)'},
+  {word:'mechanism', meaning:'기제'},
+  {word:'loose', meaning:'느슨한'},
+  {word:'tune out', meaning:'관심을 끄다'},
+  {word:'tune in', meaning:'관심을 가지다'},
+  {word:'for a bit', meaning:'잠시동안'},
+  {word:'for a little', meaning:'잠시동안'},
+  {word:'motivate', meaning:'동기부여하다'},
+  {word:'encourage', meaning:'동기부여하다'},
+  {word:'in the short run', meaning:'단기적으로'},
+  {word:'in the long term', meaning:'장기적으로'},
+  {word:'in the long run', meaning:'결국에는'},
+  {word:'crowd out', meaning:'몰아내다'},
+  {word:'drive out', meaning:'몰아내다'},
+  {word:'sustainable', meaning:'지속적인'},
+  {word:'lasting', meaning:'지속적인'},
+  {word:'enduring', meaning:'지속적인'},
+  {word:'contribution', meaning:'기여'},
+  {word:'attribution', meaning:'속성'},
+  {word:'distribution', meaning:'분배'},
+  {word:'associate A with B', meaning:'A와 B를 연관짓다'},
+  {word:'link A with B', meaning:'A와 B를 연관짓다'},
+  {word:'qualitative', meaning:'본질과 관련된, 질적인'},
+  {word:'quantitative', meaning:'양적인'},
+  {word:'unreliable', meaning:'신뢰할 수 없는'},
+  {word:'questionable', meaning:'신뢰할 수 없는'},
+  {word:'doubtful', meaning:'신뢰할 수 없는'},
+  {word:'mislead', meaning:'오도하다, 속이다'},
+  {word:'delude', meaning:'속이다'},
+  {word:'deceive', meaning:'속이다'},
+  {word:'bare', meaning:'아무것도 거치지 않은'},
+  {word:'transfer', meaning:'전달하다'},
+  {word:'convey', meaning:'전달하다'},
+  {word:'reproducible', meaning:'재현가능한'},
+  {word:'relative', meaning:'상대적인'},
+  {word:'comparative', meaning:'상대적인'},
+  {word:'absolute', meaning:'절대적인'},
+  {word:'a variety of', meaning:'다양한'},
+  {word:'a range of', meaning:'다양한'},
+  {word:'diverse', meaning:'다양한'},
+  {word:'different', meaning:'다양한'},
+  {word:'colleague', meaning:'동료'},
+  {word:'peer', meaning:'동료'},
+  {word:'co-worker', meaning:'동료'},
+  {word:'companion', meaning:'동료'},
+  {word:'run an experiment', meaning:'실험하다'},
+  {word:'convince', meaning:'납득시키다'},
+  {word:'persuade', meaning:'납득시키다'},
+  {word:'faculty', meaning:'교직원'},
+  {word:'emphasize', meaning:'강조하다'},
+  {word:'highlight', meaning:'강조하다'},
+  {word:'underline', meaning:'강조하다'},
+  {word:'stress', meaning:'강조하다'},
+  {word:'donor', meaning:'기부자'},
+  {word:'donate', meaning:'기부하다'},
+  {word:'glow', meaning:'온기, 빛'},
+  {word:'effective', meaning:'효과적인'},
+  {word:'efficient', meaning:'효과적인'},
+  {word:'affective', meaning:'감정적인'},
+  {word:'end up~ing', meaning:'결국~하게 되다'},
+  {word:'wind up', meaning:'결국~하게 되다'},
+  {word:'skeptical', meaning:'회의적인'},
+  {word:'trigger', meaning:'유발하다'},
+  {word:'prompt', meaning:'유발하다'},
+  {word:'cause', meaning:'유발하다'},
+  {word:'spark', meaning:'유발하다'},
+  {word:'arouse', meaning:'유발하다'},
+  {word:'shield', meaning:'보호하다'},
+  {word:'protect', meaning:'보호하다'},
+  {word:'reject', meaning:'거부하다'},
+  {word:'turn down', meaning:'거부하다'},
+  {word:'overcome', meaning:'극복하다'},
+  {word:'defeat', meaning:'극복하다'},
+  {word:'get over', meaning:'극복하다'},
+  {word:'attitude', meaning:'태도'},
+  {word:'aptitude', meaning:'적성'},
+  {word:'altitude', meaning:'고도(높이)'},
+  {word:'gratitude', meaning:'감사'},
+  {word:'rural', meaning:'시골의'},
+  {word:'urban', meaning:'도시의'},
+  {word:'abandon', meaning:'버리다, 포기하다'},
+  {word:'desert', meaning:'버리다'},
+  {word:'dump', meaning:'버리다'},
+  {word:'categorize', meaning:'분류하다'},
+  {word:'classify', meaning:'분류하다'},
+  {word:'uncivilized', meaning:'미개한'},
+  {word:'uncultured', meaning:'미개한'},
+  {word:'present', meaning:'나타내다, 보여주다'},
+  {word:'exhibit', meaning:'나타내다, 보여주다'},
+  {word:'revalue', meaning:'재평가하다'},
+  {word:'reappraise', meaning:'재평가하다'},
+  {word:'reassess', meaning:'재평가하다'},
+  {word:'re-evaluate', meaning:'재평가하다'},
+  {word:'run off', meaning:'급히 뛰어가다'},
+  {word:'exclaim', meaning:'외치다'},
+  {word:'go off', meaning:'~하러 나서다'},
+  {word:'spot', meaning:'발견하다'},
+  {word:'ignore', meaning:'무시하다'},
+  {word:'disregard', meaning:'무시하다'},
+  {word:'discount', meaning:'무시하다'},
+  {word:'lean', meaning:'기대다'},
+  {word:'mistaken', meaning:'틀린, 오해한'},
+  {word:'misguided', meaning:'틀린, 오해한'},
+  {word:'loyal', meaning:'충성스러운'},
+  {word:'faithful', meaning:'충성스러운'},
+  {word:'royal', meaning:'왕의, 왕족의'},
+  {word:'innovative', meaning:'획기적인'},
+  {word:'bring in', meaning:'유치하다'},
+  {word:'consideration', meaning:'고려, 숙고'},
+  {word:'raise salary', meaning:'월급을 인상하다'},
+  {word:'reflect', meaning:'반영하다'},
+  {word:'mirror', meaning:'반영하다'},
+  {word:'look forward to~ing', meaning:'학수고대하다'},
+  {word:'mute', meaning:'소리를 줄이다'},
+  {word:'fall over', meaning:'~에 걸려 넘어지다'},
+  {word:'be injured', meaning:'부상을 입다'},
+  {word:'surgery', meaning:'수술'},
+  {word:'launch', meaning:'시작하다'},
+  {word:'initiate', meaning:'시작하다'},
+  {word:'promote', meaning:'홍보하다'},
+  {word:'strictly', meaning:'엄격하게'},
+  {word:'shamelessly', meaning:'뻔뻔스럽게'},
+  {word:'latest', meaning:'최신의'},
+  {word:'newest', meaning:'최신의'},
+  {word:'up-to-date', meaning:'최신의'},
+  {word:'state of the art', meaning:'최신식의, 최첨단의'},
+  {word:'entertaining', meaning:'재미있는'},
+  {word:'reveal', meaning:'드러내다'},
+  {word:'expose', meaning:'드러내다'},
+  {word:'conceal', meaning:'감추다'},
+  {word:'assumption', meaning:'전제, 추정'},
+  {word:'premise', meaning:'전제'},
+  {word:'prerequisite', meaning:'전제'},
+  {word:'phrase', meaning:'문구'},
+  {word:'achievement', meaning:'성취'},
+  {word:'attainment', meaning:'성취'},
+  {word:'accomplishment', meaning:'성취'},
+  {word:'imply', meaning:'의미하다, 암시하다'},
+  {word:'illegal', meaning:'불법적인'},
+  {word:'legal', meaning:'합법적인'},
+  {word:'questionable', meaning:'의심스러운'},
+  {word:'doubtful', meaning:'의심스러운'},
+  {word:'uncertain', meaning:'의심스러운, 불확실한'},
+  {word:'criticism', meaning:'비판'},
+  {word:'invalidate', meaning:'틀렸음을 입증하다'},
+  {word:'disprove', meaning:'틀렸음을 입증하다'},
+  {word:'inevitably', meaning:'불가피하게'},
+  {word:'hardly', meaning:'거의~않다'},
+  {word:'sacred', meaning:'신성한'},
+  {word:'holy', meaning:'신성한'},
+  {word:'scared', meaning:'겁먹은'},
+  {word:'keep A from-ing', meaning:'A가 -ing못하게 하다'},
+  {word:'prevent A from-ing', meaning:'A가 -ing못하게 하다'},
+  {word:'scary', meaning:'무서운'},
+  {word:'frightening', meaning:'무서운'},
+  {word:'threaten', meaning:'위협하다'},
+  {word:'rob A of B', meaning:'A에게서 B를 빼앗다'},
+  {word:'deprive A of B', meaning:'A에게서 B를 빼앗다'},
+  {word:'likely to', meaning:'가능성이 있는'},
+  {word:'prone to', meaning:'가능성이 있는'},
+  {word:'liable to', meaning:'가능성이 있는'},
+  {word:'present', meaning:'제시하다'},
+  {word:'set forth', meaning:'제시하다'},
+  {word:'suggest', meaning:'제시하다'},
+  {word:'pessimistic', meaning:'비관적인'},
+  {word:'optimistic', meaning:'낙관적인'},
+  {word:'be intended to', meaning:'의도가 있다'},
+  {word:'result in~', meaning:'~결과로 이어지다'},
+  {word:'get screened', meaning:'검사를 받다'},
+  {word:'terrified', meaning:'겁먹은'},
+  {word:'doom', meaning:'파멸'},
+  {word:'downfall', meaning:'파멸'},
+  {word:'gloom', meaning:'우울, 침울'},
+  {word:'gloomy', meaning:'우울'},
+  {word:'depress', meaning:'우울하게 만들다'},
+  {word:'ecological', meaning:'생태학적'},
+  {word:'collapse', meaning:'붕괴'},
+  {word:'remarkable', meaning:'놀랄 만한'},
+  {word:'sensational', meaning:'놀랄 만한'},
+  {word:'alter', meaning:'바꾸다'},
+  {word:'alternative', meaning:'대안'},
+  {word:'glacier', meaning:'빙하'},
+  {word:'gravity', meaning:'중력'},
+  {word:'equator', meaning:'적도'},
+  {word:'rotation', meaning:'자전'},
+  {word:'barely', meaning:'거의 ...아닌'},
+  {word:'scarcely', meaning:'거의 ...아닌'},
+  {word:'noticeable', meaning:'뚜렷한, 분명한'},
+  {word:'distinct', meaning:'뚜렷한, 분명한'},
+  {word:'last', meaning:'지속하다'},
+  {word:'endure', meaning:'지속하다'},
+  {word:'sustain', meaning:'지속하다'},
+  {word:'bring up an idea', meaning:'아이디어를 내놓다'},
+  {word:'close off', meaning:'폐쇄시키다'},
+  {word:'viewpoint', meaning:'관점'},
+  {word:'perspective', meaning:'관점'},
+  {word:'standpoint', meaning:'관점'},
+  {word:'the way it is', meaning:'원래 그런, 있는 그대로'},
+  {word:'beneficial', meaning:'유익한, 이로운'},
+  {word:'advantageous', meaning:'유익한, 이로운'},
+  {word:'besides', meaning:'~외에도'},
+  {word:'beside', meaning:'~의 옆에'},
+  {word:'eliminate', meaning:'없애다, 제거하다'},
+  {word:'exceptionally', meaning:'유난히, 특별히'},
+  {word:'nearby', meaning:'가까운'},
+  {word:'adjacent', meaning:'가까운'},
+  {word:'witness', meaning:'목격하다, 목격자'},
+  {word:'eyewitness', meaning:'목격자, 증인'},
+  {word:'faulty', meaning:'결함이 있는'},
+  {word:'defective', meaning:'결함이 있는'},
+  {word:'assemble', meaning:'조립하다'},
+  {word:'put together', meaning:'조립하다'},
+  {word:'wipe out', meaning:'지우다'},
+  {word:'resident', meaning:'거주자'},
+  {word:'fascinating', meaning:'매력적인'},
+  {word:'engaging', meaning:'매력적인'},
+  {word:'inviting', meaning:'매력적인'},
+  {word:'appealing', meaning:'매력적인'},
+  {word:'on foot', meaning:'걸어서'},
+  {word:'accompany', meaning:'동반하다'},
+  {word:'artificial', meaning:'인공의'},
+  {word:'man-made', meaning:'인공의'},
+  {word:'mind-blowing', meaning:'놀라운'},
+  {word:'feature', meaning:'특징'},
+  {word:'attribute', meaning:'특징'},
+  {word:'property', meaning:'특징'},
+  {word:'trait', meaning:'특징'},
+  {word:'characteristic', meaning:'특징'},
+  {word:'specific to', meaning:'~에 특화된'},
+  {word:'virtual', meaning:'가상의'},
+  {word:'implication', meaning:'영향'},
+  {word:'effect', meaning:'영향'},
+  {word:'tip', meaning:'끝'},
+  {word:'stem', meaning:'줄기'},
+  {word:'root', meaning:'뿌리'},
+  {word:'accumulate', meaning:'축적하다'},
+  {word:'amass', meaning:'축적하다'},
+  {word:'shade', meaning:'그늘'},
+  {word:'stimulate', meaning:'자극하다'},
+  {word:'trigger', meaning:'자극하다'},
+  {word:'spark', meaning:'자극하다'},
+  {word:'phenomenon', meaning:'현상'},
+  {word:'limit', meaning:'제한하다'},
+  {word:'restrict', meaning:'제한하다'},
+  {word:'restrain', meaning:'제한하다'},
+  {word:'horizontal', meaning:'수평의, 가로의'},
+  {word:'vertical', meaning:'수직의, 세로의'},
+  {word:'interfere with', meaning:'방해하다'},
+  {word:'interrupt', meaning:'방해하다'},
+  {word:'disturb', meaning:'방해하다'},
+  {word:'in turn', meaning:'결과적으로'},
+  {word:'as a result', meaning:'결과적으로'},
+  {word:'consequentially', meaning:'결과적으로'},
+  {word:'demonstrate', meaning:'보여주다, 입증하다'},
+  {word:'indicate', meaning:'보여주다'},
+  {word:'manifest', meaning:'보여주다'},
+  {word:'delay', meaning:'미루다'},
+  {word:'put off', meaning:'미루다'},
+  {word:'assign', meaning:'맡기다, 배정하다'},
+  {word:'due date', meaning:'마감일'},
+  {word:'recognize', meaning:'인식하다'},
+  {word:'perceive', meaning:'인식하다'},
+  {word:'appreciate', meaning:'인식하다'},
+  {word:'steadily', meaning:'꾸준히'},
+  {word:'specialized in', meaning:'~에 전문화된'},
+  {word:'diversified', meaning:'다양화된'},
+  {word:'varied', meaning:'다양화된'},
+  {word:'self-sufficiency', meaning:'자급자족'},
+  {word:'interdependence', meaning:'상호 의존'},
+  {word:'afford to', meaning:'~할 여유가 있다'},
+  {word:'quantity', meaning:'양'},
+  {word:'quality', meaning:'질'},
+  {word:'trick', meaning:'속이다'},
+  {word:'deceive', meaning:'속이다'},
+  {word:'mislead', meaning:'속이다'},
+  {word:'contract', meaning:'계약'},
+  {word:'victim', meaning:'피해자'},
+  {word:'irresistible', meaning:'저항할 수 없는'},
+  {word:'otherwise', meaning:'그렇게 하지 않으면'},
+  {word:'likewise', meaning:'마찬가지로, 또한'},
+  {word:'stuff', meaning:'쑤셔 넣다'},
+  {word:'temptation', meaning:'유혹'},
+  {word:'lure', meaning:'유혹'},
+  {word:'stay off', meaning:'멀리하다'},
+  {word:'ecosystem', meaning:'생태계'},
+  {word:'host', meaning:'수용하다'},
+  {word:'accommodate', meaning:'수용하다'},
+  {word:'adapt', meaning:'적응하다'},
+  {word:'adjust', meaning:'적응하다'},
+  {word:'adopt', meaning:'선택하다'},
+  {word:'microbe', meaning:'미생물'},
+  {word:'insecticide', meaning:'살충제'},
+  {word:'distaste', meaning:'혐오감'},
+  {word:'hatred', meaning:'혐오감'},
+  {word:'counterpart', meaning:'상대'},
+  {word:'ecologist', meaning:'생태학자'},
+  {word:'thrive', meaning:'번창하다'},
+  {word:'flourish', meaning:'번창하다'},
+  {word:'prosper', meaning:'번창하다'},
+  {word:'bloom', meaning:'번창하다'},
+  {word:'drive', meaning:'추진시키다'},
+  {word:'propel', meaning:'추진시키다'},
+  {word:'represent', meaning:'대변하다, 대표하다'},
+  {word:'engagement', meaning:'관계'},
+  {word:'professional', meaning:'전문적인'},
+  {word:'capacity', meaning:'능력'},
+  {word:'capability', meaning:'능력'},
+  {word:'competence', meaning:'능력'},
+  {word:'immune system', meaning:'면역 체계'},
+  {word:'diminish', meaning:'줄이다, 약화시키다'},
+  {word:'lessen', meaning:'줄이다'},
+  {word:'reduce', meaning:'줄이다'},
+  {word:'distress', meaning:'고통'},
+  {word:'enhance', meaning:'증진시키다'},
+  {word:'improve', meaning:'증진시키다'},
+  {word:'aid', meaning:'돕다'},
+  {word:'empathy', meaning:'공감'},
+  {word:'sympathy', meaning:'공감, 동정'},
+  {word:'antipathy', meaning:'반감, 혐오'},
+  {word:'reconsider', meaning:'재고하다'},
+  {word:'rethink', meaning:'재고하다'},
+  {word:'things', meaning:'상황'},
+  {word:'automation', meaning:'자동화'},
+  {word:'flip', meaning:'홱 뒤집다'},
+  {word:'draw on', meaning:'~을 이용하다'},
+  {word:'employ', meaning:'~을 이용하다'},
+  {word:'utilize', meaning:'~을 이용하다'},
+  {word:'take advantage of', meaning:'~을 이용하다'},
+  {word:'irreplaceable', meaning:'대체할 수 없는'},
+  {word:'unique', meaning:'대체할 수 없는, 유일한'},
+  {word:'a great deal of', meaning:'다량의, 많은'},
+  {word:'nutrient', meaning:'영양분'},
+  {word:'accordingly', meaning:'그런 이유로, 그래서'},
+  {word:'for that reason', meaning:'그런 이유로, 그래서'},
+  {word:'hence', meaning:'그런 이유로, 그래서'},
+  {word:'rate', meaning:'속도'},
+  {word:'equalize', meaning:'동등하게 하다'},
+  {word:'make even', meaning:'동등하게 하다'},
+  {word:'abundance', meaning:'풍부'},
+  {word:'lack', meaning:'부족'},
+  {word:'scarcity', meaning:'부족'},
+  {word:'hand over', meaning:'넘겨주다'},
+  {word:'run short', meaning:'부족하다'},
+  {word:'analytic', meaning:'분석의'},
+  {word:'assume', meaning:'가정하다'},
+  {word:'presume', meaning:'가정하다'},
+  {word:'cognitive', meaning:'인지의'},
+  {word:'rightly', meaning:'당연히'},
+  {word:'aspect', meaning:'측면'},
+  {word:'countless', meaning:'무수한'},
+  {word:'innumerable', meaning:'무수한'},
+  {word:'numerous', meaning:'무수한'},
+  {word:'manage to', meaning:'해내다'},
+  {word:'preserve', meaning:'보존하다'},
+  {word:'conserve', meaning:'보존하다'},
+  {word:'largely', meaning:'대체로'},
+  {word:'by and large', meaning:'대체로'},
+  {word:'nevertheless', meaning:'그럼에도 불구하고'},
+  {word:'nonetheless', meaning:'그럼에도 불구하고'},
+  {word:'collaborative', meaning:'공동의'},
+  {word:'collective', meaning:'집단의'},
+  {word:'essentially', meaning:'근본적으로'},
+  {word:'fundamentally', meaning:'근본적으로'},
+  {word:'makeup', meaning:'성질, 구조'},
+  {word:'salt content', meaning:'염분'},
+  {word:'reflective', meaning:'사색적인'},
+  {word:'introspective', meaning:'사색적인'},
+  {word:'journal', meaning:'쓰다'},
+  {word:'undergraduate', meaning:'학부생'},
+  {word:'graduate student', meaning:'대학원생'},
+  {word:'handle', meaning:'다루다'},
+  {word:'address', meaning:'(문제를) 다루다'},
+  {word:'perspective', meaning:'관점'},
+  {word:'outlook', meaning:'관점'},
+  {word:'standpoint', meaning:'관점'},
+  {word:'respective', meaning:'각각의'},
+  {word:'demonstration', meaning:'보여주기, 입증'},
+  {word:'indication', meaning:'보여주기'},
+  {word:'reframe', meaning:'재구성하다'},
+  {word:'reconstruct', meaning:'재구성하다'},
+  {word:'worthwhile', meaning:'가치 있는'},
+  {word:'adapt to~', meaning:'~에 적응하다'},
+  {word:'adjust to~', meaning:'~에 적응하다'},
+  {word:'conform to~', meaning:'~에 적응하다'},
+  {word:'cultivate', meaning:'기르다, 함양하다'},
+  {word:'raise', meaning:'기르다, 함양하다'},
+  {word:'compensate', meaning:'보상하다'},
+  {word:'make up for', meaning:'보상하다'},
+  {word:'perception', meaning:'인식'},
+  {word:'recognition', meaning:'인식'},
+  {word:'thrilled', meaning:'황홀해하는, 아주 신난'},
+  {word:'overload', meaning:'과부하가 걸리게 하다'},
+  {word:'stimuli', meaning:'자극들'},
+  {word:'overwhelming', meaning:'압도적인'},
+  {word:'puzzled', meaning:'어리둥절해하는'},
+  {word:'perplexed', meaning:'어리둥절해하는'},
+  {word:'relay', meaning:'전달하다'},
+  {word:'hand on', meaning:'전달하다'},
+  {word:'alter', meaning:'바꾸다, 변하다'},
+  {word:'anticipate', meaning:'예상하다, 기대하다'},
+  {word:'a bunch of', meaning:'다수의'},
+  {word:'attentive', meaning:'주의를 기울이는'},
+  {word:'generosity', meaning:'너그러움'},
+  {word:'resident', meaning:'거주자'},
+  {word:'inhabitant', meaning:'거주자'},
+  {word:'dweller', meaning:'거주자'},
+  {word:'recently', meaning:'최근에'},
+  {word:'lately', meaning:'최근에'},
+  {word:'facility', meaning:'시설'},
+  {word:'terrible', meaning:'끔찍한'},
+  {word:'terrific', meaning:'멋진, 훌륭한'},
+  {word:'appreciate', meaning:'감사하다'},
+  {word:'be grateful for', meaning:'감사하다'},
+  {word:'habitat', meaning:'서식지'},
+  {word:'shelter', meaning:'서식지'},
+  {word:'once in a while', meaning:'가끔씩'},
+  {word:'sniff', meaning:'냄새를 맡다'},
+  {word:'maintain', meaning:'유지하다'},
+  {word:'constant', meaning:'일정한, 꾸준한'},
+  {word:'consistent', meaning:'일정한, 꾸준한'},
+  {word:'continuous', meaning:'일정한, 꾸준한'},
+  {word:'invariable', meaning:'일정한, 꾸준한'},
+  {word:'throughout', meaning:'~내내'},
+  {word:'peaks and valleys', meaning:'정점과 저점'},
+  {word:'ups and downs', meaning:'정점과 저점'},
+  {word:'characterise', meaning:'특징짓다'},
+  {word:'alertness', meaning:'기민함'},
+  {word:'confident', meaning:'자신감이 있는'},
+  {word:'assured', meaning:'자신감이 있는'},
+  {word:'benefit', meaning:'이익, 혜택'},
+  {word:'profit', meaning:'(판매)수익'},
+  {word:'demanding', meaning:'힘든, 부담이 큰'},
+  {word:'challenging', meaning:'힘든, 부담이 큰'},
+  {word:'taxing', meaning:'힘든, 부담이 큰'},
+  {word:'formidable', meaning:'힘든, 부담이 큰'},
+  {word:'task', meaning:'작업, 과업'},
+  {word:'cope with', meaning:'~을 처리하다'},
+  {word:'deal with', meaning:'~을 처리하다'},
+  {word:'handle', meaning:'~을 처리하다'},
+  {word:'observe', meaning:'관찰하다'},
+  {word:'monitor', meaning:'관찰하다'},
+  {word:'note', meaning:'알아차리다'},
+  {word:'notice', meaning:'알아차리다'},
+  {word:'take a while', meaning:'얼마간의 시간이 걸리다'},
+  {word:'warm up', meaning:'준비되다'},
+  {word:'adopt', meaning:'받아들이다, 채택하다'},
+  {word:'adapt', meaning:'적응하다'},
+  {word:'cost', meaning:'비용'},
+  {word:'livelihood', meaning:'생계, 생계수단'},
+  {word:'living', meaning:'생계'},
+  {word:'push aside', meaning:'~을 밀쳐 놓다'},
+  {word:'put aside', meaning:'~을 밀쳐 놓다'},
+  {word:'shove aside', meaning:'~을 밀쳐 놓다'},
+  {word:'progress', meaning:'발전, 전진'},
+  {word:'remove', meaning:'없애다'},
+  {word:'eliminate', meaning:'없애다'},
+  {word:'get rid of', meaning:'없애다'},
+  {word:'physical', meaning:'육체의, 신체의'},
+  {word:'mental', meaning:'정신의'},
+  {word:'disability', meaning:'장애'},
+  {word:'handicap', meaning:'장애'},
+  {word:'inability', meaning:'무능력'},
+  {word:'mass', meaning:'대중(의)'},
+  {word:'seek', meaning:'찾다, 구하다'},
+  {word:'pursue', meaning:'찾다, 구하다'},
+  {word:'divorce', meaning:'단절, 이혼'},
+  {word:'indeed', meaning:'실제로, 참으로'},
+  {word:'risk', meaning:'위험 (요소)'},
+  {word:'approach', meaning:'접근'},
+  {word:'access', meaning:'접근'},
+  {word:'rubber stamp', meaning:'고무도장'},
+  {word:'colorful', meaning:'화려한, 다채로운'},
+  {word:'vivid', meaning:'화려한, 다채로운'},
+  {word:'funeral', meaning:'장례식'},
+  {word:'bathing suit', meaning:'수영복'},
+  {word:'religious service', meaning:'종교 예식'},
+  {word:'probably', meaning:'아마'},
+  {word:'appropriate', meaning:'적합한, 알맞은'},
+  {word:'proper', meaning:'적합한, 알맞은'},
+  {word:'adequate', meaning:'적합한, 알맞은'},
+  {word:'occasion', meaning:'행사'},
+  {word:'setting', meaning:'상황, 장소'},
+  {word:'skillful', meaning:'숙련된, 능숙한'},
+  {word:'masterly', meaning:'숙련된, 능숙한'},
+  {word:'accomplished', meaning:'숙련된, 능숙한'},
+  {word:'flexible', meaning:'유연한'},
+  {word:'pliable', meaning:'유연한'},
+  {word:'strategy', meaning:'전략'},
+  {word:'wage', meaning:'임금, 급료'},
+  {word:'improve', meaning:'향상되다'},
+  {word:'advance', meaning:'향상되다'},
+  {word:'form', meaning:'형태'},
+  {word:'transport', meaning:'운송, 수송'},
+  {word:'industrial', meaning:'산업의'},
+  {word:'revolution', meaning:'혁명'},
+  {word:'railway', meaning:'철도'},
+  {word:'seaside resort', meaning:'해안가 휴양지'},
+  {word:'coast-to-coast', meaning:'대륙 횡단의'},
+  {word:'arrival', meaning:'출현, 도래'},
+  {word:'advent', meaning:'출현, 도래'},
+  {word:'tourism', meaning:'관광 산업'},
+  {word:'growth', meaning:'성장, 발전'},
+  {word:'expansion', meaning:'성장, 발전, 팽창'},
+  {word:'lead~off', meaning:'~를 벗어나게 이끌다'},
+  {word:'intended', meaning:'의도한'},
+  {word:'designed', meaning:'의도한'},
+  {word:'path', meaning:'길'},
+  {word:'comfortable', meaning:'편안한'},
+  {word:'be good at', meaning:'~을 잘하다'},
+  {word:'be poor at', meaning:'~에 서투르다'},
+  {word:'reward', meaning:'보상을 주다'},
+  {word:'recompense', meaning:'보상을 주다'},
+  {word:'realize', meaning:'깨닫다'},
+  {word:'sense', meaning:'깨닫다'},
+  {word:'perceive', meaning:'깨닫다'},
+  {word:'be aware of', meaning:'깨닫다'},
+  {word:'breathe', meaning:'호흡하다, 숨쉬다'},
+  {word:'slippery', meaning:'미끄러운'},
+  {word:'superhuman', meaning:'초인적인'},
+  {word:'effort', meaning:'노력'},
+  {word:'endeavor', meaning:'노력'},
+  {word:'effectively', meaning:'사실상, 실제로'},
+  {word:'in effect', meaning:'사실상, 실제로'},
+  {word:'practically', meaning:'사실상, 실제로'},
+  {word:'employment', meaning:'고용'},
+  {word:'secure', meaning:'안정적인'},
+  {word:'settled', meaning:'안정적인'},
+  {word:'stable', meaning:'안정적인'},
+  {word:'ultimately', meaning:'궁극적으로'},
+  {word:'eventually', meaning:'궁극적으로'},
+  {word:'unsatisfying', meaning:'만족스럽지 못한'},
+  {word:'unsatisfactory', meaning:'만족스럽지 못한'},
+  {word:'gap', meaning:'차이'},
+  {word:'slightly', meaning:'약간'},
+  {word:'increase', meaning:'증가하다'},
+  {word:'decrease', meaning:'감소하다'},
+  {word:'steadily', meaning:'꾸준히'},
+  {word:'except', meaning:'~을 제외하고'},
+  {word:'persuade', meaning:'설득하다'},
+  {word:'convince', meaning:'설득하다'},
+  {word:'end up ~ing', meaning:'결국~ 하게 되다'},
+  {word:'wind up ~ing', meaning:'결국~하게 되다'},
+  {word:'nonetheless', meaning:'그렇더라도'},
+  {word:'nevertheless', meaning:'그럼에도 불구하고'},
+  {word:'even so', meaning:'그럼에도 불구하고'},
+  {word:'notwithstanding', meaning:'그럼에도 불구하고'},
+  {word:'article', meaning:'기사'},
+  {word:'look for', meaning:'~을 찾다'},
+  {word:'fee', meaning:'요금'},
+  {word:'admission', meaning:'입장'},
+  {word:'reservation', meaning:'예약'},
+  {word:'booking', meaning:'예약'},
+  {word:'accompany', meaning:'동행하다'},
+  {word:'noticeable', meaning:'눈에 띄는'},
+  {word:'conspicuous', meaning:'눈에 띄는'},
+  {word:'prominent', meaning:'눈에 띄는'},
+  {word:'marked', meaning:'눈에 띄는'},
+  {word:'characteristic', meaning:'특징, 특성'},
+  {word:'feature', meaning:'특징, 특성'},
+  {word:'trait', meaning:'특징, 특성'},
+  {word:'attribute', meaning:'특징, 특성'},
+  {word:'project', meaning:'투영하다'},
+  {word:'physically', meaning:'신체적으로'},
+  {word:'resemble', meaning:'닮다'},
+  {word:'take after', meaning:'닮다'},
+  {word:'achieve', meaning:'달성하다, 이루다'},
+  {word:'attain', meaning:'달성하다, 이루다'},
+  {word:'accomplish', meaning:'달성하다, 이루다'},
+  {word:'facial', meaning:'얼굴의'},
+  {word:'animated', meaning:'만화 영화의'},
+  {word:'emotionally', meaning:'감정적으로'},
+  {word:'appealing', meaning:'매력적인'},
+  {word:'attractive', meaning:'매력적인'},
+  {word:'inviting', meaning:'매력적인'},
+  {word:'engaging', meaning:'매력적인'},
+  {word:'enlarge', meaning:'확대하다'},
+  {word:'childlike', meaning:'어린이 같은'},
+  {word:'naive', meaning:'어린이 같은, 순진한'},
+  {word:'major', meaning:'주요한, 중요한'},
+  {word:'philosophical', meaning:'철학적인'},
+  {word:'shift', meaning:'변화'},
+  {word:'transition', meaning:'변화'},
+  {word:'competitive', meaning:'경쟁적인'},
+  {word:'geographically', meaning:'지리적으로'},
+  {word:'spread out', meaning:'퍼져 나가다'},
+  {word:'radiate', meaning:'퍼져 나가다'},
+  {word:'relation', meaning:'관계'},
+  {word:'client', meaning:'고객'},
+  {word:'quality', meaning:'양질의, 질 좋은'},
+  {word:'reasonable', meaning:'합리적인'},
+  {word:'sensible', meaning:'합리적인'},
+  {word:'justifiable price', meaning:'합리적인 가격'},
+  {word:'equally', meaning:'마찬가지로'},
+  {word:'essential', meaning:'매우 중요한'},
+  {word:'crucial', meaning:'매우 중요한'},
+  {word:'customer', meaning:'고객'},
+  {word:'modernization', meaning:'현대화'},
+  {word:'demand', meaning:'수요'},
+  {word:'meet', meaning:'충족시키다'},
+  {word:'satisfy', meaning:'충족시키다'},
+  {word:'diverse', meaning:'다양한'},
+  {word:'complex', meaning:'복잡한'},
+  {word:'complicated', meaning:'복잡한'},
+  {word:'differ', meaning:'다르다'},
+  {word:'reset', meaning:'재설정하다'},
+  {word:'biological clock', meaning:'체내 시계'},
+  {word:'overcome', meaning:'극복하다'},
+  {word:'get over', meaning:'극복하다'},
+  {word:'surmount', meaning:'극복하다'},
+  {word:'recovery', meaning:'회복'},
+  {word:'lengthen', meaning:'연장하다'},
+  {word:'extend', meaning:'연장하다'},
+  {word:'prolong', meaning:'연장하다'},
+  {word:'shorten', meaning:'단축하다'},
+  {word:'reduce', meaning:'단축하다'},
+  {word:'sizable', meaning:'큰'},
+  {word:'considerable', meaning:'큰'},
+  {word:'have an impact on', meaning:'~에 영향을 주다'},
+  {word:'influence', meaning:'~에 영향을 주다'},
+  {word:'affect', meaning:'~에 영향을 주다'},
+  {word:'performance', meaning:'경기력, 성과'},
+  {word:'significantly', meaning:'상당히'},
+  {word:'recent', meaning:'최근의'},
+  {word:'additional', meaning:'추가적인'},
+  {word:'further', meaning:'추가적인'},
+  {word:'evidence', meaning:'증거'},
+  {word:'proof', meaning:'증거'},
+  {word:'tough', meaning:'힘든'},
+  {word:'demanding', meaning:'힘든'},
+  {word:'confidence', meaning:'자신감, 확신'},
+  {word:'set out', meaning:'~에 착수하다'},
+  {word:'embark on', meaning:'~에 착수하다'},
+  {word:'overoptimism', meaning:'지나친 낙관주의'},
+  {word:'certain', meaning:'특정한'},
+  {word:'time frame', meaning:'기간'},
+  {word:'estimate', meaning:'추산하다, 어림잡다'},
+  {word:'approximate', meaning:'추산하다, 어림잡다'},
+  {word:'calculate', meaning:'추산하다, 어림잡다'},
+  {word:'amount', meaning:'양'},
+  {word:'alongside', meaning:'~와 함께'},
+  {word:'item', meaning:'항목'},
+  {word:'give attention', meaning:'주의를 기울이다'},
+  {word:'pay attention', meaning:'주의를 기울이다'},
+  {word:'focus on', meaning:'주의를 기울이다'},
+  {word:'fit', meaning:'맞추다'},
+  {word:'available', meaning:'이용 가능한'},
+  {word:'significant', meaning:'상당한'},
+  {word:'substantial', meaning:'상당한'},
+  {word:'there is no point', meaning:'~하는 것은 무의미하다'},
+  {word:'senseless', meaning:'무의미한'},
+  {word:'gear up for', meaning:'~를 위해 준비하다'},
+  {word:'prepare for', meaning:'~를 위해 준비하다'},
+  {word:'spare', meaning:'남는'},
+  {word:'race', meaning:'경주, 달리기'},
+  {word:'countryside', meaning:'시골'},
+  {word:'biologist', meaning:'생물학자'},
+  {word:'effect', meaning:'효과, 영향, 결과'},
+  {word:'evolutionary', meaning:'진화의'},
+  {word:'progressive', meaning:'진화의'},
+  {word:'principle', meaning:'원리'},
+  {word:'principal', meaning:'교장, 총장, 주요한'},
+  {word:'evolve', meaning:'진화하다'},
+  {word:'develop', meaning:'진화하다'},
+  {word:'advance', meaning:'진화하다'},
+  {word:'generation', meaning:'세대'},
+  {word:'bunny', meaning:'토끼'},
+  {word:'case', meaning:'경우'},
+  {word:'thrive', meaning:'번영하다'},
+  {word:'prosper', meaning:'번영하다'},
+  {word:'flourish', meaning:'번영하다'},
+  {word:'bloom', meaning:'번영하다'},
+  {word:'pass on', meaning:'~을 물려주다'},
+  {word:'transfer', meaning:'~을 물려주다'},
+  {word:'gene', meaning:'유전자'},
+  {word:'species', meaning:'종'},
+  {word:'creator', meaning:'창조자'},
+  {word:'clothing', meaning:'옷'},
+  {word:'refine', meaning:'다듬다'},
+  {word:'polish', meaning:'다듬다, 윤을 내다'},
+  {word:'perfect', meaning:'완성하다'},
+  {word:'nail', meaning:'못'},
+  {word:'drive', meaning:'(못·말뚝 등을) 박다'},
+  {word:'cloth', meaning:'천, 직물'},
+  {word:'physical', meaning:'물리적인'},
+  {word:'tangible', meaning:'물리적인, 실재하는'},
+  {word:'reality', meaning:'실체'},
+  {word:'picture', meaning:'그리다'},
+  {word:'depict', meaning:'그리다, 묘사하다'},
+  {word:'portray', meaning:'그리다, 묘사하다'},
+  {word:'product', meaning:'제품'},
+  {word:'design', meaning:'설계하다'},
+  {word:'process', meaning:'과정'},
+  {word:'period', meaning:'기간'},
+  {word:'before long', meaning:'머지않아, 곧'},
+  {word:'presently', meaning:'머지않아, 곧'},
+  {word:'shortly', meaning:'머지않아, 곧'},
+  {word:'decision', meaning:'결정'},
+  {word:'resolution', meaning:'결정'},
+  {word:'settlement', meaning:'결정'},
+  {word:'activity', meaning:'활동'},
+  {word:'in harmony', meaning:'조화롭게, 한마음이 되어'},
+  {word:'bring~into existence', meaning:'~을 생겨나게 하다'},
+  {word:'generate', meaning:'~을 생겨나게 하다'},
+  {word:'affect', meaning:'영향을 미치다'},
+  {word:'influence', meaning:'영향을 미치다'},
+  {word:'impact', meaning:'(나쁜)영향을 미치다'},
+  {word:'have an impact on', meaning:'영향을 미치다'},
+  {word:'effect', meaning:'영향, 효과, 결과'},
+  {word:'have an effect on', meaning:'영향을 미치다'},
+  {word:'main character', meaning:'주인공'},
+  {word:'focus', meaning:'초점'},
+  {word:'character', meaning:'등장인물'},
+  {word:'interpret', meaning:'해석하다'},
+  {word:'construe', meaning:'해석하다'},
+  {word:'conflict', meaning:'갈등'},
+  {word:'friction', meaning:'갈등, 마찰'},
+  {word:'pray for', meaning:'~을 간절히 바라다'},
+  {word:'long for', meaning:'~을 간절히 바라다'},
+  {word:'yearn for', meaning:'~을 간절히 바라다'},
+  {word:'crave', meaning:'~을 간절히 바라다'},
+  {word:'outcome', meaning:'결과'},
+  {word:'consequence', meaning:'결과'},
+  {word:'tale', meaning:'이야기'},
+  {word:'shift', meaning:'바꾸다'},
+  {word:'evil', meaning:'사악한'},
+  {word:'stepsister', meaning:'의붓자매'},
+  {word:'kingdom', meaning:'왕국'},
+  {word:'willingly', meaning:'기꺼이'},
+  {word:'readily', meaning:'기꺼이'},
+  {word:'reluctantly', meaning:'마지못해'},
+  {word:'viewpoint', meaning:'관점'},
+  {word:'perspective', meaning:'관점'},
+  {word:'Old Stone Age', meaning:'구석기 시대'},
+  {word:'band', meaning:'무리'},
+  {word:'wander', meaning:'(걸어서) 돌아다니다'},
+  {word:'from place to place', meaning:'여기저기'},
+  {word:'in search of', meaning:'~을 찾아'},
+  {word:'settle down', meaning:'정착하다'},
+  {word:'take root', meaning:'정착하다'},
+  {word:'organize', meaning:'조직하다'},
+  {word:'arrange', meaning:'조직하다'},
+  {word:'efficiently', meaning:'효율적으로'},
+  {word:'divide up', meaning:'나누다'},
+  {word:'split up', meaning:'나누다'},
+  {word:'grow', meaning:'재배하다'},
+  {word:'cultivate', meaning:'재배하다'},
+  {word:'crop', meaning:'농작물'},
+  {word:'dweller', meaning:'거주자'},
+  {word:'toolmaker', meaning:'도구 제작자'},
+  {word:'share', meaning:'함께 하다, 공유하다'},
+  {word:'ax', meaning:'도끼'},
+  {word:'community', meaning:'공동체'},
+  {word:'allow', meaning:'~하게 하다, 허용하다'},
+  {word:'form', meaning:'형성하다, 형성되다'},
+  {word:'build', meaning:'형성하다'},
+  {word:'shape', meaning:'형성하다'},
+  {word:'mineral', meaning:'광물'},
+  {word:'melt', meaning:'녹이다, 녹다'},
+  {word:'material', meaning:'물질'},
+  {word:'surface', meaning:'표면'},
+  {word:'trap', meaning:'가두다'},
+  {word:'contain', meaning:'가두다'},
+  {word:'confine', meaning:'가두다'},
+  {word:'atom', meaning:'원자'},
+  {word:'combine', meaning:'결합하다'},
+  {word:'merge', meaning:'결합하다'},
+  {word:'incorporate', meaning:'결합하다'},
+  {word:'integrate', meaning:'결합하다'},
+  {word:'compound', meaning:'화합물'},
+  {word:'crystal', meaning:'결정, 결정체'},
+  {word:'depend on', meaning:'~에 달려있다'},
+  {word:'rest on', meaning:'~에 달려있다'},
+  {word:'rely on', meaning:'~에 달려있다'},
+  {word:'count on', meaning:'~에 달려있다'},
+  {word:'partly', meaning:'부분적으로'},
+  {word:'in part', meaning:'부분적으로'},
+  {word:'partially', meaning:'부분적으로'},
+  {word:'rapidly', meaning:'빨리'},
+  {word:'unaided eye', meaning:'육안, 맨눈'},
+  {word:'orderly', meaning:'질서있는'},
+  {word:'structured', meaning:'질서있는'},
+  {word:'systematic', meaning:'질서있는'},
+  {word:'element', meaning:'원소'},
+  {word:'individual', meaning:'개별의'},
+  {word:'complex', meaning:'복합의, 복잡한'},
+  {word:'intricate', meaning:'복합의, 복잡한'},
+  {word:'break down', meaning:'~을 분해하다'},
+  {word:'decompose', meaning:'~을 분해하다'},
+  {word:'nutrient', meaning:'영양소'},
+  {word:'be released', meaning:'방출되다'},
+  {word:'be delivered', meaning:'전달되다'},
+  {word:'provide', meaning:'제공하다'},
+  {word:'fuel', meaning:'연료'},
+  {word:'a number of', meaning:'많은'},
+  {word:'the number of', meaning:'~의 숫자'},
+  {word:'structure', meaning:'구조'},
+  {word:'hold', meaning:'가지고 있다'},
+  {word:'other than', meaning:'~외에, ~을 제외하고'},
+  {word:'apart from', meaning:'~외에, ~을 제외하고'},
+  {word:'excluding', meaning:'~외에, ~을 제외하고'},
+  {word:'rather', meaning:'상당히'},
+  {word:'fairly', meaning:'상당히'},
+  {word:'store', meaning:'저장하다'},
+  {word:'commonly', meaning:'흔히'},
+  {word:'lecturer', meaning:'강사, 강연자'},
+  {word:'tend to', meaning:'~하는 경향이 있다'},
+  {word:'be inclined to', meaning:'~하는 경향이 있다'},
+  {word:'be prone to', meaning:'~하는 경향이 있다'},
+  {word:'be liable to', meaning:'~하는 경향이 있다'},
+  {word:'mistaken', meaning:'잘못된'},
+  {word:'misguided', meaning:'잘못된'},
+  {word:'misinformed', meaning:'잘못된'},
+  {word:'assumption', meaning:'가정'},
+  {word:'presumption', meaning:'가정'},
+  {word:'characteristic', meaning:'특성'},
+  {word:'trait', meaning:'특성'},
+  {word:'property', meaning:'특성'},
+  {word:'description', meaning:'설명, 묘사'},
+  {word:'contain', meaning:'포함하다'},
+  {word:'impression', meaning:'인상'},
+  {word:'depending upon', meaning:'~에 따라'},
+  {word:'relying on', meaning:'~에 따라'},
+  {word:'based on', meaning:'~에 따라'},
+  {word:'original', meaning:'최초의, 원래의'},
+  {word:'initial', meaning:'최초의, 원래의'},
+  {word:'expectation', meaning:'기대'},
+  {word:'anticipation', meaning:'기대'},
+  {word:'trustworthy', meaning:'신뢰할 수 있는'},
+  {word:'reliable', meaning:'신뢰할 수 있는'},
+  {word:'dependable', meaning:'신뢰할 수 있는'},
+  {word:'evolutionary', meaning:'진화의'},
+  {word:'view', meaning:'관점'},
+  {word:'perspective', meaning:'관점'},
+  {word:'positive', meaning:'긍정적인'},
+  {word:'affirmative', meaning:'긍정적인'},
+  {word:'prospect', meaning:'전망'},
+  {word:'outlook', meaning:'전망'},
+  {word:'sensible', meaning:'합리적인, 분별력 있는'},
+  {word:'rational', meaning:'합리적인, 분별력 있는'},
+  {word:'reasonable', meaning:'합리적인, 분별력 있는'},
+  {word:'product review', meaning:'상품 평'},
+  {word:'subtle', meaning:'미묘한'},
+  {word:'cue', meaning:'신호'},
+  {word:'local', meaning:'지역의, 현지의'},
+  {word:'hassle', meaning:'성가신 일'},
+  {word:'nuisance', meaning:'성가신 일'},
+  {word:'in demand', meaning:'수요가 많은'},
+  {word:'more often than not', meaning:'대개'},
+  {word:'as a rule', meaning:'대개'},
+  {word:'in general', meaning:'대개'},
+  {word:'adopt', meaning:'따르다, 채택하다'},
+  {word:'embrace', meaning:'따르다, 채택하다'},
+  {word:'practice', meaning:'행동, 관행'},
+  {word:'master', meaning:'달인'},
+  {word:'piece', meaning:'(장기, 체스의) 말, 조각'},
+  {word:'reproduce', meaning:'재현하다'},
+  {word:'recreate', meaning:'재현하다'},
+  {word:'place', meaning:'놓다'},
+  {word:'randomly', meaning:'무작위로'},
+  {word:'reduce', meaning:'줄이다'},
+  {word:'lessen', meaning:'줄이다'},
+  {word:'diminish', meaning:'줄이다'},
+  {word:'narrow', meaning:'줄어들다'},
+  {word:'expert', meaning:'전문가'},
+  {word:'advantage', meaning:'유리함'},
+  {word:'familiar', meaning:'익숙한'},
+  {word:'accustomed', meaning:'익숙한'},
+  {word:'arrange', meaning:'배열하다'},
+  {word:'previously', meaning:'이전에'},
+  {word:'face', meaning:'직면하다'},
+  {word:'involve', meaning:'~와 관련 있다'},
+  {word:'domain', meaning:'분야'},
+  {word:'field', meaning:'분야'},
+  {word:'realm', meaning:'분야'},
+  {word:'beneficial', meaning:'유익한'},
+  {word:'effect of A on B', meaning:'A가 B에 미치는 영향'},
+  {word:'influence of A on B', meaning:'A가 B에 미치는 영향'},
+  {word:'impact of A on B', meaning:'A가 B에 미치는 영향'},
+  {word:'expertise', meaning:'전문지식'},
+  {word:'sequence', meaning:'연속'},
+  {word:'accurately', meaning:'정확하게'},
+  {word:'musical notation', meaning:'악보'},
+  {word:'note', meaning:'음표'},
+  {word:'order', meaning:'배열하다'},
+  {word:'experienced', meaning:'숙련된'},
+  {word:'skillful', meaning:'숙련된'},
+  {word:'make up', meaning:'~을 이루다'},
+  {word:'comprise', meaning:'~을 이루다'},
+  {word:'routine', meaning:'정해진 춤 동작'},
+  {word:'recognize', meaning:'인식하다'},
+  {word:'palace', meaning:'궁전'},
+  {word:'approach', meaning:'접근하다'},
+  {word:'smelly', meaning:'냄새가 나는'},
+  {word:'freeze', meaning:'얼어붙다, 얼다'},
+  {word:'get off', meaning:'~에서 내려오다'},
+  {word:'call for', meaning:'~을 시키다,~을 요구하다'},
+  {word:'request', meaning:'~을 시키다,~을 요구하다'},
+  {word:'sword', meaning:'칼'},
+  {word:'scare ~ away', meaning:'~을 겁주어 쫓아내다'},
+  {word:'eventually', meaning:'결국, 마침내'},
+  {word:'in the long run', meaning:'결국, 마침내'},
+  {word:'take up', meaning:'~을 차지하다'},
+  {word:'occupy', meaning:'~을 차지하다'},
+  {word:'B as well as A', meaning:'A뿐만 아니라 B도'},
+  {word:'not only A but B', meaning:'A뿐만 아니라 B도'},
+  {word:'not just A but B', meaning:'A뿐만 아니라 B도'},
+  {word:'meditation', meaning:'명상'},
+  {word:'mediation', meaning:'중재, 중개'},
+  {word:'instructor', meaning:'교사, 강사'},
+  {word:'book', meaning:'예약하다'},
+  {word:'reserve', meaning:'예약하다'},
+  {word:'reasonable', meaning:'합리적인'},
+  {word:'rational', meaning:'합리적인'},
+  {word:'unforgettable', meaning:'잊지 못할'},
+  {word:'memorable', meaning:'잊지 못할'},
+  {word:'midnight', meaning:'자정'},
+  {word:'crowd', meaning:'군중, 무리'},
+  {word:'mob', meaning:'군중, 무리'},
+  {word:'attention', meaning:'주의, 관심'},
+  {word:'approach', meaning:'다가가다'},
+  {word:'suddenly', meaning:'갑자기'},
+  {word:'abruptly', meaning:'갑자기'},
+  {word:'familiar', meaning:'친근한'},
+  {word:'familiarity', meaning:'친근함'},
+  {word:'personal', meaning:'개인적인'},
+  {word:'private', meaning:'개인적인'},
+  {word:'sensible', meaning:'합리적인'},
+  {word:'sensitive', meaning:'민감한'},
+  {word:'sensory', meaning:'감각의'},
+  {word:'make sense', meaning:'이치에 맞다'},
+  {word:'make sense of', meaning:'~를 이해하다'},
+  {word:'distraction', meaning:'주의 산만'},
+  {word:'concentration', meaning:'집중'},
+  {word:'multiple', meaning:'다수의'},
+  {word:'organize', meaning:'조직하다'},
+  {word:'matter', meaning:'중요하다'},
+  {word:'count', meaning:'중요하다'},
+  {word:'make a difference', meaning:'중요하다'},
+  {word:'informed', meaning:'정보를 갖춘'},
+  {word:'care', meaning:'관심을 가지다'},
+  {word:'react', meaning:'반응하다'},
+  {word:'respond', meaning:'반응하다'},
+  {word:'reply', meaning:'반응하다'},
+  {word:'post-', meaning:'-후'},
+  {word:'pre-', meaning:'-전'},
+  {word:'influence', meaning:'영향'},
+  {word:'impact', meaning:'영향'},
+  {word:'effect', meaning:'영향'},
+  {word:'likelihood', meaning:'가능성'},
+  {word:'chance', meaning:'가능성'},
+  {word:'probability', meaning:'가능성'},
+  {word:'encourage', meaning:'격려하다'},
+  {word:'discourage', meaning:'못하게 막다'},
+  {word:'unpaid', meaning:'무보수의'},
+  {word:'voluntary', meaning:'무보수의'},
+  {word:'ambassador', meaning:'대사'},
+  {word:'monitor', meaning:'감시하다'},
+  {word:'supervise', meaning:'감시하다'},
+  {word:'keep an eye on', meaning:'감시하다'},
+  {word:'word-of-mouth', meaning:'구두의, 구전의'},
+  {word:'viral marketing', meaning:'입소문 마케팅'},
+  {word:'repetitive', meaning:'반복적인'},
+  {word:'pursue', meaning:'추구하다'},
+  {word:'chase', meaning:'추구하다'},
+  {word:'seek', meaning:'추구하다'},
+  {word:'leisure', meaning:'여가'},
+  {word:'off-load', meaning:'떠넘기다'},
+  {word:'unload', meaning:'떠넘기다'},
+  {word:'pass along', meaning:'떠넘기다'},
+  {word:'used to', meaning:'...하곤 했다'},
+  {word:'get used to~ing', meaning:'~에 익숙해지다'},
+  {word:'value-added', meaning:'부가가치의'},
+  {word:'complete', meaning:'완료하다'},
+  {word:'get through', meaning:'완료하다'},
+  {word:'reservation', meaning:'예약'},
+  {word:'employee', meaning:'피고용인, 노동자'},
+  {word:'employer', meaning:'고용주'},
+  {word:'scan', meaning:'살피다'},
+  {word:'examine', meaning:'살피다'},
+  {word:'a host of', meaning:'다수의'},
+  {word:'tons of', meaning:'다수의'},
+  {word:'numerous', meaning:'다수의'},
+  {word:'a majority of', meaning:'다수의'},
+  {word:'desirable', meaning:'바람직한'},
+  {word:'advisable', meaning:'바람직한'},
+  {word:'undesirable', meaning:'바람직하지 않은'},
+  {word:'characteristic', meaning:'특징'},
+  {word:'feature', meaning:'특징'},
+  {word:'general public', meaning:'일반 대중'},
+  {word:'fair-minded', meaning:'공정한'},
+  {word:'impartial', meaning:'공정한'},
+  {word:'prejudiced', meaning:'편견이 있는'},
+  {word:'partial', meaning:'편견이 있는'},
+  {word:'biased', meaning:'편견이 있는'},
+  {word:'reliable', meaning:'믿을 만한'},
+  {word:'trustworthy', meaning:'믿을 만한'},
+  {word:'fictional', meaning:'허구적인, 소설의'},
+  {word:'high school senior', meaning:'고3 학생'},
+  {word:'in terms of', meaning:'~면에서'},
+  {word:'concerning', meaning:'~면에서'},
+  {word:'regarding', meaning:'~면에서'},
+  {word:'get along with', meaning:'~와 잘 지내다'},
+  {word:'harmonize with', meaning:'~와 잘 지내다'},
+  {word:'poverty', meaning:'가난'},
+  {word:'note', meaning:'~에 주목하다'},
+  {word:'pay attention to', meaning:'~에 주목하다'},
+  {word:'socioeconomic', meaning:'사회 경제적인'},
+  {word:'status', meaning:'신분, 지위'},
+  {word:'be associated with', meaning:'~와 관련되다'},
+  {word:'be linked to', meaning:'~와 관련되다'},
+  {word:'be related to', meaning:'~와 관련되다'},
+  {word:'distinct', meaning:'뚜렷한'},
+  {word:'noticeable', meaning:'뚜렷한'},
+  {word:'key', meaning:'중요한'},
+  {word:'crucial', meaning:'중요한'},
+  {word:'vital', meaning:'중요한'},
+  {word:'pressure', meaning:'압박'},
+  {word:'industrialized', meaning:'산업화된'},
+  {word:'pace', meaning:'속도'},
+  {word:'standard', meaning:'수준'},
+  {word:'constant', meaning:'지속적인'},
+  {word:'consistent', meaning:'지속적인'},
+  {word:'continuous', meaning:'지속적인'},
+  {word:'urgency', meaning:'긴급'},
+  {word:'be prone to', meaning:'~할 가능성이 있다'},
+  {word:'be likely to', meaning:'~할 가능성이 있다'},
+  {word:'be liable to', meaning:'~할 가능성이 있다'},
+  {word:'productivity', meaning:'생산성'},
+  {word:'lack the time', meaning:'시간이 부족하다'},
+  {word:'run out of time', meaning:'시간이 부족하다'},
+  {word:'financial', meaning:'금융의'},
+  {word:'monetary', meaning:'금융의'},
+  {word:'political', meaning:'정치적인'},
+  {word:'major in', meaning:'~을 전공하다'},
+  {word:'be dissatisfied with', meaning:'~에 불만족하다'},
+  {word:'be displeased with', meaning:'~에 불만족하다'},
+  {word:'handle', meaning:'(문제를) 다루다'},
+  {word:'tackle', meaning:'(문제를) 다루다'},
+  {word:'address', meaning:'(문제를) 다루다'},
+  {word:'deal with', meaning:'(문제를) 다루다'},
+  {word:'doctor’s degree', meaning:'박사 학위'},
+  {word:'doctoral paper', meaning:'박사 논문'},
+  {word:'discrimination', meaning:'차별'},
+  {word:'inequality', meaning:'차별'},
+  {word:'contribution', meaning:'기여'},
+  {word:'prove', meaning:'증명하다'},
+  {word:'disprove', meaning:'틀렸다고 증명하다'},
+  {word:'approve', meaning:'승인하다, 인정하다'},
+  {word:'souvenir', meaning:'기념품'},
+  {word:'participant', meaning:'참가자'},
+  {word:'for free', meaning:'무료로'},
+  {word:'register', meaning:'등록하다'},
+  {word:'sign up for', meaning:'등록하다'},
+  {word:'praise', meaning:'칭찬'},
+  {word:'compliment', meaning:'칭찬'},
+  {word:'appraise', meaning:'평가하다'},
+  {word:'improve', meaning:'향상시키다'},
+  {word:'enhance', meaning:'향상시키다'},
+  {word:'self-esteem', meaning:'자부심, 자긍심'},
+  {word:'self-respect', meaning:'자부심, 자긍심'},
+  {word:'self-confidence', meaning:'자부심, 자긍심'},
+  {word:'preschooler', meaning:'미취학 아동'},
+  {word:'profound', meaning:'심오한'},
+  {word:'significant', meaning:'심오한'},
+  {word:'cognitive', meaning:'인식의'},
+  {word:'sophistication', meaning:'정교함'},
+  {word:'reason', meaning:'판단하다, 사고하다'},
+  {word:'analytically', meaning:'분석적으로'},
+  {word:'reject', meaning:'거부하다'},
+  {word:'turn down', meaning:'거부하다'},
+  {word:'decline', meaning:'거부하다'},
+  {word:'refuse', meaning:'거부하다'},
+  {word:'consistently', meaning:'지속적으로'},
+  {word:'constantly', meaning:'지속적으로'},
+  {word:'coherently', meaning:'지속적으로'},
+  {word:'incorporate A into B', meaning:'A를 B로 통합하다'},
+  {word:'combine', meaning:'합치다, 결합하다'},
+  {word:'integrate', meaning:'합치다, 결합하다'},
+  {word:'merge', meaning:'합치다, 결합하다'},
+  {word:'unite', meaning:'합치다, 결합하다'},
+  {word:'self-image', meaning:'자아상'},
+  {word:'endure', meaning:'견디다'},
+  {word:'withstand', meaning:'견디다'},
+  {word:'bear', meaning:'견디다'},
+  {word:'confidence', meaning:'신뢰'},
+  {word:'conviction', meaning:'신뢰'},
+  {word:'considerable', meaning:'상당한, 많은'},
+  {word:'innumerable', meaning:'상당한, 많은'},
+  {word:'sizable', meaning:'상당한, 많은'},
+  {word:'considerate', meaning:'사려깊은'},
+  {word:'facility', meaning:'시설'},
+  {word:'adapt', meaning:'맞추다, 적응하다'},
+  {word:'adjust', meaning:'적응하다'},
+  {word:'adopt', meaning:'선택하다'},
+  {word:'claim', meaning:'주장'},
+  {word:'assertion', meaning:'주장'},
+  {word:'promote', meaning:'홍보하다'},
+  {word:'ingredient', meaning:'재료'},
+  {word:'yeast', meaning:'효모'},
+  {word:'come up with', meaning:'~을 생각해내다'},
+  {word:'invent', meaning:'~을 생각해내다'},
+  {word:'thereafter', meaning:'그 후에'},
+  {word:'subsequently', meaning:'그 후에'},
+  {word:'profession', meaning:'직업'},
+  {word:'occupation', meaning:'직업'},
+  {word:'career', meaning:'직업'},
+  {word:'credibility', meaning:'신뢰성'},
+  {word:'reliability', meaning:'신뢰성'},
+  {word:'admire', meaning:'존경하다'},
+  {word:'esteem', meaning:'존경하다'},
+  {word:'look up to', meaning:'존경하다'},
+  {word:'have nothing to do with', meaning:'~와는 전혀 관계 없다'},
+  {word:'have to do with', meaning:'~와 관계가 있다.'},
+  {word:'expertise', meaning:'전문 지식'},
+  {word:'talent', meaning:'재능'},
+  {word:'gift', meaning:'재능'},
+  {word:'facility', meaning:'재능, 시설'},
+  {word:'excellence', meaning:'뛰어남, 탁월함'},
+  {word:'superiority', meaning:'뛰어남, 탁월함'},
+  {word:'possess', meaning:'소유하다, 지니다'},
+  {word:'emerge', meaning:'나타나다'},
+  {word:'show up', meaning:'나타나다'},
+  {word:'interaction', meaning:'상호 작용'},
+  {word:'interplay', meaning:'상호 작용'},
+  {word:'element', meaning:'요소'},
+  {word:'component', meaning:'요소'},
+  {word:'factor', meaning:'요소'},
+  {word:'merchant', meaning:'상인'},
+  {word:'operation', meaning:'작동'},
+  {word:'functioning', meaning:'작동'},
+  {word:'resident', meaning:'거주자'},
+  {word:'inhabitant', meaning:'거주자'},
+  {word:'dweller', meaning:'거주자'},
+  {word:'locally', meaning:'근처에서'},
+  {word:'nearby', meaning:'근처에서'},
+  {word:'distantly', meaning:'멀리서'},
+  {word:'remotely', meaning:'멀리서'},
+  {word:'material', meaning:'자재'},
+  {word:'textile', meaning:'직물'},
+  {word:'process', meaning:'처리하다'},
+  {word:'handle', meaning:'처리하다'},
+  {word:'raw', meaning:'가공되지 않은'},
+  {word:'unprocessed', meaning:'가공되지 않은'},
+  {word:'sensory organ', meaning:'감각 기관'},
+  {word:'transport', meaning:'보내다, 전송하다'},
+  {word:'transfer', meaning:'보내다, 전송하다'},
+  {word:'superhighway', meaning:'고속도로'},
+  {word:'neuron', meaning:'뉴런, 신경 세포'},
+  {word:'undergo', meaning:'겪다'},
+  {word:'go through', meaning:'겪다'},
+  {word:'experience', meaning:'겪다'},
+  {word:'suffer', meaning:'겪다'},
+  {word:'conscious', meaning:'의식적인'},
+  {word:'affect', meaning:'영향을 주다'},
+  {word:'influence', meaning:'영향을 주다'},
+  {word:'emotional', meaning:'정서적인'},
+  {word:'accordingly', meaning:'그에 따라'},
+  {word:'consequently', meaning:'그에 따라'},
+  {word:'for that reason', meaning:'그에 따라'},
+  {word:'transmit', meaning:'전송하다'},
+  {word:'via', meaning:'~를 경유하여, 통하여'},
+  {word:'arise from', meaning:'~에서 발생하다'},
+  {word:'originate from', meaning:'~에서 발생하다'},
+  {word:'stem from', meaning:'~에서 발생하다'},
+  {word:'lift up', meaning:'들어올리다'},
+  {word:'bite down', meaning:'꼭 깨물다'},
+  {word:'lengthwise', meaning:'세로로'},
+  {word:'frown', meaning:'얼굴을 찌푸리다'},
+  {word:'make face', meaning:'얼굴을 찌푸리다'},
+  {word:'primacy', meaning:'우선함'},
+  {word:'the number of', meaning:'~의 수'},
+  {word:'a number of', meaning:'수 많은'},
+  {word:'boost', meaning:'증가시키다, 높이다'},
+  {word:'enhance', meaning:'증가시키다, 높이다'},
+  {word:'elevate', meaning:'증가시키다, 높이다'},
+  {word:'investigate', meaning:'조사하다'},
+  {word:'effectiveness', meaning:'효율성'},
+  {word:'efficiency', meaning:'효율성'},
+  {word:'tactic', meaning:'전략, 전술'},
+  {word:'strategy', meaning:'전략, 전술'},
+  {word:'discount', meaning:'할인'},
+  {word:'control', meaning:'대조군'},
+  {word:'scarce', meaning:'부족한'},
+  {word:'limited', meaning:'부족한'},
+  {word:'scarcity', meaning:'부족, 결핍'},
+  {word:'shortage', meaning:'부족, 결핍'},
+  {word:'deficiency', meaning:'부족, 결핍'},
+  {word:'take place', meaning:'일어나다, 발생하다'},
+  {word:'occur', meaning:'일어나다, 발생하다'},
+  {word:'genuine', meaning:'진실한'},
+  {word:'authentic', meaning:'진실한, 진정한'},
+  {word:'laboratory', meaning:'실험실'},
+  {word:'productivity', meaning:'생산성'},
+  {word:'performance', meaning:'생산성'},
+  {word:'have an impact on', meaning:'영향을 미치다'},
+  {word:'have an effect on', meaning:'영향을 미치다'},
+  {word:'have an influence on', meaning:'영향을 미치다'},
+  {word:'introduce', meaning:'도입하다'},
+  {word:'bring in', meaning:'도입하다'},
+  {word:'decline', meaning:'감소'},
+  {word:'decrease', meaning:'감소'},
+  {word:'reduction', meaning:'감소'},
+  {word:'drop', meaning:'감소'},
+  {word:'livestock', meaning:'가축'},
+  {word:'gradually', meaning:'서서히'},
+  {word:'steadily', meaning:'서서히'},
+  {word:'settlement', meaning:'정착지'},
+  {word:'priest', meaning:'성직자'},
+  {word:'carry out', meaning:'수행하다'},
+  {word:'implement', meaning:'수행하다'},
+  {word:'fulfill', meaning:'수행하다'},
+  {word:'religious', meaning:'종교적인'},
+  {word:'keep track of', meaning:'~을 기록하다'},
+  {word:'setting', meaning:'설정'},
+  {word:'aeroplane', meaning:'비행기'},
+  {word:'output', meaning:'생산량'},
+  {word:'yield', meaning:'생산량'},
+  {word:'division of labor', meaning:'분업'},
+  {word:'straighten', meaning:'곧게 하다'},
+  {word:'sharpen', meaning:'날카롭게 하다'},
+  {word:'polish', meaning:'다듬다'},
+  {word:'refine', meaning:'다듬다'},
+  {word:'specialize in', meaning:'~을 전문으로 하다'},
+  {word:'pace', meaning:'속도'},
+  {word:'tempo', meaning:'속도'},
+  {word:'rate', meaning:'속도'},
+  {word:'reflect', meaning:'비추다'},
+  {word:'stare', meaning:'빤히 쳐다보다'},
+  {word:'gaze', meaning:'빤히 쳐다보다'},
+  {word:'interval', meaning:'간격'},
+  {word:'peer', meaning:'유심히 보다'},
+  {word:'examine', meaning:'유심히 보다'},
+  {word:'curiosity', meaning:'호기심'},
+  {word:'disinterested', meaning:'무관심한'},
+  {word:'indifferent', meaning:'무관심한'},
+  {word:'channel', meaning:'경로'},
+  {word:'trace', meaning:'추적하다'},
+  {word:'tack', meaning:'추적하다'},
+  {word:'infant', meaning:'유아'},
+  {word:'neural', meaning:'신경의'},
+  {word:'wiring', meaning:'연결(상태)'},
+  {word:'perception', meaning:'인식'},
+  {word:'cognition', meaning:'인식'},
+  {word:'awareness', meaning:'인식'},
+  {word:'consequently', meaning:'그 결과, 따라서'},
+  {word:'hence', meaning:'그 결과, 따라서'},
+  {word:'accordingly', meaning:'그 결과, 따라서'},
+  {word:'intensely', meaning:'매우'},
+  {word:'wildly', meaning:'몹시, 아주'},
+  {word:'disorder', meaning:'무질서'},
+  {word:'confusion', meaning:'무질서'},
+  {word:'regularly', meaning:'규칙적으로'},
+  {word:'routinely', meaning:'규칙적으로'},
+  {word:'nearly', meaning:'거의'},
+  {word:'approximately', meaning:'거의'},
+  {word:'unless', meaning:'~하지 않는다면'},
+  {word:'spoiled', meaning:'상한'},
+  {word:'label', meaning:'분류하다'},
+  {word:'classify', meaning:'분류하다'},
+  {word:'categorize', meaning:'분류하다'},
+  {word:'combination', meaning:'결합'},
+  {word:'conjunction', meaning:'결합'},
+  {word:'union', meaning:'결합'},
+  {word:'bond', meaning:'결합'},
+  {word:'nutrient', meaning:'영양소'},
+  {word:'dense', meaning:'빽빽한, 밀집한'},
+  {word:'compact', meaning:'빽빽한, 밀집한'},
+  {word:'crowded', meaning:'빽빽한, 밀집한'},
+  {word:'add up to', meaning:'결국~이 되다'},
+  {word:'result in', meaning:'결국~이 되다'},
+  {word:'amount to', meaning:'결국~이 되다'},
+  {word:'load up on', meaning:'~로 배를 가득 채우다'},
+  {word:'hunter-gatherer', meaning:'수렵·채집인'},
+  {word:'minimal', meaning:'최소의'},
+  {word:'least', meaning:'최소의'},
+  {word:'chief', meaning:'추장'},
+  {word:'surplus', meaning:'과잉'},
+  {word:'excess', meaning:'과잉'},
+  {word:'vital', meaning:'필수적인'},
+  {word:'crucial', meaning:'필수적인'},
+  {word:'essential', meaning:'필수적인'},
+  {word:'seldom', meaning:'좀처럼 ...않는'},
+  {word:'sufficient', meaning:'충분한'},
+  {word:'ample', meaning:'충분한'},
+  {word:'deficient', meaning:'부족한'},
+  {word:'agriculture', meaning:'농업'},
+  {word:'reap', meaning:'수확하다'},
+  {word:'harvest', meaning:'수확하다'},
+  {word:'practice medicine', meaning:'의술을 시행하다'},
+  {word:'consistent', meaning:'일관된'},
+  {word:'coherent', meaning:'일관된'},
+  {word:'necessity', meaning:'필수품, 필요'},
+  {word:'specialize', meaning:'전문적으로 다루다'},
+  {word:'carpenter', meaning:'목수'},
+  {word:'blacksmith', meaning:'대장장이'},
+  {word:'standard', meaning:'수준'},
+  {word:'stability', meaning:'안정성'},
+  {word:'severe', meaning:'심각한'},
+  {word:'barely', meaning:'간신히, 가까스로'},
+  {word:'narrowly', meaning:'간신히, 가까스로'},
+  {word:'comfort', meaning:'안락'},
+  {word:'politely', meaning:'공손히'},
+  {word:'hesitate', meaning:'주저하다'},
+  {word:'director', meaning:'책임자, 관리자'},
+  {word:'supervisor', meaning:'책임자, 관리자'},
+  {word:'fair', meaning:'박람회'},
+  {word:'experiment', meaning:'실험'},
+  {word:'qualified', meaning:'자격있는'},
+  {word:'certified', meaning:'자격있는'},
+  {word:'participant', meaning:'참가자'},
+  {word:'take a risk', meaning:'모험을 감수하다'},
+  {word:'definitely', meaning:'확실히, 분명히'},
+  {word:'unquestionably', meaning:'확실히, 분명히'},
+  {word:'without question', meaning:'확실히, 분명히'},
+  {word:'without doubt', meaning:'확실히, 분명히'},
+  {word:'piece of cake', meaning:'식은 죽 먹기'},
+  {word:'pin', meaning:'꼼짝 못하게 하다'},
+  {word:'freeze', meaning:'꼼짝 못하게 하다'},
+  {word:'deceptively', meaning:'믿을 수 없게도'},
+  {word:'incredibly', meaning:'믿을 수 없게도'},
+  {word:'handhold', meaning:'손으로 잡을 수 있는 곳'},
+  {word:'clumsily', meaning:'어색하게 , 서투르게'},
+  {word:'back and forth', meaning:'이리저리, 왔다갔다'},
+  {word:'end up with', meaning:'결국~하게 되다'},
+  {word:'wind up with', meaning:'결국~하게 되다'},
+  {word:'tremble', meaning:'(몸을) 떨다'},
+  {word:'shiver', meaning:'(몸을) 떨다'},
+  {word:'exhaustion', meaning:'탈진, 기진맥진'},
+  {word:'fright', meaning:'놀람, 두려움'},
+  {word:'overhear', meaning:'우연히 듣다'},
+  {word:'priority', meaning:'우선순위'},
+  {word:'tempting', meaning:'솔깃한, 매력적인'},
+  {word:'appealing', meaning:'솔깃한, 매력적인'},
+  {word:'inviting', meaning:'솔깃한, 매력적인'},
+  {word:'principle', meaning:'원칙'},
+  {word:'uphold', meaning:'유지시키다'},
+  {word:'sustain', meaning:'유지시키다'},
+  {word:'compassion', meaning:'연민, 동정심'},
+  {word:'sympathy', meaning:'연민, 동정심'},
+  {word:'pity', meaning:'연민, 동정심'},
+  {word:'concern', meaning:'우려, 걱정'},
+  {word:'self-discipline', meaning:'자기 훈련, 수양'},
+  {word:'no doubt', meaning:'틀림없이'},
+  {word:'assuredly', meaning:'틀림없이'},
+  {word:'pressure wave', meaning:'기압파, 압력파'},
+  {word:'two-way', meaning:'양 방향의, 쌍방의'},
+  {word:'one-way', meaning:'일방적인'},
+  {word:'perceive', meaning:'감지하다'},
+  {word:'intended', meaning:'의도된'},
+  {word:'restate', meaning:'다시 말하다'},
+  {word:'retell', meaning:'다시 말하다'},
+  {word:'publication', meaning:'출판, 발표'},
+  {word:'silently', meaning:'아무 말없이, 잠자코'},
+  {word:'negotiate', meaning:'협상하다'},
+  {word:'bargain', meaning:'협상하다'},
+  {word:'approach', meaning:'접근법'},
+  {word:'one-off', meaning:'단 한 번의'},
+  {word:'deal with', meaning:'상대하다, ~을 다루다'},
+  {word:'handle', meaning:'상대하다, ~을 다루다'},
+  {word:'increasingly', meaning:'점차'},
+  {word:'progressively', meaning:'점차'},
+  {word:'spouse', meaning:'배우자'},
+  {word:'colleague', meaning:'동료'},
+  {word:'coworker', meaning:'동료'},
+  {word:'essential', meaning:'중요한, 필수적인'},
+  {word:'crucial', meaning:'중요한, 필수적인'},
+  {word:'critical', meaning:'중요한, 필수적인'},
+  {word:'vital', meaning:'중요한, 필수적인'},
+  {word:'indispensable', meaning:'중요한, 필수적인'},
+  {word:'interdependent', meaning:'상호의존적인'},
+  {word:'interaction', meaning:'상호 작용'},
+  {word:'interplay', meaning:'상호 작용'},
+  {word:'productivity', meaning:'생산성'},
+  {word:'efficiency', meaning:'생산성'},
+  {word:'spillover', meaning:'파급'},
+  {word:'excessive', meaning:'지나친, 과도한'},
+  {word:'surplus', meaning:'과도한'},
+  {word:'transaction', meaning:'거래'},
+  {word:'deal', meaning:'거래'},
+  {word:'diversity', meaning:'다양성'},
+  {word:'tolerant', meaning:'관대한'},
+  {word:'liberal', meaning:'관대한'},
+  {word:'unattractive', meaning:'매력적이지 못한'},
+  {word:'unappealing', meaning:'매력적이지 못한'},
+  {word:'native', meaning:'토착민'},
+  {word:'distortion', meaning:'왜곡'},
+  {word:'misrepresentation', meaning:'왜곡'},
+  {word:'identity', meaning:'정체성'},
+  {word:'discriminate', meaning:'차별하다'},
+  {word:'segregate', meaning:'차별하다(성, 인종)'},
+  {word:'ethnic', meaning:'민족의'},
+  {word:'ethical', meaning:'도덕적인, 윤리적인'},
+  {word:'carve', meaning:'조각하다'},
+  {word:'erect', meaning:'세우다, 건립하다'},
+  {word:'hunter-gatherer', meaning:'수렵·채집인'},
+  {word:'successive', meaning:'연속적인, 연이은'},
+  {word:'succession', meaning:'연속, 계승'},
+  {word:'successor', meaning:'계승자'},
+  {word:'innovator', meaning:'혁신자, 도입자'},
+  {word:'settle down', meaning:'정착하다'},
+  {word:'take root', meaning:'정착하다'},
+  {word:'radically', meaning:'근본적으로'},
+  {word:'fundamentally', meaning:'근본적으로'},
+  {word:'bachelor’s degree', meaning:'학사 학위'},
+  {word:'master\'s degree', meaning:'석사 학위'},
+  {word:'doctor’s degree', meaning:'박사 학위'},
+  {word:'composition', meaning:'작곡, 작문'},
+  {word:'admire', meaning:'감탄하다'},
+  {word:'expressive', meaning:'표현력이 있는'},
+  {word:'harmonic', meaning:'화성의'},
+  {word:'inspire', meaning:'영감을 주다'},
+  {word:'motivate', meaning:'영감을 주다'},
+  {word:'stimulate', meaning:'영감을 주다'},
+  {word:'available', meaning:'이용가능한'},
+  {word:'registration', meaning:'등록'},
+  {word:'enrollment', meaning:'등록'},
+  {word:'submission', meaning:'제출'},
+  {word:'entry', meaning:'출품작'},
+  {word:'go for~', meaning:'~에 해당되다'},
+  {word:'be equivalent to', meaning:'~에 해당되다'},
+  {word:'specialized', meaning:'전문적인'},
+  {word:'expertise', meaning:'전문지식'},
+  {word:'executive', meaning:'경영진'},
+  {word:'decades of', meaning:'수십년의'},
+  {word:'respective', meaning:'각자의, 각각의'},
+  {word:'perspective', meaning:'관점'},
+  {word:'respectful', meaning:'예의바른, 공손한'},
+  {word:'criticism', meaning:'비판, 비평'},
+  {word:'surgery', meaning:'수술'},
+  {word:'operation', meaning:'수술'},
+  {word:'accountant', meaning:'회계사'},
+  {word:'moving', meaning:'이사'},
+  {word:'security', meaning:'안심, 안도감'},
+  {word:'disoriented', meaning:'방향 감각을 잃은'},
+  {word:'disrupt', meaning:'방해하다'},
+  {word:'disturb', meaning:'방해하다'},
+  {word:'interrupt', meaning:'방해하다'},
+  {word:'obstruct', meaning:'방해하다'},
+  {word:'hamper', meaning:'방해하다'},
+  {word:'literal', meaning:'융통성 없는'},
+  {word:'inflexible', meaning:'융통성 없는'},
+  {word:'beforehand', meaning:'사전에, 미리'},
+  {word:'in advance', meaning:'사전에, 미리'},
+  {word:'establish', meaning:'수립하다'},
+  {word:'set up', meaning:'수립하다'},
+  {word:'validate', meaning:'인정하다, 입증하다'},
+  {word:'approve', meaning:'인정하다, 입증하다'},
+  {word:'adjust', meaning:'적응하다'},
+  {word:'adapt', meaning:'적응하다'},
+  {word:'contribute', meaning:'기여하다'},
+  {word:'transition', meaning:'변화'},
+  {word:'terrified', meaning:'겁먹은'},
+  {word:'scared', meaning:'겁먹은'},
+  {word:'stem from', meaning:'~ 에서 유래하다'},
+  {word:'derive from', meaning:'~ 에서 유래하다'},
+  {word:'originate from', meaning:'~ 에서 유래하다'},
+  {word:'spring from', meaning:'~ 에서 유래하다'},
+  {word:'arise from', meaning:'~ 에서 유래하다'},
+  {word:'destination', meaning:'목적지'},
+  {word:'destiny', meaning:'운명'},
+  {word:'logic', meaning:'논리'},
+  {word:'rationality', meaning:'논리, 합리성'},
+  {word:'solely', meaning:'오로지, 단독으로'},
+  {word:'statistically', meaning:'통계적으로'},
+  {word:'possibly', meaning:'아마, 혹시'},
+  {word:'odds', meaning:'확률, 가능성'},
+  {word:'possibility', meaning:'확률, 가능성'},
+  {word:'likelihood', meaning:'확률, 가능성'},
+  {word:'chance', meaning:'확률, 가능성'},
+  {word:'anxiety', meaning:'걱정, 불안감'},
+  {word:'unease', meaning:'걱정, 불안감'},
+  {word:'downplay', meaning:'경시하다'},
+  {word:'play down', meaning:'경시하다'},
+  {word:'make light of', meaning:'경시하다'},
+  {word:'undervalue', meaning:'경시하다'},
+  {word:'understate', meaning:'경시하다'},
+  {word:'minimize', meaning:'경시하다'},
+  {word:'imaginary', meaning:'상상의'},
+  {word:'point out', meaning:'지적하다'},
+  {word:'indicate', meaning:'지적하다'},
+  {word:'employ', meaning:'사용하다'},
+  {word:'utilize', meaning:'사용하다'},
+  {word:'tap into', meaning:'사용하다'},
+  {word:'offender', meaning:'범죄자'},
+  {word:'interpret A as B', meaning:'A를 B라고 해석하다'},
+  {word:'qualitatively', meaning:'질적으로'},
+  {word:'quantitatively', meaning:'양적으로'},
+  {word:'define', meaning:'정의하다'},
+  {word:'humanity', meaning:'인류, 인간성'},
+  {word:'beat', meaning:'이기다'},
+  {word:'cognitive', meaning:'인지적인'},
+  {word:'precise', meaning:'정확한'},
+  {word:'accurate', meaning:'정확한'},
+  {word:'instinct', meaning:'본능'},
+  {word:'intelligence', meaning:'지능'},
+  {word:'trick', meaning:'수법'},
+  {word:'term', meaning:'(용어로) 칭하다'},
+  {word:'entitle', meaning:'칭하다'},
+  {word:'linguistic', meaning:'언어의'},
+  {word:'castration', meaning:'거세'},
+  {word:'disempower', meaning:'~로부터 힘을 빼앗다'},
+  {word:'weaken', meaning:'약화시키다'},
+  {word:'undermine', meaning:'훼손하다'},
+  {word:'engagement', meaning:'참여'},
+  {word:'involvement', meaning:'참여'},
+  {word:'achievement', meaning:'성취'},
+  {word:'attainment', meaning:'성취'},
+  {word:'relevant', meaning:'적절한'},
+  {word:'scholarly', meaning:'학구적인'},
+  {word:'highly', meaning:'매우'},
+  {word:'significant', meaning:'상당한'},
+  {word:'substantial', meaning:'상당한'},
+  {word:'bypass', meaning:'우회하다'},
+  {word:'detour', meaning:'우회하다, 우회'},
+  {word:'compensate', meaning:'보상하다'},
+  {word:'make up for', meaning:'보상하다'},
+  {word:'offset', meaning:'보상하다'},
+  {word:'opposite', meaning:'반대, 반대의'},
+  {word:'enthusiastic', meaning:'열광적인'},
+  {word:'passionate', meaning:'열광적인'},
+  {word:'rarely', meaning:'좀처럼 …하지 않는'},
+  {word:'seldom', meaning:'좀처럼 …하지 않는'},
+  {word:'scarcely', meaning:'좀처럼 …하지 않는'},
+  {word:'hardly', meaning:'좀처럼 …하지 않는'},
+  {word:'seek out', meaning:'~을 찾아내다'},
+  {word:'subject', meaning:'피실험자'},
+  {word:'religion', meaning:'종교'},
+  {word:'biography', meaning:'전기(傳記)'},
+  {word:'matter', meaning:'중요하다'},
+  {word:'count', meaning:'중요하다'},
+  {word:'ability', meaning:'능력'},
+  {word:'capability', meaning:'능력'},
+  {word:'competence', meaning:'능력'},
+  {word:'reflect', meaning:'나타내다, 반영하다'},
+  {word:'mirror', meaning:'나타내다, 반영하다'},
+  {word:'represent', meaning:'나타내다, 반영하다'},
+  {word:'brilliant', meaning:'훌륭한'},
+  {word:'legal', meaning:'법률의'},
+  {word:'elegant', meaning:'우아한, 명쾌한'},
+  {word:'exceptionally', meaning:'특별히'},
+  {word:'remarkably', meaning:'특별히'},
+  {word:'extraordinary', meaning:'특별히'},
+  {word:'witty', meaning:'재치 있는'},
+  {word:'attractive', meaning:'매력적인'},
+  {word:'appealing', meaning:'매력적인'},
+  {word:'inviting', meaning:'매력적인'},
+  {word:'fascinating', meaning:'매력적인'},
+  {word:'entertaining', meaning:'재미있는'},
+  {word:'latest', meaning:'최신의'},
+  {word:'newest', meaning:'최신의'},
+  {word:'up-to-date', meaning:'최신의'},
+  {word:'gadget', meaning:'(작고 유용한) 장치'},
+  {word:'sole', meaning:'유일한'},
+  {word:'determinant', meaning:'결정 요인'},
+  {word:'self-worth', meaning:'자아 존중감'},
+  {word:'self-esteem', meaning:'자아 존중감'},
+  {word:'self-respect', meaning:'자아 존중감'},
+  {word:'measure', meaning:'기준, 척도'},
+  {word:'take into account', meaning:'~을 고려하다'},
+  {word:'consider', meaning:'~을 고려하다'},
+  {word:'outstanding', meaning:'뛰어난'},
+  {word:'distinguished', meaning:'뛰어난'},
+  {word:'period', meaning:'끝, 마침표'},
+  {word:'sensory', meaning:'감각의'},
+  {word:'sensible', meaning:'현명한'},
+  {word:'sensitive', meaning:'민감한'},
+  {word:'ending', meaning:'말단'},
+  {word:'tissue', meaning:'(세포들로 이뤄진) 조직'},
+  {word:'particular', meaning:'특정한'},
+  {word:'specific', meaning:'특정한'},
+  {word:'sensation', meaning:'감각'},
+  {word:'transmit', meaning:'전달하다'},
+  {word:'convey', meaning:'전달하다'},
+  {word:'protective', meaning:'보호하는, 보호용의'},
+  {word:'defensive', meaning:'보호하는, 보호용의'},
+  {word:'mechanism', meaning:'구조, 메커니즘'},
+  {word:'polite', meaning:'공손한'},
+  {word:'motor nerve', meaning:'운동 신경'},
+  {word:'gut', meaning:'장(내장)'},
+  {word:'sweat', meaning:'땀을 흘리다'},
+  {word:'atom', meaning:'원자'},
+  {word:'crystal', meaning:'결정체'},
+  {word:'be made up of', meaning:'~로 구성되다'},
+  {word:'be comprised of', meaning:'~로 구성되다'},
+  {word:'consist of', meaning:'~로 구성되다'},
+  {word:'hexagon', meaning:'육각형'},
+  {word:'twist', meaning:'휘다, 비틀다'},
+  {word:'steady', meaning:'안정된, 변함없는'},
+  {word:'stable', meaning:'안정된'},
+  {word:'constant', meaning:'안정된'},
+  {word:'crystal lattice', meaning:'결정격자'},
+  {word:'string', meaning:'줄'},
+  {word:'blur', meaning:'흐릿해지다'},
+  {word:'outline', meaning:'윤곽'},
+  {word:'on one’s own', meaning:'스스로'},
+  {word:'for oneself', meaning:'스스로'},
+  {word:'vibrate', meaning:'진동하다'},
+  {word:'attach A to B', meaning:'A를 B에 붙이다'},
+  {word:'hollow', meaning:'(속이) 빈'},
+  {word:'note', meaning:'음, 음표'},
+  {word:'eardrum', meaning:'고막'},
+  {word:'flex', meaning:'굽이쳐 움직이다'},
+  {word:'rate', meaning:'비율, 속도'},
+  {word:'boundary', meaning:'경계'},
+  {word:'border', meaning:'경계'},
+  {word:'blur', meaning:'흐릿해지다'},
+  {word:'dull', meaning:'흐릿해지다'},
+  {word:'portable', meaning:'휴대용의'},
+  {word:'mobile', meaning:'휴대용의'},
+  {word:'separate', meaning:'분리하다, 나누다'},
+  {word:'divide', meaning:'분리하다, 나누다'},
+  {word:'isolate', meaning:'분리하다, 나누다'},
+  {word:'take~off', meaning:'분리하다'},
+  {word:'segment', meaning:'(여러 부분으로)나누다'},
+  {word:'minimize', meaning:'최소화하다'},
+  {word:'reduce', meaning:'최소화하다'},
+  {word:'lessen', meaning:'최소화하다'},
+  {word:'downplay', meaning:'최소화하다'},
+  {word:'flexible', meaning:'유연한'},
+  {word:'adaptable', meaning:'유연한'},
+  {word:'distinction', meaning:'구별'},
+  {word:'differentiation', meaning:'구별'},
+  {word:'discrimination', meaning:'구별'},
+  {word:'integrate', meaning:'통합시키다'},
+  {word:'unify', meaning:'통합시키다'},
+  {word:'merge', meaning:'통합시키다'},
+  {word:'incorporate', meaning:'통합시키다'},
+  {word:'entail', meaning:'수반하다'},
+  {word:'involve', meaning:'수반하다'},
+  {word:'accompany', meaning:'수반하다'},
+  {word:'go with', meaning:'수반하다'},
+  {word:'constantly', meaning:'지속해서'},
+  {word:'consistently', meaning:'지속해서'},
+  {word:'inbox', meaning:'전자우편 수신함'},
+  {word:'complementary', meaning:'상호 보완적인'},
+  {word:'supplemental', meaning:'상호 보완적인'},
+  {word:'complimentary', meaning:'칭찬의'},
+  {word:'good(=goods)', meaning:'상품'},
+  {word:'merchandise', meaning:'상품'},
+  {word:'commodity', meaning:'상품'},
+  {word:'alongside', meaning:'…와 함께'},
+  {word:'pillow', meaning:'베개'},
+  {word:'popularity', meaning:'인기'},
+  {word:'complement', meaning:'보충하다'},
+  {word:'supplement', meaning:'보충하다'},
+  {word:'replenish', meaning:'보충하다'},
+  {word:'compliment', meaning:'칭찬하다'},
+  {word:'steady', meaning:'꾸준한, 한결같은'},
+  {word:'unchanging', meaning:'꾸준한, 한결같은'},
+  {word:'stream', meaning:'흐름'},
+  {word:'assume', meaning:'추정하다'},
+  {word:'presume', meaning:'추정하다'},
+  {word:'suppose', meaning:'추정하다'},
+  {word:'investigate', meaning:'조사하다'},
+  {word:'examine', meaning:'조사하다'},
+  {word:'scrutinize', meaning:'조사하다'},
+  {word:'expectation', meaning:'예상, 기대'},
+  {word:'anticipation', meaning:'예상, 기대'},
+  {word:'surgeon', meaning:'외과 전문의'},
+  {word:'scrubs', meaning:'(외과 의사의) 수술복'},
+  {word:'notable', meaning:'눈에 띄는'},
+  {word:'evident', meaning:'눈에 띄는'},
+  {word:'remarkable', meaning:'눈에 띄는'},
+  {word:'striking', meaning:'눈에 띄는'},
+  {word:'exception', meaning:'예외'},
+  {word:'a series of', meaning:'일련의'},
+  {word:'a chain of', meaning:'일련의'},
+  {word:'established', meaning:'기존의, 확립된'},
+  {word:'existing', meaning:'기존의'},
+  {word:'norm', meaning:'규범, 기준'},
+  {word:'standard', meaning:'규범, 기준'},
+  {word:'convention', meaning:'(관습적) 규범'},
+  {word:'competence', meaning:'능력'},
+  {word:'proficiency', meaning:'능력'},
+  {word:'capability', meaning:'능력'},
+  {word:'uniqueness', meaning:'독특함'},
+  {word:'distinctiveness', meaning:'독특함'},
+  {word:'singularity', meaning:'독특함'},
+  {word:'slight', meaning:'약간의'},
+  {word:'emission', meaning:'배출'},
+  {word:'discharge', meaning:'배출'},
+  {word:'transportation', meaning:'수송'},
+  {word:'founded', meaning:'근거가 있는'},
+  {word:'well-grounded', meaning:'근거가 있는'},
+  {word:'baseless', meaning:'근거가 없는'},
+  {word:'ship', meaning:'수송하다, 운송하다'},
+  {word:'footprint', meaning:'발자국'},
+  {word:'lamb', meaning:'어린 양'},
+  {word:'load', meaning:'짐'},
+  {word:'pastureland', meaning:'목초지'},
+  {word:'meadow', meaning:'목초지'},
+  {word:'temple', meaning:'사원'},
+  {word:'worship', meaning:'예배'},
+  {word:'arrangement', meaning:'준비'},
+  {word:'put up', meaning:'게시하다'},
+  {word:'post', meaning:'게시하다'},
+  {word:'accommodation', meaning:'숙박 시설'},
+  {word:'applicant', meaning:'지원자'},
+  {word:'bury', meaning:'(땅 속에) 숨기다'},
+  {word:'brick', meaning:'벽돌'},
+  {word:'trip over', meaning:'…에 발이 걸려 넘어지다'},
+  {word:'dig up', meaning:'캐내다'},
+  {word:'duty', meaning:'의무'},
+  {word:'appreciate', meaning:'감사하다'},
+  {word:'be grateful for', meaning:'감사하다'},
+  {word:'confident', meaning:'자신감 있는'},
+  {word:'ad(advertisement)', meaning:'광고'},
+  {word:'in response to', meaning:'~에 대한 대답으로'},
+  {word:'graduate from', meaning:'~을 졸업하다'},
+  {word:'apply for', meaning:'지원하다, 신청하다'},
+  {word:'apply to~', meaning:'~에게 적용되다'},
+  {word:'available', meaning:'가능한'},
+  {word:'look forward to ~ing', meaning:'~하는 것을 학수고대하다'},
+  {word:'anticipate', meaning:'~하는 것을 학수고대하다'},
+  {word:'shade', meaning:'색조'},
+  {word:'exotic', meaning:'이국적인'},
+  {word:'point at', meaning:'가리키다'},
+  {word:'indicate', meaning:'가리키다'},
+  {word:'lose track of', meaning:'~을 놓치다'},
+  {word:'lose sight of', meaning:'~을 놓치다'},
+  {word:'sink', meaning:'가라앉다'},
+  {word:'submerge', meaning:'가라앉다'},
+  {word:'unfortunately', meaning:'불행히도'},
+  {word:'lay out', meaning:'놓다'},
+  {word:'manage to ~', meaning:'해내다'},
+  {word:'succeed in', meaning:'해내다'},
+  {word:'well-run', meaning:'잘 운영되는'},
+  {word:'as if', meaning:'마치 ~인 것 처럼'},
+  {word:'as though', meaning:'마치 ~인 것 처럼'},
+  {word:'lack', meaning:'~가 부족하다, 결여되다'},
+  {word:'describe', meaning:'나타내다, 묘사하다'},
+  {word:'depict', meaning:'나타내다, 묘사하다'},
+  {word:'portray', meaning:'나타내다, 묘사하다'},
+  {word:'commit', meaning:'전념하다, 헌신하다'},
+  {word:'dedicate', meaning:'전념하다, 헌신하다'},
+  {word:'devote', meaning:'전념하다, 헌신하다'},
+  {word:'commitment', meaning:'헌신, 약속'},
+  {word:'otherwise', meaning:'그렇지 않으면'},
+  {word:'likewise', meaning:'마찬가지로'},
+  {word:'be likely to ~', meaning:'~할 것 같다'},
+  {word:'be prone to', meaning:'~할 것 같다'},
+  {word:'be apt to', meaning:'~할 것 같다'},
+  {word:'be liable to', meaning:'~할 것 같다'},
+  {word:'progress', meaning:'진전하다, 진보하다'},
+  {word:'commonsense', meaning:'상식적인'},
+  {word:'view', meaning:'견해, 관점'},
+  {word:'perspective', meaning:'견해, 관점'},
+  {word:'objective', meaning:'객관적인'},
+  {word:'subjective', meaning:'주관적인'},
+  {word:'property', meaning:'속성, 특성'},
+  {word:'trait', meaning:'속성, 특성'},
+  {word:'attribute', meaning:'속성, 특성'},
+  {word:'bounce off', meaning:'튕겨나가다'},
+  {word:'reflect', meaning:'반사하다, 반영하다'},
+  {word:'mirror', meaning:'반사하다, 반영하다'},
+  {word:'argue', meaning:'주장하다'},
+  {word:'maintain', meaning:'주장하다'},
+  {word:'inhabit', meaning:'존재하다, 살다'},
+  {word:'exist', meaning:'존재하다, 살다'},
+  {word:'physical', meaning:'물리적인'},
+  {word:'mental', meaning:'정신적인'},
+  {word:'else', meaning:'그 밖의'},
+  {word:'put it', meaning:'말하다'},
+  {word:'register', meaning:'등록하다'},
+  {word:'sign up for', meaning:'등록하다'},
+  {word:'interpret', meaning:'해석하다'},
+  {word:'novel', meaning:'소설'},
+  {word:'fiction', meaning:'소설, 허구'},
+  {word:'crime', meaning:'범죄'},
+  {word:'criminal', meaning:'범죄의, 범죄자'},
+  {word:'author', meaning:'저자'},
+  {word:'organize', meaning:'조직하다'},
+  {word:'polite', meaning:'예의바른'},
+  {word:'courteous', meaning:'예의바른'},
+  {word:'impolite', meaning:'예의없는'},
+  {word:'earn', meaning:'얻다'},
+  {word:'permission', meaning:'허락, 허가'},
+  {word:'location', meaning:'장소, 위치'},
+  {word:'boredom', meaning:'지루함'},
+  {word:'monotony', meaning:'지루함'},
+  {word:'pack', meaning:'꽉 채우다'},
+  {word:'matter', meaning:'중요하다'},
+  {word:'count', meaning:'중요하다'},
+  {word:'reveal', meaning:'드러내다'},
+  {word:'disclose', meaning:'드러내다'},
+  {word:'conceal', meaning:'감추다'},
+  {word:'crucial', meaning:'중요한, 결정적인'},
+  {word:'critical', meaning:'중요한, 결정적인'},
+  {word:'vital', meaning:'중요한, 결정적인'},
+  {word:'tension', meaning:'긴장(감)'},
+  {word:'conflict', meaning:'갈등'},
+  {word:'friction', meaning:'갈등, 마찰'},
+  {word:'disagreement', meaning:'갈등'},
+  {word:'timetable', meaning:'시간표'},
+  {word:'the rest', meaning:'나머지'},
+  {word:'adequate', meaning:'적절한, 충분한'},
+  {word:'gum', meaning:'잇몸'},
+  {word:'bloodstream', meaning:'혈류'},
+  {word:'oral', meaning:'구두의, 입의'},
+  {word:'affect', meaning:'영향을 주다'},
+  {word:'influence', meaning:'영향을 주다'},
+  {word:'aspect', meaning:'면, 측면'},
+  {word:'pose', meaning:'(문제 등을)제기하다'}
+];
+
+function esc(s) {
+  return String(s)
+    .replace(/&/g,'&amp;')
+    .replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;')
+    .replace(/"/g,'&quot;');
+}
+
+function speak(t) {
+  if (!('speechSynthesis' in window)) return;
+  window.speechSynthesis.cancel();
+  var u = new SpeechSynthesisUtterance(t);
+  u.lang = 'en-US';
+  u.rate = 0.85;
+  window.speechSynthesis.speak(u);
+}
+function speakFc() { speak(document.getElementById('fcword').textContent); }
+
+function shuffle(a) {
+  var b = a.slice();
+  for (var i = b.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var t = b[i]; b[i] = b[j]; b[j] = t;
+  }
+  return b;
+}
+
+function toast(msg) {
+  var el = document.getElementById('toast');
+  el.textContent = msg;
+  el.style.display = 'block';
+  clearTimeout(window._toastT);
+  window._toastT = setTimeout(function() { el.style.display = 'none'; }, 1800);
+}
+
+/* ---------- storage ---------- */
+var store = {};
+try { store = JSON.parse(localStorage.getItem(STORE_KEY) || '{}') || {}; } catch (e) { store = {}; }
+function saveStore() { try { localStorage.setItem(STORE_KEY, JSON.stringify(store)); } catch (e) {} }
+function skey(w) { return w.word + '|' + w.meaning; }
+function getS(w) {
+  var s = store[skey(w)];
+  if (!s) return { status: '', fav: false };
+  return { status: s.status || '', fav: !!s.fav };
+}
+function setS(w, s) { store[skey(w)] = { status: s.status, fav: s.fav }; saveStore(); }
+
+/* ---------- ranges ---------- */
+function buildRanges(ws) {
+  var r = [{label:'전체', s:0, e:ws.length}];
+  for (var i = 0; i < ws.length; i += 50) {
+    var e = Math.min(i + 50, ws.length);
+    r.push({label:(i+1)+'~'+e, s:i, e:e});
+  }
+  return r;
+}
+var RANGES = buildRanges(rawWords);
+
+function renderRangeBar(barId, ri, fn) {
+  var bar = document.getElementById(barId);
+  if (!bar) return;
+  var h = [];
+  for (var i = 0; i < RANGES.length; i++) {
+    var cls = 'rbtn' + (i === ri ? ' on' : '');
+    h.push('<button class="' + cls + '" data-i="' + i + '" onclick="' + fn + '(this)">' + RANGES[i].label + '</button>');
+  }
+  bar.innerHTML = h.join('');
+  var on = bar.querySelector('.rbtn.on');
+  if (on && on.scrollIntoView) {
+    var left = on.offsetLeft - bar.clientWidth / 2 + on.clientWidth / 2;
+    bar.scrollLeft = left < 0 ? 0 : left;
+  }
+}
+
+function wordsForRange(ri) {
+  var r = RANGES[ri];
+  return rawWords.slice(r.s, r.e);
+}
+
+/* ---------- tab 1: word list ---------- */
+var wri = 0;
+var wfilter = 'all';
+function setWR(el) { wri = parseInt(el.getAttribute('data-i'), 10); renderList(); }
+function setFilter(f) {
+  wfilter = f;
+  document.getElementById('flt-all').classList.toggle('on', f === 'all');
+  document.getElementById('flt-unk').classList.toggle('on', f === 'unk');
+  document.getElementById('flt-fav').classList.toggle('on', f === 'fav');
+  renderList();
+}
+function renderList() {
+  renderRangeBar('wrbar', wri, 'setWR');
+  var pool = wordsForRange(wri);
+  var q = document.getElementById('wsearch').value.replace(/^\s+|\s+$/g, '').toLowerCase();
+  var list = [];
+  var knownCnt = 0;
+  for (var k = 0; k < pool.length; k++) {
+    var pw = pool[k], ps = getS(pw);
+    if (ps.status === 'known') knownCnt++;
+    if (wfilter === 'unk' && ps.status === 'known') continue;
+    if (wfilter === 'fav' && !ps.fav) continue;
+    if (q && pw.word.toLowerCase().indexOf(q) < 0 && pw.meaning.toLowerCase().indexOf(q) < 0) continue;
+    list.push(pw);
+  }
+  var h = [];
+  for (var i = 0; i < list.length; i++) {
+    var w = list[i], s = getS(w);
+    var known = s.status === 'known', fav = s.fav;
+    h.push('<div class="wcard' + (known ? ' known' : '') + '">');
+    h.push('<button class="chk' + (known ? ' on' : '') + '" data-wi="' + i + '" onclick="toggleKnown(this)">' + (known ? '✔' : '') + '</button>');
+    h.push('<div class="wbody">');
+    h.push('<div class="wword">' + esc(w.word) + '</div>');
+    h.push('<div class="wmean">' + esc(w.meaning) + '</div>');
+    h.push('</div>');
+    h.push('<div class="wacts">');
+    h.push('<button class="ibtn" data-w="' + esc(w.word) + '" onclick="speak(this.dataset.w)">🔊</button>');
+    h.push('<button class="ibtn favbtn' + (fav ? ' on' : '') + '" data-wi="' + i + '" onclick="toggleFav(this)">' + (fav ? '★' : '☆') + '</button>');
+    h.push('</div>');
+    h.push('</div>');
+  }
+  if (!list.length) h.push('<div class="empty">표시할 단어가 없어요</div>');
+  document.getElementById('wlist').innerHTML = h.join('');
+  document.getElementById('wstat').textContent = '표시 ' + list.length + '개 · 알아요 ' + knownCnt + '/' + pool.length;
+  window._wlist = list;
+}
+function toggleKnown(el) {
+  var w = window._wlist[parseInt(el.getAttribute('data-wi'), 10)];
+  if (!w) return;
+  var s = getS(w);
+  s.status = s.status === 'known' ? '' : 'known';
+  setS(w, s);
+  renderList();
+}
+function toggleFav(el) {
+  var w = window._wlist[parseInt(el.getAttribute('data-wi'), 10)];
+  if (!w) return;
+  var s = getS(w);
+  s.fav = !s.fav;
+  setS(w, s);
+  renderList();
+}
+
+/* ---------- tab 2: flashcard ---------- */
+var fri = 0, fcPool = [], fcIdx = 0, fcFlipped = false, fcTX = 0;
+function setFCR(el) { fri = parseInt(el.getAttribute('data-i'), 10); fcIdx = 0; fcInit(); }
+var fcEvReg = false;
+function fcRegisterEvents() {
+  if (fcEvReg) return;
+  fcEvReg = true;
+  var card = document.getElementById('fccard');
+  card.addEventListener('click', function(e) {
+    if (e.target.id === 'fcfavbtn') return;
+    fcFlip();
+  });
+  card.addEventListener('touchstart', function(e) {
+    fcTX = e.touches[0].clientX;
+  }, {passive:true});
+  card.addEventListener('touchend', function(e) {
+    var dx = e.changedTouches[0].clientX - fcTX;
+    if (Math.abs(dx) > 50) { if (dx < 0) fcNext(); else fcPrev(); }
+  }, {passive:true});
+}
+function fcInit() {
+  renderRangeBar('fcrbar', fri, 'setFCR');
+  fcPool = wordsForRange(fri);
+  if (fcIdx >= fcPool.length) fcIdx = 0;
+  fcRegisterEvents();
+  fcShow();
+}
+function fcShow() {
+  if (!fcPool.length) return;
+  fcFlipped = false;
+  var w = fcPool[fcIdx];
+  document.getElementById('fcword').textContent = w.word;
+  document.getElementById('fcmean').textContent = w.meaning;
+  document.getElementById('fcmean').style.display = 'none';
+  document.getElementById('fctap').style.display = 'block';
+  document.getElementById('fcctr').textContent = (fcIdx+1) + '/' + fcPool.length;
+  document.getElementById('fcfavbtn').textContent = getS(w).fav ? '★' : '☆';
+}
+function fcFlip() {
+  if (fcFlipped) return;
+  if (!fcPool.length) return;
+  fcFlipped = true;
+  document.getElementById('fcmean').style.display = 'block';
+  document.getElementById('fctap').style.display = 'none';
+  speak(fcPool[fcIdx].word);
+}
+function fcNext() { if (!fcPool.length) return; fcIdx = (fcIdx + 1) % fcPool.length; fcShow(); }
+function fcPrev() { if (!fcPool.length) return; fcIdx = (fcIdx - 1 + fcPool.length) % fcPool.length; fcShow(); }
+function fcToggleFav() {
+  if (!fcPool.length) return;
+  var w = fcPool[fcIdx];
+  var s = getS(w);
+  s.fav = !s.fav;
+  setS(w, s);
+  document.getElementById('fcfavbtn').textContent = s.fav ? '★' : '☆';
+}
+
+/* ---------- tab 3: test (4-choice) ---------- */
+var tri = 0, tName = '', tQs = [], tIdx = 0, tCorrect = 0, tResults = [], tLocked = false, tStarted = false;
+var T_COUNT = 50;
+function setTR(el) { tri = parseInt(el.getAttribute('data-i'), 10); renderRangeBar('trbar', tri, 'setTR'); }
+function tSetup() {
+  if (tStarted) return;
+  var h = [];
+  h.push('<div class="tbox">');
+  h.push('<div class="tlabel">이름</div>');
+  h.push('<input class="tinput" id="tname" type="text" placeholder="이름을 입력하세요" value="' + esc(tName) + '">');
+  h.push('<div class="tlabel">문제 수</div>');
+  h.push('<div class="qcnt"><span class="qbtn">50문제</span></div>');
+  h.push('<div class="tlabel">범위</div>');
+  h.push('<div class="rbar" id="trbar"></div>');
+  h.push('<button class="pbtn" onclick="tStart()">테스트 시작 ▶</button>');
+  h.push('</div>');
+  document.getElementById('tarea').innerHTML = h.join('');
+  renderRangeBar('trbar', tri, 'setTR');
+}
+function tStart() {
+  var nm = document.getElementById('tname').value.replace(/^\s+|\s+$/g, '');
+  if (!nm) { alert('이름을 입력해 주세요.'); return; }
+  tName = nm;
+  var pool = shuffle(wordsForRange(tri));
+  tQs = pool.slice(0, Math.min(T_COUNT, pool.length));
+  tIdx = 0; tCorrect = 0; tResults = []; tStarted = true;
+  tRenderQ();
+}
+function tBuildOptions(w) {
+  var cands = shuffle(rawWords);
+  var opts = [w.meaning];
+  for (var i = 0; i < cands.length && opts.length < 4; i++) {
+    var m = cands[i].meaning;
+    if (opts.indexOf(m) < 0) opts.push(m);
+  }
+  return shuffle(opts);
+}
+function tRenderQ() {
+  tLocked = false;
+  var w = tQs[tIdx];
+  var opts = tBuildOptions(w);
+  var total = tQs.length;
+  var h = [];
+  h.push('<div class="ptrack"><div class="pfill" style="width:' + Math.round(tIdx / total * 100) + '%"></div></div>');
+  h.push('<div class="tmeta"><span>' + (tIdx + 1) + ' / ' + total + '</span><span class="ok">✔ 맞춤 ' + tCorrect + '</span></div>');
+  h.push('<div class="tq">');
+  h.push('<div class="tqword">' + esc(w.word) + '</div>');
+  h.push('<div class="tqpron">' + (w.pron ? esc(w.pron) : '') + '</div>');
+  h.push('<button class="tqspk" data-w="' + esc(w.word) + '" onclick="speak(this.dataset.w)">🔊</button>');
+  h.push('</div>');
+  h.push('<div id="toptions">');
+  for (var i = 0; i < opts.length; i++) {
+    h.push('<button class="topt" data-oi="' + i + '">' + esc(opts[i]) + '</button>');
+  }
+  h.push('</div>');
+  h.push('<button class="pbtn" id="t-next-btn" onclick="tNext()">' + (tIdx === total - 1 ? '결과 보기 →' : '다음 →') + '</button>');
+  document.getElementById('tarea').innerHTML = h.join('');
+  var btns = document.querySelectorAll('#toptions .topt');
+  for (var j = 0; j < btns.length; j++) {
+    (function(b, val) {
+      b.addEventListener('click', function() { tAnswer(b, val, w.meaning); });
+    })(btns[j], opts[j]);
+  }
+  speak(w.word);
+}
+function tAnswer(el, chosen, correct) {
+  if (tLocked) return;
+  tLocked = true;
+  var opts = document.querySelectorAll('#toptions .topt');
+  for (var i = 0; i < opts.length; i++) {
+    var b = opts[i];
+    if (b.textContent.replace(/^\s+/, '') === correct) b.className += ' correct';
+    else if (b === el) b.className += ' wrong';
+    b.style.pointerEvents = 'none';
+  }
+  var ok = (chosen === correct);
+  if (ok) tCorrect++;
+  tResults.push({ word: tQs[tIdx].word, meaning: correct, ans: chosen, ok: ok });
+  var meta = document.querySelector('.tmeta .ok');
+  if (meta) meta.textContent = '✔ 맞춤 ' + tCorrect;
+  document.getElementById('t-next-btn').style.display = 'block';
+}
+function tNext() {
+  if (!tLocked) return;
+  tIdx++;
+  if (tIdx >= tQs.length) { tShowResult(); return; }
+  tRenderQ();
+}
+function tEmoji(p) {
+  if (p === 100) return '🏆';
+  if (p >= 80) return '🎉';
+  if (p >= 60) return '👍';
+  return '💪';
+}
+function tShowResult() {
+  var total = tQs.length;
+  var pct = total ? Math.round(tCorrect / total * 100) : 0;
+  var wrong = [];
+  for (var i = 0; i < tResults.length; i++) if (!tResults[i].ok) wrong.push(tResults[i]);
+  var h = [];
+  h.push('<div class="tbox">');
+  h.push('<div class="rscore">');
+  h.push('<div class="remoji">' + tEmoji(pct) + '</div>');
+  h.push('<div class="rnum">' + tCorrect + ' / ' + total + '</div>');
+  h.push('<div class="rpct">' + pct + '점</div>');
+  h.push('<div class="rname">' + esc(tName) + '</div>');
+  h.push('</div>');
+  if (wrong.length) {
+    h.push('<div class="rsec">❌ 틀린 단어 (' + wrong.length + '개)</div>');
+    for (var j = 0; j < wrong.length; j++) {
+      var r = wrong[j];
+      h.push('<div class="ritem">');
+      h.push('<div class="rw">' + esc(r.word) + '</div>');
+      h.push('<div class="ra">입력: ' + esc(r.ans) + '</div>');
+      h.push('<div class="rc">정답: ' + esc(r.meaning) + '</div>');
+      h.push('</div>');
+    }
+  } else {
+    h.push('<div class="rsec" style="text-align:center;">모두 맞혔어요! 완벽해요 ✨</div>');
+  }
+  h.push('<button class="pbtn kbtn" onclick="tCopy()">📋 카톡으로 결과 복사</button>');
+  h.push('<button class="pbtn sbtn" onclick="tRestart()">↩ 다시 테스트</button>');
+  h.push('</div>');
+  document.getElementById('tarea').innerHTML = h.join('');
+}
+function tBuildText() {
+  var total = tQs.length;
+  var pct = total ? Math.round(tCorrect / total * 100) : 0;
+  var d = new Date();
+  var lines = [];
+  var wrong = [], right = [];
+  for (var i = 0; i < tResults.length; i++) {
+    if (tResults[i].ok) right.push(tResults[i].word); else wrong.push(tResults[i]);
+  }
+  lines.push('[씨유에탑 ' + SERIES + '] 테스트 결과');
+  lines.push('날짜: ' + d.getFullYear() + '. ' + (d.getMonth() + 1) + '. ' + d.getDate() + '.');
+  lines.push('이름: ' + tName);
+  lines.push('점수: ' + tCorrect + '/' + total + ' (' + pct + '점)');
+  lines.push('─────────────────');
+  lines.push('❌ 틀린 단어 (' + wrong.length + '개)');
+  for (var j = 0; j < wrong.length; j++) {
+    lines.push('  ' + wrong[j].word + ' → 입력:' + wrong[j].ans + ' / 정답:' + wrong[j].meaning);
+  }
+  lines.push('─────────────────');
+  lines.push('✅ 맞은 단어: ' + right.join(', '));
+  return lines.join('\n');
+}
+function tCopy() {
+  var txt = tBuildText();
+  function fallback() {
+    var ta = document.createElement('textarea');
+    ta.value = txt;
+    ta.style.position = 'fixed';
+    ta.style.top = '-1000px';
+    document.body.appendChild(ta);
+    ta.focus();
+    ta.select();
+    try { document.execCommand('copy'); toast('결과가 복사되었어요! 카톡에 붙여넣기 하세요'); }
+    catch (e) { alert(txt); }
+    document.body.removeChild(ta);
+  }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(txt).then(function() {
+      toast('결과가 복사되었어요! 카톡에 붙여넣기 하세요');
+    }, fallback);
+  } else {
+    fallback();
+  }
+}
+function tRestart() { tStarted = false; tSetup(); }
+
+/* ---------- tabs ---------- */
+var TABS = ['w','fc','t'];
+function showTab(id) {
+  for (var i = 0; i < TABS.length; i++) {
+    var t = TABS[i];
+    document.getElementById('pane-' + t).classList.toggle('on', t === id);
+    document.getElementById('tb-' + t).classList.toggle('on', t === id);
+  }
+  if (id === 'w')  { renderRangeBar('wrbar', wri, 'setWR'); renderList(); }
+  if (id === 'fc') { fcInit(); }
+  if (id === 't')  { tSetup(); }
+}
+
+document.getElementById('hsub').textContent = SERIES + ' · 총 ' + rawWords.length + '단어';
+renderList();
+</script>
+</body>
+</html>
