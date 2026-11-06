@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>씨유에탑 일본어단어장 — 실생활 기초단어 100</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary: #2563EB;
+  --primary-dark: #1D4ED8;
+  --primary-light: #EFF6FF;
+  --success: #10B981;
+  --danger: #EF4444;
+  --warn: #F59E0B;
+  --gray: #6B7280;
+  --border: #E5E7EB;
+  --bg: #F9FAFB;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+body { font-family: 'Noto Sans KR', sans-serif; background: var(--bg); color: #111827; max-width: 420px; margin: 0 auto; min-height: 100vh; display: flex; flex-direction: column; }
+header { background: var(--primary); color: #fff; padding: 14px 16px 10px; text-align: center; flex-shrink: 0; }
+header .htop { font-family: 'Nunito', sans-serif; font-size: 13px; font-weight: 800; letter-spacing: 1px; opacity: 0.9; }
+header .hsub { font-size: 12px; opacity: 0.8; margin-top: 2px; }
+.tabs { display: flex; background: #fff; border-bottom: 2px solid var(--border); flex-shrink: 0; }
+.tab { flex: 1; padding: 10px 4px; text-align: center; font-size: 11px; font-weight: 600; color: var(--gray); cursor: pointer; border: none; background: none; font-family: 'Noto Sans KR', sans-serif; }
+.tab.on { color: var(--primary); border-bottom: 2px solid var(--primary); margin-bottom: -2px; }
+.pane { display: none; flex: 1; overflow-y: auto; padding: 12px; flex-direction: column; }
+.pane.on { display: flex; }
+.rbar { display: flex; gap: 6px; overflow-x: auto; padding: 0 0 8px 0; margin-bottom: 8px; -webkit-overflow-scrolling: touch; scrollbar-width: none; flex-shrink: 0; }
+.rbar::-webkit-scrollbar { display: none; }
+.rbtn { flex-shrink: 0; padding: 6px 12px; border-radius: 20px; border: 1.5px solid var(--border); background: #fff; font-size: 12px; font-weight: 600; color: var(--gray); cursor: pointer; white-space: nowrap; font-family: 'Nunito', sans-serif; }
+.rbtn.on { background: var(--primary); border-color: var(--primary); color: #fff; }
+/* Tab 1 */
+.search-wrap { display: flex; gap: 8px; margin-bottom: 8px; flex-shrink: 0; }
+.search-wrap input { flex: 1; padding: 8px 12px; border: 1.5px solid var(--border); border-radius: 20px; font-size: 13px; font-family: 'Noto Sans KR', sans-serif; outline: none; }
+.search-wrap input:focus { border-color: var(--primary); }
+.filter-row { display: flex; gap: 6px; margin-bottom: 10px; flex-shrink: 0; }
+.fbtn { padding: 5px 12px; border-radius: 20px; border: 1.5px solid var(--border); background: #fff; font-size: 12px; font-weight: 600; color: var(--gray); cursor: pointer; white-space: nowrap; font-family: 'Noto Sans KR', sans-serif; }
+.fbtn.on { background: var(--primary); border-color: var(--primary); color: #fff; }
+#wlist { display: flex; flex-direction: column; gap: 8px; }
+.wcard { display: flex; align-items: center; background: #fff; border-radius: 12px; padding: 10px 10px 10px 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); gap: 6px; transition: opacity 0.2s; }
+.wcard.known { opacity: 0.35; }
+.chk { width: 32px; height: 32px; border-radius: 50%; border: 2px solid var(--border); background: #fff; font-size: 14px; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--gray); font-family: 'Nunito', sans-serif; }
+.chk.on { background: var(--success); border-color: var(--success); color: #fff; }
+.wbody { flex: 1; min-width: 0; }
+.wword { font-family: 'Nunito', sans-serif; font-size: 15px; font-weight: 700; color: #111; word-break: break-all; }
+.wmean { font-size: 12px; color: var(--gray); margin-top: 2px; }
+.wacts { display: flex; flex-direction: column; gap: 4px; flex-shrink: 0; }
+.ibtn { width: 30px; height: 30px; border-radius: 50%; border: 1.5px solid var(--border); background: #fff; font-size: 15px; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+.favbtn.on { color: var(--warn); border-color: var(--warn); background: #fffbeb; }
+/* Tab 2 */
+.fc-wrap { display: flex; flex-direction: column; height: 100%; }
+#fccard { background: #fff; border-radius: 18px; box-shadow: 0 4px 16px rgba(0,0,0,0.1); min-height: 220px; display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer; position: relative; padding: 24px 20px; margin-bottom: 12px; user-select: none; flex-shrink: 0; }
+#fcctr { position: absolute; top: 12px; right: 14px; font-family: 'Nunito', sans-serif; font-size: 12px; color: var(--gray); font-weight: 700; }
+#fcfavbtn { position: absolute; top: 10px; left: 12px; background: none; border: none; font-size: 20px; cursor: pointer; color: var(--gray); }
+#fcfavbtn.on { color: var(--warn); }
+#fcword { font-family: 'Nunito', sans-serif; font-size: 26px; font-weight: 800; color: #111; text-align: center; word-break: break-all; }
+#fcmean { font-size: 16px; color: var(--primary); text-align: center; margin-top: 12px; font-weight: 600; }
+#fctap { font-size: 12px; color: var(--gray); margin-top: 14px; }
+.fcnav { display: flex; gap: 8px; flex-shrink: 0; }
+.fcbtn { flex: 1; padding: 12px; border-radius: 12px; border: none; background: var(--primary); color: #fff; font-size: 14px; font-weight: 700; cursor: pointer; font-family: 'Nunito', sans-serif; }
+.fcbtn.sec { background: var(--border); color: #374151; }
+/* Test options (4지선다) */
+.qopts { display: flex; flex-direction: column; gap: 8px; }
+.qopt { padding: 10px 14px; border-radius: 10px; border: 1.5px solid var(--border); background: #fff; font-size: 13px; cursor: pointer; text-align: left; font-family: 'Noto Sans KR', sans-serif; }
+.qopt.correct { background: #dcfce7; border-color: var(--success); color: #065f46; }
+.qopt.wrong { background: #fee2e2; border-color: var(--danger); color: #991b1b; }
+/* Tab 4 */
+#tsetup, #trun, #tres { display: none; flex-direction: column; gap: 10px; }
+#tsetup.on, #trun.on, #tres.on { display: flex; }
+.tcard { background: #fff; border-radius: 14px; padding: 16px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+.tlabel { font-size: 12px; font-weight: 700; color: var(--gray); margin-bottom: 6px; }
+.tinput { width: 100%; padding: 10px 14px; border: 1.5px solid var(--border); border-radius: 10px; font-size: 14px; font-family: 'Noto Sans KR', sans-serif; outline: none; }
+.tinput:focus { border-color: var(--primary); }
+.tstart-btn { padding: 14px; border-radius: 12px; border: none; background: var(--primary); color: #fff; font-size: 15px; font-weight: 700; cursor: pointer; font-family: 'Nunito', sans-serif; }
+.tprog-bar { width: 100%; height: 6px; background: var(--border); border-radius: 3px; overflow: hidden; margin-bottom: 6px; }
+.tprog-fill { height: 100%; background: var(--primary); border-radius: 3px; transition: width 0.3s; }
+.tprog-info { display: flex; justify-content: space-between; font-size: 12px; color: var(--gray); font-family: 'Nunito', sans-serif; font-weight: 700; margin-bottom: 12px; }
+.tword-disp { font-family: 'Nunito', sans-serif; font-size: 28px; font-weight: 800; color: #111; text-align: center; margin: 20px 0; }
+.tansbtn { padding: 12px; border-radius: 12px; border: none; background: var(--primary); color: #fff; font-size: 14px; font-weight: 700; cursor: pointer; font-family: 'Nunito', sans-serif; margin-top: 8px; }
+.twrong-list { display: flex; flex-direction: column; gap: 6px; margin-top: 10px; }
+.twrong-item { background: #fee2e2; border-radius: 10px; padding: 8px 12px; font-size: 12px; }
+.twrong-word { font-family: 'Nunito', sans-serif; font-weight: 700; }
+.tcopy-btn { padding: 12px; border-radius: 12px; border: none; background: #25D366; color: #fff; font-size: 14px; font-weight: 700; cursor: pointer; font-family: 'Nunito', sans-serif; }
+.tretry-btn { padding: 12px; border-radius: 12px; border: none; background: var(--primary); color: #fff; font-size: 14px; font-weight: 700; cursor: pointer; font-family: 'Nunito', sans-serif; }
+.tres-score { font-family: 'Nunito', sans-serif; font-size: 40px; font-weight: 800; color: var(--primary); text-align: center; }
+.tres-pct { font-size: 14px; color: var(--gray); text-align: center; margin-top: 4px; }
+.tcorrect-list { font-size: 12px; color: #065f46; background: #dcfce7; border-radius: 10px; padding: 10px 12px; line-height: 1.8; }
+.wword, #fcword, .tword-disp, .twrong-word { font-family: 'Noto Sans JP', 'Noto Sans KR', sans-serif; }
+.wkanji { font-size: 13px; font-weight: 500; color: #374151; margin-left: 6px; }
+.wpron { font-size: 12px; color: var(--primary); font-weight: 600; margin-top: 1px; }
+.wpos, .fcpos { display: inline-block; font-size: 10px; font-weight: 700; color: var(--primary-dark); background: var(--primary-light); border-radius: 6px; padding: 1px 6px; margin-right: 6px; font-family: 'Noto Sans JP', sans-serif; vertical-align: 1px; }
+#fckanji { font-family: 'Noto Sans JP', sans-serif; font-size: 18px; color: #374151; margin-top: 6px; font-weight: 500; }
+#fcpron { font-size: 17px; color: var(--success); font-weight: 700; margin-top: 8px; }
+.fcpos { font-size: 11px; }
+.tword-disp { margin: 14px 0 4px; }
+.tsub { text-align: center; margin-bottom: 16px; font-size: 15px; }
+.tkanji { font-family: 'Noto Sans JP', sans-serif; color: #374151; }
+.tpron { color: var(--success); font-weight: 700; }
+</style>
+</head>
+<body>
+<header>
+  <div class="htop">씨유에탑 ✦ 일본어단어장</div>
+  <div class="hsub">실생활 기초단어 · 총 100단어</div>
+</header>
+<div class="tabs">
+  <button class="tab on" id="tb-w" onclick="showTab('w')">📚 단어</button>
+  <button class="tab" id="tb-fc" onclick="showTab('fc')">🃏 플래시</button>
+  <button class="tab" id="tb-t" onclick="showTab('t')">📝 테스트</button>
+</div>
+<!-- Tab 1 -->
+<div class="pane on" id="pane-w">
+  <div class="rbar" id="wrbar"></div>
+  <div class="search-wrap">
+    <input type="text" id="wsearch" placeholder="단어·한자·발음·뜻 검색..." oninput="renderList()">
+  </div>
+  <div class="filter-row">
+    <button class="fbtn on" id="flt-all" onclick="setFilter('all')">전체</button>
+    <button class="fbtn" id="flt-unk" onclick="setFilter('unk')">모름</button>
+    <button class="fbtn" id="flt-fav" onclick="setFilter('fav')">⭐즐겨찾기</button>
+  </div>
+  <div id="wlist"></div>
+</div>
+<!-- Tab 2 -->
+<div class="pane" id="pane-fc">
+  <div class="rbar" id="fcrbar"></div>
+  <div class="fc-wrap">
+    <div id="fccard">
+      <span id="fcctr"></span>
+      <button id="fcfavbtn" onclick="fcToggleFav()">☆</button>
+      <div id="fcword"></div>
+      <div id="fckanji"></div>
+      <div id="fcpron"></div>
+      <div id="fcmean"></div>
+      <div id="fctap">탭하여 발음 듣기 · 뜻 보기</div>
+    </div>
+    <div class="fcnav">
+      <button class="fcbtn sec" onclick="fcPrev()">◀ 이전</button>
+      <button class="fcbtn" style="background:var(--warn);" onclick="speakFc()">🔊</button>
+      <button class="fcbtn" onclick="fcNext()">다음 ▶</button>
+    </div>
+  </div>
+</div>
+<!-- Tab 4 -->
+<div class="pane" id="pane-t">
+  <div id="tsetup" class="on">
+    <div class="tcard">
+      <div class="tlabel">이름</div>
+      <input class="tinput" type="text" id="tname" placeholder="이름을 입력하세요">
+    </div>
+    <div class="tcard">
+      <div class="tlabel">문제 수 (최대 50)</div>
+      <input class="tinput" type="number" id="tcount" value="20" min="1" max="50">
+    </div>
+    <div class="tcard">
+      <div class="tlabel">범위 (20단어씩)</div>
+      <div class="rbar" id="trbar"></div>
+    </div>
+    <button class="tstart-btn" onclick="tStart()">테스트 시작 ▶</button>
+  </div>
+  <div id="trun">
+    <div class="tprog-bar"><div class="tprog-fill" id="tpfill"></div></div>
+    <div class="tprog-info"><span id="tpnum"></span><span id="tpcor"></span></div>
+    <div class="tcard" style="text-align:center;">
+      <div class="tword-disp" id="tworddisp"></div>
+      <div class="tsub" id="tsubdisp"></div>
+      <div class="qopts" id="topts"></div>
+      <button class="tansbtn" id="tnext" onclick="tNext()" style="width:100%; display:none;">다음 →</button>
+    </div>
+  </div>
+  <div id="tres">
+    <div class="tcard" style="text-align:center;">
+      <div id="testemoji" style="font-size:48px; margin-bottom:6px;"></div>
+      <div class="tres-score" id="tresscore"></div>
+      <div class="tres-pct" id="trespct"></div>
+    </div>
+    <div class="tcard" id="twrongcard" style="display:none;">
+      <div class="tlabel">❌ 틀린 단어</div>
+      <div class="twrong-list" id="twronglist"></div>
+    </div>
+    <div class="tcard" id="tcorcard" style="display:none;">
+      <div class="tlabel">✅ 맞은 단어</div>
+      <div class="tcorrect-list" id="tcorlist"></div>
+    </div>
+    <button class="tcopy-btn" onclick="tCopy()">📋 카톡으로 결과 복사</button>
+    <button class="tretry-btn" onclick="tRetry()">↩ 다시 테스트</button>
+  </div>
+</div>
+<script>
+var rawWords = [{"word": "みず", "kanji": "水", "pron": "미즈", "pos": "음식", "meaning": "물"}, {"word": "ごはん", "kanji": "ご飯", "pron": "고항", "pos": "음식", "meaning": "밥, 식사"}, {"word": "パン", "kanji": "", "pron": "팡", "pos": "음식", "meaning": "빵"}, {"word": "にく", "kanji": "肉", "pron": "니꾸", "pos": "음식", "meaning": "고기"}, {"word": "さかな", "kanji": "魚", "pron": "사까나", "pos": "음식", "meaning": "생선, 물고기"}, {"word": "やさい", "kanji": "野菜", "pron": "야사이", "pos": "음식", "meaning": "채소"}, {"word": "くだもの", "kanji": "果物", "pron": "쿠다모노", "pos": "음식", "meaning": "과일"}, {"word": "たまご", "kanji": "卵", "pron": "타마고", "pos": "음식", "meaning": "달걀"}, {"word": "ぎゅうにゅう", "kanji": "牛乳", "pron": "규-뉴-", "pos": "음식", "meaning": "우유"}, {"word": "おちゃ", "kanji": "お茶", "pron": "오짜", "pos": "음식", "meaning": "차, 녹차"}, {"word": "コーヒー", "kanji": "", "pron": "코-히-", "pos": "음식", "meaning": "커피"}, {"word": "おさけ", "kanji": "お酒", "pron": "오사께", "pos": "음식", "meaning": "술"}, {"word": "あさごはん", "kanji": "朝ご飯", "pron": "아사고항", "pos": "음식", "meaning": "아침밥"}, {"word": "ひるごはん", "kanji": "昼ご飯", "pron": "히루고항", "pos": "음식", "meaning": "점심밥"}, {"word": "ばんごはん", "kanji": "晩ご飯", "pron": "방고항", "pos": "음식", "meaning": "저녁밥"}, {"word": "いえ", "kanji": "家", "pron": "이에", "pos": "장소", "meaning": "집"}, {"word": "がっこう", "kanji": "学校", "pron": "각꼬-", "pos": "장소", "meaning": "학교"}, {"word": "かいしゃ", "kanji": "会社", "pron": "카이샤", "pos": "장소", "meaning": "회사"}, {"word": "えき", "kanji": "駅", "pron": "에끼", "pos": "장소", "meaning": "역"}, {"word": "びょういん", "kanji": "病院", "pron": "뵤-잉", "pos": "장소", "meaning": "병원"}, {"word": "ぎんこう", "kanji": "銀行", "pron": "깅꼬-", "pos": "장소", "meaning": "은행"}, {"word": "みせ", "kanji": "店", "pron": "미세", "pos": "장소", "meaning": "가게"}, {"word": "スーパー", "kanji": "", "pron": "스-파-", "pos": "장소", "meaning": "슈퍼마켓"}, {"word": "コンビニ", "kanji": "", "pron": "콤비니", "pos": "장소", "meaning": "편의점"}, {"word": "レストラン", "kanji": "", "pron": "레스또랑", "pos": "장소", "meaning": "레스토랑, 식당"}, {"word": "トイレ", "kanji": "", "pron": "토이레", "pos": "장소", "meaning": "화장실"}, {"word": "へや", "kanji": "部屋", "pron": "헤야", "pos": "장소", "meaning": "방"}, {"word": "こうえん", "kanji": "公園", "pron": "코-엥", "pos": "장소", "meaning": "공원"}, {"word": "としょかん", "kanji": "図書館", "pron": "토쇼깡", "pos": "장소", "meaning": "도서관"}, {"word": "くうこう", "kanji": "空港", "pron": "쿠-꼬-", "pos": "장소", "meaning": "공항"}, {"word": "でんしゃ", "kanji": "電車", "pron": "덴샤", "pos": "교통", "meaning": "전철, 기차"}, {"word": "バス", "kanji": "", "pron": "바스", "pos": "교통", "meaning": "버스"}, {"word": "タクシー", "kanji": "", "pron": "타꾸시-", "pos": "교통", "meaning": "택시"}, {"word": "くるま", "kanji": "車", "pron": "쿠루마", "pos": "교통", "meaning": "자동차"}, {"word": "じてんしゃ", "kanji": "自転車", "pron": "지뗀샤", "pos": "교통", "meaning": "자전거"}, {"word": "ひこうき", "kanji": "飛行機", "pron": "히꼬-끼", "pos": "교통", "meaning": "비행기"}, {"word": "きっぷ", "kanji": "切符", "pron": "킵뿌", "pos": "교통", "meaning": "표, 승차권"}, {"word": "みち", "kanji": "道", "pron": "미찌", "pos": "교통", "meaning": "길"}, {"word": "きょう", "kanji": "今日", "pron": "쿄-", "pos": "시간·날씨", "meaning": "오늘"}, {"word": "あした", "kanji": "明日", "pron": "아시따", "pos": "시간·날씨", "meaning": "내일"}, {"word": "きのう", "kanji": "昨日", "pron": "키노-", "pos": "시간·날씨", "meaning": "어제"}, {"word": "あさ", "kanji": "朝", "pron": "아사", "pos": "시간·날씨", "meaning": "아침"}, {"word": "ひる", "kanji": "昼", "pron": "히루", "pos": "시간·날씨", "meaning": "낮, 점심때"}, {"word": "よる", "kanji": "夜", "pron": "요루", "pos": "시간·날씨", "meaning": "밤"}, {"word": "いま", "kanji": "今", "pron": "이마", "pos": "시간·날씨", "meaning": "지금"}, {"word": "じかん", "kanji": "時間", "pron": "지깡", "pos": "시간·날씨", "meaning": "시간"}, {"word": "まいにち", "kanji": "毎日", "pron": "마이니찌", "pos": "시간·날씨", "meaning": "매일"}, {"word": "しゅうまつ", "kanji": "週末", "pron": "슈-마쯔", "pos": "시간·날씨", "meaning": "주말"}, {"word": "やすみ", "kanji": "休み", "pron": "야스미", "pos": "시간·날씨", "meaning": "휴일, 쉬는 시간"}, {"word": "てんき", "kanji": "天気", "pron": "텡끼", "pos": "시간·날씨", "meaning": "날씨"}, {"word": "あめ", "kanji": "雨", "pron": "아메", "pos": "시간·날씨", "meaning": "비"}, {"word": "ゆき", "kanji": "雪", "pron": "유끼", "pos": "시간·날씨", "meaning": "눈 (내리는 눈)"}, {"word": "わたし", "kanji": "私", "pron": "와따시", "pos": "사람", "meaning": "나, 저"}, {"word": "ともだち", "kanji": "友達", "pron": "토모다찌", "pos": "사람", "meaning": "친구"}, {"word": "かぞく", "kanji": "家族", "pron": "카조꾸", "pos": "사람", "meaning": "가족"}, {"word": "ちち", "kanji": "父", "pron": "치찌", "pos": "사람", "meaning": "(나의) 아버지"}, {"word": "はは", "kanji": "母", "pron": "하하", "pos": "사람", "meaning": "(나의) 어머니"}, {"word": "こども", "kanji": "子供", "pron": "코도모", "pos": "사람", "meaning": "아이, 어린이"}, {"word": "せんせい", "kanji": "先生", "pron": "센세-", "pos": "사람", "meaning": "선생님"}, {"word": "がくせい", "kanji": "学生", "pron": "가꾸세-", "pos": "사람", "meaning": "학생"}, {"word": "ひと", "kanji": "人", "pron": "히또", "pos": "사람", "meaning": "사람"}, {"word": "なまえ", "kanji": "名前", "pron": "나마에", "pos": "사람", "meaning": "이름"}, {"word": "あたま", "kanji": "頭", "pron": "아따마", "pos": "몸·건강", "meaning": "머리"}, {"word": "め", "kanji": "目", "pron": "메", "pos": "몸·건강", "meaning": "눈 (신체)"}, {"word": "て", "kanji": "手", "pron": "테", "pos": "몸·건강", "meaning": "손"}, {"word": "あし", "kanji": "足", "pron": "아시", "pos": "몸·건강", "meaning": "발, 다리"}, {"word": "くすり", "kanji": "薬", "pron": "쿠스리", "pos": "몸·건강", "meaning": "약"}, {"word": "かぜ", "kanji": "風邪", "pron": "카제", "pos": "몸·건강", "meaning": "감기"}, {"word": "おかね", "kanji": "お金", "pron": "오까네", "pos": "물건", "meaning": "돈"}, {"word": "さいふ", "kanji": "財布", "pron": "사이후", "pos": "물건", "meaning": "지갑"}, {"word": "かばん", "kanji": "鞄", "pron": "카방", "pos": "물건", "meaning": "가방"}, {"word": "けいたい", "kanji": "携帯", "pron": "케-따이", "pos": "물건", "meaning": "휴대폰"}, {"word": "かさ", "kanji": "傘", "pron": "카사", "pos": "물건", "meaning": "우산"}, {"word": "ふく", "kanji": "服", "pron": "후꾸", "pos": "물건", "meaning": "옷"}, {"word": "くつ", "kanji": "靴", "pron": "쿠쯔", "pos": "물건", "meaning": "신발, 구두"}, {"word": "ほん", "kanji": "本", "pron": "홍", "pos": "물건", "meaning": "책"}, {"word": "とけい", "kanji": "時計", "pron": "토께-", "pos": "물건", "meaning": "시계"}, {"word": "かぎ", "kanji": "鍵", "pron": "카기", "pos": "물건", "meaning": "열쇠"}, {"word": "テレビ", "kanji": "", "pron": "테레비", "pos": "물건", "meaning": "텔레비전"}, {"word": "しゃしん", "kanji": "写真", "pron": "샤싱", "pos": "물건", "meaning": "사진"}, {"word": "たべる", "kanji": "食べる", "pron": "타베루", "pos": "동사", "meaning": "먹다"}, {"word": "のむ", "kanji": "飲む", "pron": "노무", "pos": "동사", "meaning": "마시다"}, {"word": "いく", "kanji": "行く", "pron": "이꾸", "pos": "동사", "meaning": "가다"}, {"word": "くる", "kanji": "来る", "pron": "쿠루", "pos": "동사", "meaning": "오다"}, {"word": "かえる", "kanji": "帰る", "pron": "카에루", "pos": "동사", "meaning": "돌아가다, 귀가하다"}, {"word": "みる", "kanji": "見る", "pron": "미루", "pos": "동사", "meaning": "보다"}, {"word": "かう", "kanji": "買う", "pron": "카우", "pos": "동사", "meaning": "사다"}, {"word": "ねる", "kanji": "寝る", "pron": "네루", "pos": "동사", "meaning": "자다"}, {"word": "おきる", "kanji": "起きる", "pron": "오끼루", "pos": "동사", "meaning": "일어나다"}, {"word": "はなす", "kanji": "話す", "pron": "하나스", "pos": "동사", "meaning": "이야기하다, 말하다"}, {"word": "まつ", "kanji": "待つ", "pron": "마쯔", "pos": "동사", "meaning": "기다리다"}, {"word": "はたらく", "kanji": "働く", "pron": "하따라꾸", "pos": "동사", "meaning": "일하다"}, {"word": "おおきい", "kanji": "大きい", "pron": "오-끼-", "pos": "형용사", "meaning": "크다"}, {"word": "ちいさい", "kanji": "小さい", "pron": "치-사이", "pos": "형용사", "meaning": "작다"}, {"word": "たかい", "kanji": "高い", "pron": "타까이", "pos": "형용사", "meaning": "비싸다, 높다"}, {"word": "やすい", "kanji": "安い", "pron": "야스이", "pos": "형용사", "meaning": "싸다"}, {"word": "おいしい", "kanji": "美味しい", "pron": "오이시-", "pos": "형용사", "meaning": "맛있다"}, {"word": "あつい", "kanji": "暑い", "pron": "아쯔이", "pos": "형용사", "meaning": "덥다"}, {"word": "さむい", "kanji": "寒い", "pron": "사무이", "pos": "형용사", "meaning": "춥다"}, {"word": "いそがしい", "kanji": "忙しい", "pron": "이소가시-", "pos": "형용사", "meaning": "바쁘다"}];
+
+var STORE_KEY = 'cutop_jp_life_100';
+var store = {};
+try { store = JSON.parse(localStorage.getItem(STORE_KEY)) || {}; } catch(e) { store = {}; }
+function save() { try { localStorage.setItem(STORE_KEY, JSON.stringify(store)); } catch(e) {} }
+function getS(w) { var k = w.word + '|' + w.meaning; if (!store[k]) store[k] = {status:'', fav:false}; return store[k]; }
+
+function esc(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function speak(t) {
+  if (!('speechSynthesis' in window)) return;
+  window.speechSynthesis.cancel();
+  var u = new SpeechSynthesisUtterance(t);
+  u.lang = 'ja-JP';
+  var vs = window.speechSynthesis.getVoices();
+  for (var vi = 0; vi < vs.length; vi++) { if (/^ja/i.test(vs[vi].lang)) { u.voice = vs[vi]; break; } }
+  u.rate = 0.85;
+  window.speechSynthesis.speak(u);
+}
+function speakFc() { if (fcPool.length) speak(fcPool[fcIdx].word); }
+
+function buildRanges(ws) {
+  var r = [{label:'전체', s:0, e:ws.length}];
+  for (var i = 0; i < ws.length; i += 20) {
+    var e = Math.min(i + 20, ws.length);
+    r.push({label:(i+1)+'~'+e, s:i, e:e});
+  }
+  return r;
+}
+var RANGES = buildRanges(rawWords);
+
+function renderRangeBar(barId, ri, fn) {
+  var bar = document.getElementById(barId);
+  if (!bar) return;
+  var h = [];
+  for (var i = 0; i < RANGES.length; i++) {
+    var cls = 'rbtn' + (i === ri ? ' on' : '');
+    h.push('<button class="' + cls + '" data-i="' + i + '" onclick="' + fn + '(this)">' + RANGES[i].label + '</button>');
+  }
+  bar.innerHTML = h.join('');
+}
+
+function wordsForRange(ri) {
+  var r = RANGES[ri];
+  return rawWords.slice(r.s, r.e);
+}
+
+// ===== Tab 1 =====
+var wri = 0;
+var wFilter = 'all';
+
+function setWR(btn) { wri = parseInt(btn.dataset.i); renderList(); }
+function setFilter(f) {
+  wFilter = f;
+  document.getElementById('flt-all').className = 'fbtn' + (f === 'all' ? ' on' : '');
+  document.getElementById('flt-unk').className = 'fbtn' + (f === 'unk' ? ' on' : '');
+  document.getElementById('flt-fav').className = 'fbtn' + (f === 'fav' ? ' on' : '');
+  renderList();
+}
+
+function renderList() {
+  renderRangeBar('wrbar', wri, 'setWR');
+  var pool = wordsForRange(wri);
+  var q = document.getElementById('wsearch').value.toLowerCase().replace(/\s/g,'');
+  var list = [];
+  for (var i = 0; i < pool.length; i++) {
+    var w = pool[i], s = getS(w);
+    if (wFilter === 'unk' && s.status === 'known') continue;
+    if (wFilter === 'fav' && !s.fav) continue;
+    if (q) {
+      var wl = w.word.toLowerCase().replace(/\s/g,'');
+      var ml = (w.meaning + '|' + w.kanji + '|' + w.pron).replace(/\s/g,'');
+      if (wl.indexOf(q) < 0 && ml.indexOf(q) < 0) continue;
+    }
+    list.push(w);
+  }
+  var h = [];
+  for (var i = 0; i < list.length; i++) {
+    var w = list[i], s = getS(w);
+    var known = s.status === 'known', fav = s.fav;
+    h.push('<div class="wcard' + (known ? ' known' : '') + '">');
+    h.push('<button class="chk' + (known ? ' on' : '') + '" data-wi="' + i + '" onclick="toggleKnown(this)">' + (known ? '✔' : '') + '</button>');
+    h.push('<div class="wbody">');
+    h.push('<div class="wword">' + esc(w.word) + (w.kanji ? '<span class="wkanji">' + esc(w.kanji) + '</span>' : '') + '</div>');
+    h.push('<div class="wpron">' + esc(w.pron) + '</div>');
+    h.push('<div class="wmean"><span class="wpos">' + esc(w.pos) + '</span>' + esc(w.meaning) + '</div>');
+    h.push('</div>');
+    h.push('<div class="wacts">');
+    h.push('<button class="ibtn" data-w="' + esc(w.word) + '" onclick="speak(this.dataset.w)">🔊</button>');
+    h.push('<button class="ibtn favbtn' + (fav ? ' on' : '') + '" data-wi="' + i + '" onclick="toggleFav(this)">' + (fav ? '★' : '☆') + '</button>');
+    h.push('</div>');
+    h.push('</div>');
+  }
+  document.getElementById('wlist').innerHTML = h.join('');
+  window._wlist = list;
+}
+
+function toggleKnown(btn) {
+  var i = parseInt(btn.dataset.wi);
+  var w = window._wlist[i];
+  var s = getS(w);
+  s.status = s.status === 'known' ? '' : 'known';
+  save();
+  renderList();
+}
+
+function toggleFav(btn) {
+  var i = parseInt(btn.dataset.wi);
+  var w = window._wlist[i];
+  var s = getS(w);
+  s.fav = !s.fav;
+  save();
+  renderList();
+}
+
+// ===== Tab 2 =====
+var fcPool = [];
+var fcIdx = 0;
+var fcFlipped = false;
+var fcTX = 0;
+var fcEvReg = false;
+var fri = 0;
+
+function setFCR(btn) { fri = parseInt(btn.dataset.i); fcInit(); }
+
+function fcRegisterEvents() {
+  if (fcEvReg) return;
+  fcEvReg = true;
+  var card = document.getElementById('fccard');
+  card.addEventListener('click', function(e) {
+    if (e.target.id === 'fcfavbtn') return;
+    fcFlip();
+  });
+  card.addEventListener('touchstart', function(e) {
+    fcTX = e.touches[0].clientX;
+  }, {passive:true});
+  card.addEventListener('touchend', function(e) {
+    var dx = e.changedTouches[0].clientX - fcTX;
+    if (Math.abs(dx) > 50) { if (dx < 0) fcNext(); else fcPrev(); }
+  }, {passive:true});
+}
+
+function fcInit() {
+  renderRangeBar('fcrbar', fri, 'setFCR');
+  fcPool = wordsForRange(fri);
+  if (fcIdx >= fcPool.length) fcIdx = 0;
+  fcRegisterEvents();
+  fcShow();
+}
+
+function fcShow() {
+  if (!fcPool.length) return;
+  fcFlipped = false;
+  var w = fcPool[fcIdx];
+  document.getElementById('fcword').textContent = w.word;
+  document.getElementById('fckanji').textContent = w.kanji ? '[' + w.kanji + ']' : '';
+  document.getElementById('fcpron').textContent = w.pron;
+  document.getElementById('fcmean').innerHTML = '<span class="fcpos">' + esc(w.pos) + '</span>' + esc(w.meaning);
+  document.getElementById('fcmean').style.display = 'none';
+  document.getElementById('fctap').style.display = 'block';
+  document.getElementById('fcctr').textContent = (fcIdx+1) + '/' + fcPool.length;
+  var s = getS(w);
+  var fb = document.getElementById('fcfavbtn');
+  fb.textContent = s.fav ? '★' : '☆';
+  fb.className = s.fav ? 'on' : '';
+}
+
+function fcFlip() {
+  if (fcFlipped) return;
+  if (!fcPool.length) return;
+  fcFlipped = true;
+  document.getElementById('fcmean').style.display = 'block';
+  document.getElementById('fctap').style.display = 'none';
+  speak(fcPool[fcIdx].word);
+}
+
+function fcNext() {
+  if (!fcPool.length) return;
+  fcIdx = (fcIdx + 1) % fcPool.length;
+  fcShow();
+}
+
+function fcPrev() {
+  if (!fcPool.length) return;
+  fcIdx = (fcIdx - 1 + fcPool.length) % fcPool.length;
+  fcShow();
+}
+
+function fcToggleFav() {
+  if (!fcPool.length) return;
+  var w = fcPool[fcIdx];
+  var s = getS(w);
+  s.fav = !s.fav;
+  save();
+  var fb = document.getElementById('fcfavbtn');
+  fb.textContent = s.fav ? '★' : '☆';
+  fb.className = s.fav ? 'on' : '';
+}
+
+// ===== Utils =====
+function shuffle(arr) {
+  var a = arr.slice();
+  for (var i = a.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i+1));
+    var t = a[i]; a[i] = a[j]; a[j] = t;
+  }
+  return a;
+}
+
+// ===== Tab 4 =====
+var tri = 1;
+var tPool = [];
+var tIdx = 0;
+var tCorCount = 0;
+var tResults = [];
+var tName = '';
+var tTotal = 0;
+var tLocked = false;
+
+function setTR(btn) { tri = parseInt(btn.dataset.i); renderRangeBar('trbar', tri, 'setTR'); }
+
+function tSetup() {
+  renderRangeBar('trbar', tri, 'setTR');
+  document.getElementById('tsetup').className = 'on';
+  document.getElementById('trun').className = '';
+  document.getElementById('tres').className = '';
+}
+
+function tStart() {
+  var name = document.getElementById('tname').value.trim();
+  if (!name) { alert('이름을 입력해 주세요.'); return; }
+  var cnt = parseInt(document.getElementById('tcount').value) || 20;
+  if (cnt < 1) cnt = 1;
+  if (cnt > 50) cnt = 50;
+  if (rawWords.length < 4) { alert('4지선다 테스트는 최소 4단어가 필요합니다.'); return; }
+  tName = name;
+  var base = wordsForRange(tri);
+  tPool = shuffle(base).slice(0, cnt);
+  tTotal = tPool.length;
+  tIdx = 0;
+  tCorCount = 0;
+  tResults = [];
+  document.getElementById('tsetup').className = '';
+  document.getElementById('trun').className = 'on';
+  document.getElementById('tres').className = '';
+  tShowQ();
+}
+
+function tShowQ() {
+  if (tIdx >= tPool.length) { tShowResult(); return; }
+  var w = tPool[tIdx];
+  tLocked = false;
+  var pct = Math.round(tIdx / tTotal * 100);
+  document.getElementById('tpfill').style.width = pct + '%';
+  document.getElementById('tpnum').textContent = (tIdx+1) + ' / ' + tTotal;
+  document.getElementById('tpcor').textContent = '✅ ' + tCorCount;
+  document.getElementById('tworddisp').textContent = w.word;
+  document.getElementById('tsubdisp').innerHTML = (w.kanji ? '<span class="tkanji">[' + esc(w.kanji) + ']</span> ' : '') + '<span class="tpron">' + esc(w.pron) + '</span>';
+  var opts = [w.meaning];
+  var others = shuffle(rawWords.filter(function(x){ return x.meaning !== w.meaning; }));
+  for (var j = 0; j < others.length && opts.length < 4; j++) {
+    if (opts.indexOf(others[j].meaning) < 0) opts.push(others[j].meaning);
+  }
+  opts = shuffle(opts);
+  var h = [];
+  for (var k = 0; k < opts.length; k++) {
+    var isC = opts[k] === w.meaning ? '1' : '0';
+    h.push('<button class="qopt" data-cor="' + isC + '" onclick="tPick(this)">' + esc(opts[k]) + '</button>');
+  }
+  document.getElementById('topts').innerHTML = h.join('');
+  document.getElementById('tnext').style.display = 'none';
+  speak(w.word);
+}
+
+function tPick(btn) {
+  if (tLocked) return;
+  tLocked = true;
+  var w = tPool[tIdx];
+  var cor = btn.dataset.cor === '1';
+  var opts = document.getElementById('topts').querySelectorAll('.qopt');
+  for (var i = 0; i < opts.length; i++) {
+    opts[i].style.pointerEvents = 'none';
+    if (opts[i].dataset.cor === '1') opts[i].className = 'qopt correct';
+  }
+  if (!cor) btn.className = 'qopt wrong';
+  else tCorCount++;
+  document.getElementById('tpcor').textContent = '✅ ' + tCorCount;
+  tResults.push({word: w.word, kanji: w.kanji, pron: w.pron, meaning: w.meaning, ans: btn.textContent, ok: cor});
+  var nb = document.getElementById('tnext');
+  nb.textContent = (tIdx + 1 >= tTotal) ? '결과 보기 →' : '다음 →';
+  nb.style.display = 'block';
+}
+
+function tNext() {
+  if (!tLocked) return;
+  tIdx++;
+  if (tIdx >= tPool.length) { document.getElementById('tpfill').style.width = '100%'; }
+  tShowQ();
+}
+
+function tShowResult() {
+  document.getElementById('trun').className = '';
+  document.getElementById('tres').className = 'on';
+  var pct = Math.round(tCorCount / tTotal * 100);
+  var emoji = pct === 100 ? '🏆' : pct >= 80 ? '🎉' : pct >= 60 ? '👍' : '💪';
+  document.getElementById('testemoji').textContent = emoji;
+  document.getElementById('tresscore').textContent = tCorCount + ' / ' + tTotal;
+  document.getElementById('trespct').textContent = pct + '점';
+  var wrong = tResults.filter(function(r){ return !r.ok; });
+  var corr = tResults.filter(function(r){ return r.ok; });
+  var wcard = document.getElementById('twrongcard');
+  var ccard = document.getElementById('tcorcard');
+  if (wrong.length > 0) {
+    wcard.style.display = 'block';
+    var h = [];
+    for (var i = 0; i < wrong.length; i++) {
+      var r = wrong[i];
+      h.push('<div class="twrong-item">');
+      h.push('<span class="twrong-word">' + esc(r.word) + (r.kanji ? ' [' + esc(r.kanji) + ']' : '') + '</span> <span style="color:#6B7280">' + esc(r.pron) + '</span>');
+      h.push(' → 입력:<b>' + esc(r.ans || '(없음)') + '</b> / 정답:<b>' + esc(r.meaning) + '</b>');
+      h.push('</div>');
+    }
+    document.getElementById('twronglist').innerHTML = h.join('');
+  } else {
+    wcard.style.display = 'none';
+  }
+  if (corr.length > 0) {
+    ccard.style.display = 'block';
+    var cwords = corr.map(function(r){ return r.word; }).join(', ');
+    document.getElementById('tcorlist').textContent = cwords;
+  } else {
+    ccard.style.display = 'none';
+  }
+}
+
+function tCopy() {
+  var now = new Date();
+  var dateStr = now.getFullYear() + '. ' + (now.getMonth()+1) + '. ' + now.getDate() + '.';
+  var pct = Math.round(tCorCount / tTotal * 100);
+  var wrong = tResults.filter(function(r){ return !r.ok; });
+  var corr = tResults.filter(function(r){ return r.ok; });
+  var lines = [];
+  lines.push('[씨유에탑 일본어 실생활 기초단어] 테스트 결과');
+  lines.push('날짜: ' + dateStr);
+  lines.push('이름: ' + tName);
+  lines.push('점수: ' + tCorCount + '/' + tTotal + ' (' + pct + '점)');
+  lines.push('─────────────────');
+  lines.push('❌ 틀린 단어 (' + wrong.length + '개)');
+  for (var i = 0; i < wrong.length; i++) {
+    var r = wrong[i];
+    lines.push('  ' + r.word + (r.kanji ? '[' + r.kanji + ']' : '') + '(' + r.pron + ') → 입력:' + (r.ans || '(없음)') + ' / 정답:' + r.meaning);
+  }
+  lines.push('─────────────────');
+  lines.push('✅ 맞은 단어: ' + corr.map(function(r){ return r.word; }).join(', '));
+  var text = lines.join('\n');
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(text).then(function(){
+      alert('클립보드에 복사되었습니다!');
+    });
+  } else {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    alert('클립보드에 복사되었습니다!');
+  }
+}
+
+function tRetry() {
+  document.getElementById('tres').className = '';
+  document.getElementById('tsetup').className = 'on';
+}
+
+// ===== Tab switching =====
+var TABS = ['w','fc','t'];
+function showTab(id) {
+  for (var i = 0; i < TABS.length; i++) {
+    var t = TABS[i];
+    document.getElementById('pane-' + t).classList.toggle('on', t === id);
+    document.getElementById('tb-' + t).classList.toggle('on', t === id);
+  }
+  if (id === 'w')  { renderRangeBar('wrbar', wri, 'setWR'); renderList(); }
+  if (id === 'fc') { fcInit(); }
+  if (id === 't')  { tSetup(); }
+}
+
+// Init
+if ('speechSynthesis' in window) { window.speechSynthesis.getVoices(); }
+renderList();
+</script>
+</body>
+</html>
